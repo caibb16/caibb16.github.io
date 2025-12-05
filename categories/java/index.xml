@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Java on caibb16</title>
+        <link>https://caibb16.github.io/categories/java/</link>
+        <description>Recent content in Java on caibb16</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>caibb16</copyright><atom:link href="https://caibb16.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>java_study</title>
+        <link>https://caibb16.github.io/p/java_study/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://caibb16.github.io/p/java_study/</guid>
+        <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
+&lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;整数类型：byte、short、int、long&lt;br&gt;
+整数在计算机中以补码形式存在，最高位为符号位&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;byte 1字节&lt;br&gt;
+short 2字节&lt;br&gt;
+int  4字节&lt;br&gt;
+long 8字节&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;浮点类型：float、double&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;字符类型：char&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;布尔类型：boolean&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;引用数据类型数据值存储在堆中自己空间存储地址值&#34;&gt;引用数据类型：数据值存储在堆中，自己空间存储地址值
+&lt;/h3&gt;&lt;p&gt;类、接口、数组&lt;/p&gt;
+&lt;h3 id=&#34;类型转换&#34;&gt;类型转换
+&lt;/h3&gt;&lt;p&gt;小范围转大范围：高位补0，符号位扩展&lt;br&gt;
+大范围转小范围：直接截取低位&lt;/p&gt;
+&lt;h2 id=&#34;switch语句&#34;&gt;switch语句
+&lt;/h2&gt;&lt;p&gt;case穿透：执行case语句时，若未发现break，则顺序执行下一个case语句，直到发现break为止&lt;br&gt;
+if和switch的各自应用场景：if一般用于对范围的判断，switch用于在有限个数据任选其一&lt;/p&gt;
+&lt;h2 id=&#34;循环语句&#34;&gt;循环语句
+&lt;/h2&gt;&lt;h3 id=&#34;for和while的对比&#34;&gt;for和while的对比
+&lt;/h3&gt;&lt;p&gt;相同点：运行规则相同&lt;br&gt;
+不同点：for循环一般用于知道循环次数或者循环范围，while循环一般用于不知道循环次数和范围，只知道循环的结束条件&lt;/p&gt;
+&lt;h3 id=&#34;continue和break&#34;&gt;continue和break
+&lt;/h3&gt;&lt;p&gt;continue：结束本次循环，进入下一次循环
+break：结束整个循环&lt;/p&gt;
+&lt;h2 id=&#34;数组&#34;&gt;数组
+&lt;/h2&gt;&lt;h3 id=&#34;静态初始化指定初始化值&#34;&gt;静态初始化（指定初始化值）
+&lt;/h3&gt;&lt;p&gt;数据类型[] 数组名 = {元素1, 元素2, 元素3&amp;hellip;  }&lt;/p&gt;
+&lt;h3 id=&#34;动态初始化指定数组长度&#34;&gt;动态初始化（指定数组长度）
+&lt;/h3&gt;&lt;p&gt;数据类型[] 数组名 = new 数据类型[数组长度];&lt;/p&gt;
+&lt;h3 id=&#34;遍历数组&#34;&gt;遍历数组
+&lt;/h3&gt;&lt;p&gt;for(数据类型 变量名 : 数组名){
+//使用变量名进行操作
+}&lt;/p&gt;
+&lt;h2 id=&#34;方法&#34;&gt;方法
+&lt;/h2&gt;&lt;h3 id=&#34;方法的定义&#34;&gt;方法的定义
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;我要干什么？——方法体&lt;/li&gt;
+&lt;li&gt;我需要什么？——形参&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;方法的基本内存原理&#34;&gt;方法的基本内存原理
+&lt;/h3&gt;&lt;p&gt;栈：方法调用时进栈，执行结束时出栈（先进后出）&lt;br&gt;
+堆：创建对象（new）时进堆，存储引用数据类型的值&lt;/p&gt;
+&lt;h3 id=&#34;基本数据类型和引用数据类型的存储&#34;&gt;基本数据类型和引用数据类型的存储
+&lt;/h3&gt;&lt;p&gt;基本数据类型：数据值存储在自己的空间中（传递时传递数据）&lt;br&gt;
+引用数据类型：数据值存储在堆中，自己空间中存储的是地址值（传递时传递地址）&lt;/p&gt;
+&lt;h2 id=&#34;二维数组&#34;&gt;二维数组
+&lt;/h2&gt;&lt;h3 id=&#34;初始化&#34;&gt;初始化
+&lt;/h3&gt;&lt;p&gt;数据类型[ ][ ] 数组名 = new 数据类型[行数][列数]&lt;br&gt;
+数据类型[ ][ ] 数组名 = { {元素1, 元素2}, {元素3, 元素4} }&lt;/p&gt;
+&lt;h3 id=&#34;遍历&#34;&gt;遍历
+&lt;/h3&gt;&lt;p&gt;外循环：遍历二维数组获取每一个一维数组 （数组名[ ]获取一维数组地址）&lt;br&gt;
+内循环：遍历一维数组获取每一个元素 （数组名[ ][ ]同时获取一维数组地址和元素）&lt;/p&gt;
+&lt;h2 id=&#34;面向对象&#34;&gt;面向对象
+&lt;/h2&gt;&lt;h3 id=&#34;类和对象的关系&#34;&gt;类和对象的关系
+&lt;/h3&gt;&lt;p&gt;类是对象的模板，对象是类的具体体现&lt;/p&gt;
+&lt;h3 id=&#34;成员变量和局部变量&#34;&gt;成员变量和局部变量
+&lt;/h3&gt;&lt;p&gt;成员变量：定义在类中，方法外，可以被类中的所有方法使用，默认初始化值&lt;br&gt;
+局部变量：定义在方法中，只能被该方法使用，使用前必须初始化&lt;/p&gt;
+&lt;h3 id=&#34;构造方法&#34;&gt;构造方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;方法名和类名相同&lt;/li&gt;
+&lt;li&gt;没有返回值类型&lt;/li&gt;
+&lt;li&gt;用于创建对象并初始化对象成员变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;方法重载&#34;&gt;方法重载
+&lt;/h3&gt;&lt;p&gt;在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或参数类型不同即可&lt;/p&gt;
+&lt;h3 id=&#34;就近原则和this关键字&#34;&gt;就近原则和this关键字
+&lt;/h3&gt;&lt;p&gt;就近原则：在方法中使用变量时，优先使用局部变量，如果没有则使用成员变量&lt;br&gt;
+this关键字的两种用法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;表示当前对象的引用，指向当前对象本身&lt;/li&gt;
+&lt;li&gt;在构造方法中，this(形参列表)表示调用本类中的另一个构造方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;this的内存原理：this存储在栈中，指向堆中的当前对象，代表方法调用者的地址值&lt;/p&gt;
+&lt;h3 id=&#34;javabean类描述某类事物&#34;&gt;JavaBean类（描述某类事物）
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;类是公共的（public）&lt;/li&gt;
+&lt;li&gt;有一个无参的公共构造方法&lt;/li&gt;
+&lt;li&gt;成员变量私有化（private）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;对象的内存解析&#34;&gt;对象的内存解析
+&lt;/h3&gt;&lt;p&gt;栈：存储局部变量和方法调用&lt;br&gt;
+堆：存储对象实例和数组实例，对象和数组的地址值存储在栈中&lt;br&gt;
+方法区：存储类信息、常量、静态变量、方法字节码&lt;/p&gt;
+&lt;h3 id=&#34;static关键字&#34;&gt;static关键字
+&lt;/h3&gt;&lt;h4 id=&#34;静态变量&#34;&gt;静态变量
+&lt;/h4&gt;&lt;p&gt;特点：被类的所有对象共享，随着类的加载而加载，优先于对象存在&lt;br&gt;
+调用方式：类名.静态变量名 或 对象名.静态变量名&lt;/p&gt;
+&lt;h4 id=&#34;静态方法&#34;&gt;静态方法
+&lt;/h4&gt;&lt;p&gt;特点：多用在测试类和工具类中&lt;br&gt;
+调用方式：类名.静态方法名 或 对象名.静态方法名&lt;br&gt;
+静态方法中不能使用非静态的成员变量和成员方法，非静态方法二者都可以使用，因为静态方法优先于对象存在，而非静态的成员变量和成员方法依赖于对象存在&lt;/p&gt;
+&lt;h3 id=&#34;工具类&#34;&gt;工具类
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;提供静态方法，方便调用&lt;/li&gt;
+&lt;li&gt;构造方法私有化，避免创建对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;集合&#34;&gt;集合
+&lt;/h2&gt;&lt;h3 id=&#34;arraylist&#34;&gt;ArrayList
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;动态数组，长度可变&lt;/li&gt;
+&lt;li&gt;存储有序的、可重复的数据&lt;/li&gt;
+&lt;li&gt;底层使用Object[]数组存储数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;继承&#34;&gt;继承
+&lt;/h2&gt;&lt;h3 id=&#34;继承的基本概念&#34;&gt;继承的基本概念
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;子类继承父类，子类拥有父类的属性和方法，可以访问父类的非私有成员&lt;/li&gt;
+&lt;li&gt;继承方法：使用extends关键字实现继承&lt;/li&gt;
+&lt;li&gt;继承特点：单继承、多层继承
+&lt;blockquote&gt;
+&lt;p&gt;单继承：Java中一个类只能有一个直接父类&lt;br&gt;
+多层继承：子类继承父类，父类继承祖父类&lt;br&gt;
+Object类：所有类都继承Object类&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;继承中成员变量访问特点：
+&lt;blockquote&gt;
+&lt;p&gt;就进原则：子类对象访问成员变量时，优先访问局部变量，再访问子类自己的成员变量，再查找父类的成员变量，直到Object类为止，整个是一个向上的查找过程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;super关键字&#34;&gt;super关键字
+&lt;/h3&gt;&lt;p&gt;表示父类对象的引用，指向父类对象本身&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在子类构造方法中，super(形参列表)表示调用父类的构造方法&lt;br&gt;
+super.成员变量名：访问父类的成员变量&lt;br&gt;
+super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;方法重写override&#34;&gt;方法重写（Override）
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;子类继承父类后，可以对父类的方法进行重新定义和实现&lt;/li&gt;
+&lt;li&gt;重写方法的方法名、参数列表、返回值类型必须和父类被重写的方法相同&lt;/li&gt;
+&lt;li&gt;重写方法的访问权限不能小于父类被重写的方法的访问权限&lt;/li&gt;
+&lt;li&gt;父类被重写的方法不能是private、final、static修饰的&lt;/li&gt;
+&lt;li&gt;重写方法中可以调用父类被重写的方法，使用super关键字实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;多态&#34;&gt;多态
+&lt;/h3&gt;&lt;p&gt;定义：父类引用指向子类对象&lt;br&gt;
+使用：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建对象时，使用父类创建子类对象；&lt;br&gt;
+定义方法时，形参使用父类类型，可以传入所有子类对象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;多态只能发生在继承关系中&lt;br&gt;
+多态只能调用子类重写父类的方法，不能调用子类特有的方法&lt;br&gt;
+多态的前提是有继承关系和方法重写&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;多态的体现：方法调用时，编译看左边，运行看右边;变量访问时，编译运行都看左边&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
