@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git</title>
+        <link>https://caibb16.github.io/categories/git/</link>
+        <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/git/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>ROS</title>
+        <link>https://caibb16.github.io/categories/ros/</link>
+        <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/ros/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Java</title>
         <link>https://caibb16.github.io/categories/java/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
