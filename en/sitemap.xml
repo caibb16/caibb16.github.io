@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://caibb16.github.io/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://caibb16.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://caibb16.github.io/en/categories/"
-                />
-  </url><url>
     <loc>https://caibb16.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
@@ -24,6 +12,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://caibb16.github.io/en/"
+                />
+  </url><url>
+    <loc>https://caibb16.github.io/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://caibb16.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://caibb16.github.io/en/categories/"
                 />
   </url><url>
     <loc>https://caibb16.github.io/en/tags/</loc>

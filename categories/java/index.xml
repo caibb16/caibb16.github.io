@@ -257,6 +257,32 @@ super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
 &lt;li&gt;使用private关键字修饰&lt;/li&gt;
 &lt;li&gt;只能在接口内部使用，不能被实现类使用&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;内部类&#34;&gt;内部类
+&lt;/h2&gt;&lt;h3 id=&#34;成员内部类&#34;&gt;成员内部类
+&lt;/h3&gt;&lt;h4 id=&#34;创建内部类对象&#34;&gt;创建内部类对象：
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;外部类名.内部类名 对象名 = new 外部类名().new 内部类名();&lt;/li&gt;
+&lt;li&gt;在外部类的成员方法中创建内部类对象，外界通过外部类对象调用该方法获取内部类对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;内部类方法访问&#34;&gt;内部类方法访问
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;访问内部类成员：this.成员变量名 或 成员变量名&lt;/li&gt;
+&lt;li&gt;访问外部类成员：外部类名.this.成员变量名&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;静态内部类&#34;&gt;静态内部类
+&lt;/h3&gt;&lt;h4 id=&#34;创建静态内部类对象&#34;&gt;创建静态内部类对象
+&lt;/h4&gt;&lt;p&gt;外部类名.内部类名 对象名 = new 外部类名.内部类名();&lt;/p&gt;
+&lt;h4 id=&#34;静态内部类方法访问&#34;&gt;静态内部类方法访问
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;访问静态方法：外部类名.内部类名.静态方法名();&lt;/li&gt;
+&lt;li&gt;访问非静态方法：创建对象后，通过对象调用;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;匿名内部类&#34;&gt;匿名内部类
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;定义：没有类名的内部类，必须继承一个类或实现一个接口，继承类或实现接口的同时创建对象&lt;/li&gt;
+&lt;li&gt;作用：简化代码编写&lt;/li&gt;
+&lt;li&gt;格式：new 父类名或接口名(){重写父类或接口的方法};&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         
