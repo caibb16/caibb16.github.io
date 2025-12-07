@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Example description">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my website">
 <title>Categories</title>
 
 <link rel='canonical' href='https://caibb16.github.io/en/categories/'>
 
 <link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Categories">
-<meta property='og:description' content="Example description">
+<meta property='og:description' content="Welcome to my website">
 <meta property='og:url' content='https://caibb16.github.io/en/categories/'>
-<meta property='og:site_name' content='Example Site'>
+<meta property='og:site_name' content='caibb16'>
 <meta property='og:type' content='website'>
 <meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="Example description"><link rel="alternate" type="application/rss&#43;xml" href="https://caibb16.github.io/en/categories/index.xml">
+<meta name="twitter:description" content="Welcome to my website"><link rel="alternate" type="application/rss&#43;xml" href="https://caibb16.github.io/en/categories/index.xml">
     </head>
     <body class="">
     <script>
@@ -65,8 +65,8 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/en">Example Site</a></h1>
-            <h2 class="site-description">Example description</h2>
+            <h1 class="site-name"><a href="/en">caibb16</a></h1>
+            <h2 class="site-description">Welcome to my website</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -172,10 +172,6 @@
             
         
             
-                
-            
-        
-            
                 <section class="widget tagCloud">
     <div class="widget-icon">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -217,6 +213,67 @@
     </div>
 </section>
 
+            
+        
+            
+                <section class="widget music-player">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-music" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="6" cy="17" r="3" />
+  <circle cx="16" cy="17" r="3" />
+  <polyline points="9 17 9 4 19 4 19 17" />
+  <line x1="9" y1="8" x2="19" y2="8" />
+</svg>
+
+    </div>
+    <h2 class="widget-title section-title">我的歌单</h2>
+    
+    <div class="widget-body"><div id="music-player-container">
+            <meting-js
+                server="netease"
+                type="playlist"
+                id="878415460"
+                fixed="false"
+                mini="false"
+                autoplay="false"
+                theme="#FF6B6B"
+                loop="all"
+                order="random"
+                preload="auto"
+                volume="0.7"
+                list-folded="false"
+                list-max-height="250px">
+            </meting-js>
+        </div>
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+<style>
+.widget.music-player .widget-body {
+    padding: 0;
+    overflow: hidden;
+}
+
+#music-player-container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.widget.music-player .aplayer {
+    margin: 0;
+    box-shadow: none;
+    border-radius: 8px;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
             
         
     </aside>
@@ -277,6 +334,136 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 caibb16
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+
+
+
+
+<div id="particles-js"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+
+particlesJS('particles-js', {
+    particles: {
+        number: {
+            value: 80,  
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: '#64748b'  
+        },
+        shape: {
+            type: 'circle',  
+            stroke: {
+                width: 0,
+                color: '#000000'
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+                enable: false
+            }
+        },
+        size: {
+            value: 3,
+            random: true,
+            anim: {
+                enable: false
+            }
+        },
+        line_linked: {
+            enable: true,  
+            distance: 150,
+            color: '#64748b',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 2,  
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'grab'  
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'  
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 140,
+                line_linked: {
+                    opacity: 1
+                }
+            },
+            push: {
+                particles_nb: 4
+            }
+        }
+    },
+    retina_detect: true
+});
+</script>
+
+<style>
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;   
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </body>
 </html>
