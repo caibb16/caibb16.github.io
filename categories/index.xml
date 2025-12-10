@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Mon, 08 Dec 2025 16:18:37 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux</title>
+        <link>https://caibb16.github.io/categories/linux/</link>
+        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>运维</title>
+        <link>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
+        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Deep Learning</title>
         <link>https://caibb16.github.io/categories/deep-learning/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
