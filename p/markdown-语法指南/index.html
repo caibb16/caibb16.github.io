@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="学习java入门时做的笔记">
-<title>java_study</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="展示基本 Markdown 语法和 HTML 元素格式的示例文章。">
+<title>Markdown 语法指南</title>
 
-<link rel='canonical' href='https://caibb16.github.io/p/java_study/'>
+<link rel='canonical' href='https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/'>
 
-<link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="java_study">
-<meta property='og:description' content="学习java入门时做的笔记">
-<meta property='og:url' content='https://caibb16.github.io/p/java_study/'>
+<link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Markdown 语法指南">
+<meta property='og:description' content="展示基本 Markdown 语法和 HTML 元素格式的示例文章。">
+<meta property='og:url' content='https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/'>
 <meta property='og:site_name' content='caibb16'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-12-05T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="java_study">
-<meta name="twitter:description" content="学习java入门时做的笔记">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='markdown' /><meta property='article:tag' content='css' /><meta property='article:tag' content='html' /><meta property='article:tag' content='themes' /><meta property='article:published_time' content='2019-03-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-03-11T00:00:00&#43;00:00'/><meta property='og:image' content='https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+<meta name="twitter:title" content="Markdown 语法指南">
+<meta name="twitter:description" content="展示基本 Markdown 语法和 HTML 元素格式的示例文章。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
     </head>
     <body class="
     article-page
@@ -286,129 +287,64 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#数据类型">数据类型</a>
+    <li><a href="#标题">标题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#h2">H2</a>
       <ul>
-        <li><a href="#基本数据类型数据值存储在自己空间">基本数据类型：数据值存储在自己空间</a></li>
-        <li><a href="#引用数据类型数据值存储在堆中自己空间存储地址值">引用数据类型：数据值存储在堆中，自己空间存储地址值</a></li>
-        <li><a href="#类型转换">类型转换</a></li>
-      </ul>
-    </li>
-    <li><a href="#switch语句">switch语句</a></li>
-    <li><a href="#循环语句">循环语句</a>
-      <ul>
-        <li><a href="#for和while的对比">for和while的对比</a></li>
-        <li><a href="#continue和break">continue和break</a></li>
-      </ul>
-    </li>
-    <li><a href="#数组">数组</a>
-      <ul>
-        <li><a href="#静态初始化指定初始化值">静态初始化（指定初始化值）</a></li>
-        <li><a href="#动态初始化指定数组长度">动态初始化（指定数组长度）</a></li>
-        <li><a href="#遍历数组">遍历数组</a></li>
-      </ul>
-    </li>
-    <li><a href="#方法">方法</a>
-      <ul>
-        <li><a href="#方法的定义">方法的定义</a></li>
-        <li><a href="#方法的基本内存原理">方法的基本内存原理</a></li>
-        <li><a href="#基本数据类型和引用数据类型的存储">基本数据类型和引用数据类型的存储</a></li>
-      </ul>
-    </li>
-    <li><a href="#二维数组">二维数组</a>
-      <ul>
-        <li><a href="#初始化">初始化</a></li>
-        <li><a href="#遍历">遍历</a></li>
-      </ul>
-    </li>
-    <li><a href="#面向对象">面向对象</a>
-      <ul>
-        <li><a href="#类和对象的关系">类和对象的关系</a></li>
-        <li><a href="#成员变量和局部变量">成员变量和局部变量</a></li>
-        <li><a href="#构造方法">构造方法</a></li>
-        <li><a href="#方法重载">方法重载</a></li>
-        <li><a href="#就近原则和this关键字">就近原则和this关键字</a></li>
-        <li><a href="#javabean类描述某类事物">JavaBean类（描述某类事物）</a></li>
-        <li><a href="#对象的内存解析">对象的内存解析</a></li>
-        <li><a href="#static关键字">static关键字</a>
+        <li><a href="#h3">H3</a>
           <ul>
-            <li><a href="#静态变量">静态变量</a></li>
-            <li><a href="#静态方法">静态方法</a></li>
-          </ul>
-        </li>
-        <li><a href="#工具类">工具类</a></li>
-      </ul>
-    </li>
-    <li><a href="#集合">集合</a>
-      <ul>
-        <li><a href="#arraylist">ArrayList</a></li>
-      </ul>
-    </li>
-    <li><a href="#继承">继承</a>
-      <ul>
-        <li><a href="#继承的基本概念">继承的基本概念</a></li>
-        <li><a href="#super关键字">super关键字</a></li>
-        <li><a href="#方法重写override">方法重写（Override）</a></li>
-        <li><a href="#多态">多态</a></li>
-      </ul>
-    </li>
-    <li><a href="#包">包</a></li>
-    <li><a href="#final关键字">final关键字</a>
-      <ul>
-        <li><a href="#final修饰变量">final修饰变量</a></li>
-        <li><a href="#final修饰方法">final修饰方法</a></li>
-        <li><a href="#final修饰类">final修饰类</a></li>
-      </ul>
-    </li>
-    <li><a href="#静态代码块">静态代码块</a></li>
-    <li><a href="#抽象类和抽象方法">抽象类和抽象方法</a>
-      <ul>
-        <li><a href="#抽象方法">抽象方法</a></li>
-        <li><a href="#抽象类">抽象类</a></li>
-      </ul>
-    </li>
-    <li><a href="#接口">接口</a>
-      <ul>
-        <li><a href="#接口的定义">接口的定义</a></li>
-        <li><a href="#接口的作用">接口的作用</a></li>
-        <li><a href="#接口中的成员">接口中的成员</a></li>
-        <li><a href="#接口的实现">接口的实现</a></li>
-        <li><a href="#接口和类之间的关系">接口和类之间的关系</a></li>
-        <li><a href="#接口中新增的方法">接口中新增的方法</a>
-          <ul>
-            <li><a href="#默认方法">默认方法</a></li>
-            <li><a href="#静态方法-1">静态方法</a></li>
-            <li><a href="#私有方法java-9及以上版本">私有方法（Java 9及以上版本）</a></li>
+            <li><a href="#h4">H4</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#内部类">内部类</a>
+    <li><a href="#段落">段落</a></li>
+    <li><a href="#引用块">引用块</a>
       <ul>
-        <li><a href="#成员内部类">成员内部类</a>
+        <li>
           <ul>
-            <li><a href="#创建内部类对象">创建内部类对象：</a></li>
-            <li><a href="#内部类方法访问">内部类方法访问</a></li>
+            <li><a href="#无署名引用">无署名引用</a></li>
+            <li><a href="#有署名引用">有署名引用</a></li>
           </ul>
         </li>
-        <li><a href="#静态内部类">静态内部类</a>
+      </ul>
+    </li>
+    <li><a href="#表格">表格</a>
+      <ul>
+        <li>
           <ul>
-            <li><a href="#创建静态内部类对象">创建静态内部类对象</a></li>
-            <li><a href="#静态内部类方法访问">静态内部类方法访问</a></li>
+            <li><a href="#表格内的行内-markdown">表格内的行内 Markdown</a></li>
           </ul>
         </li>
-        <li><a href="#匿名内部类">匿名内部类</a></li>
       </ul>
     </li>
-    <li><a href="#集合进阶">集合进阶</a>
+    <li><a href="#代码块">代码块</a>
       <ul>
-        <li><a href="#collection接口">collection接口</a></li>
-        <li><a href="#list接口">List接口</a></li>
-        <li><a href="#set接口">Set接口</a></li>
-        <li><a href="#迭代器遍历">迭代器遍历</a></li>
-        <li><a href="#增强for遍历">增强for遍历</a></li>
-        <li><a href="#lamda表达式遍历">lamda表达式遍历</a></li>
+        <li>
+          <ul>
+            <li><a href="#使用反引号的代码块">使用反引号的代码块</a></li>
+            <li><a href="#使用四个空格缩进的代码块">使用四个空格缩进的代码块</a></li>
+            <li><a href="#使用-hugo-内置高亮短代码的代码块">使用 Hugo 内置高亮短代码的代码块</a></li>
+            <li><a href="#diff-差异代码块">Diff 差异代码块</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li><a href="#列表类型">列表类型</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#有序列表">有序列表</a></li>
+            <li><a href="#无序列表">无序列表</a></li>
+            <li><a href="#嵌套列表">嵌套列表</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#其他元素--abbr-sub-sup-kbd-mark">其他元素 — abbr, sub, sup, kbd, mark</a></li>
+    <li><a href="#超链接图片">超链接图片</a></li>
   </ul>
 </nav>
         </div>
@@ -420,15 +356,31 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/">
+                <img src="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_c86b681f3fee94ff.jpg"
+                        srcset="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_c86b681f3fee94ff.jpg 800w, /p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu_bea442a1395058f4.jpg 1600w"
+                        width="800" 
+                        height="534" 
+                        loading="lazy"
+                        alt="Featured image of post Markdown 语法指南" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/java/" >
-                Java
+            <a href="/categories/themes/" >
+                Themes
+            </a>
+        
+            <a href="/categories/syntax/" >
+                Syntax
             </a>
         
     </header>
@@ -436,12 +388,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/java_study/">java_study</a>
+            <a href="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/">Markdown 语法指南</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            学习java入门时做的笔记
+            展示基本 Markdown 语法和 HTML 元素格式的示例文章。
         </h3>
         
     </div>
@@ -462,7 +414,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2025-12-05T00:00:00Z'>Dec 05, 2025</time>
+                <time class="article-time--published" datetime='2019-03-11T00:00:00Z'>Mar 11, 2019</time>
             </div>
         
 
@@ -478,320 +430,246 @@
     <section class="article-content">
     
     
-    <h2 id="数据类型">数据类型
-</h2><h3 id="基本数据类型数据值存储在自己空间">基本数据类型：数据值存储在自己空间
-</h3><ol>
-<li>
-<p>整数类型：byte、short、int、long<br>
-整数在计算机中以补码形式存在，最高位为符号位</p>
-<blockquote>
-<p>byte 1字节<br>
-short 2字节<br>
-int  4字节<br>
-long 8字节</p>
+    <p>本文提供了可在 Hugo 内容文件中使用的基本 Markdown 语法示例，同时展示了 Hugo 主题中 CSS 对基本 HTML 元素的装饰效果。</p>
+<h2 id="标题">标题
+</h2><p>以下 HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> 元素代表六个级别的章节标题。<code>&lt;h1&gt;</code> 是最高级别，而 <code>&lt;h6&gt;</code> 是最低级别。</p>
+<h1 id="h1">H1
+</h1><h2 id="h2">H2
+</h2><h3 id="h3">H3
+</h3><h4 id="h4">H4
+</h4><h5 id="h5">H5
+</h5><h6 id="h6">H6
+</h6><h2 id="段落">段落
+</h2><p>这是一段示例文本。段落是文档中最基本的文本单元，用于组织和呈现相关的思想和信息。在 Markdown 中，段落由一个或多个连续的文本行组成，通过一个或多个空白行与其他段落分隔。</p>
+<p>这是另一段示例文本。通过将文本分成段落，可以提高文档的可读性，使读者更容易理解和吸收信息。良好的段落结构是清晰写作的关键。</p>
+<h2 id="引用块">引用块
+</h2><p>引用块元素表示从其他来源引用的内容，可选择性地包含引文（必须在 <code>footer</code> 或 <code>cite</code> 元素中），以及可选的行内修改（如注释和缩写）。</p>
+<h4 id="无署名引用">无署名引用
+</h4><blockquote>
+<p>这是一段示例引用文本。
+<strong>注意</strong>你可以在引用块中使用 <em>Markdown 语法</em>。</p>
 </blockquote>
-</li>
-<li>
-<p>浮点类型：float、double</p>
-</li>
-<li>
-<p>字符类型：char</p>
-</li>
-<li>
-<p>布尔类型：boolean</p>
-</li>
+<h4 id="有署名引用">有署名引用
+</h4><blockquote>
+<p>不要通过共享内存来通信，而应该通过通信来共享内存。<br>
+— <cite>Rob Pike<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
+</blockquote>
+<h2 id="表格">表格
+</h2><p>表格不是核心 Markdown 规范的一部分，但 Hugo 开箱即用地支持它们。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>姓名</th>
+          <th>年龄</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>张三</td>
+          <td>27</td>
+      </tr>
+      <tr>
+          <td>李四</td>
+          <td>23</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="表格内的行内-markdown">表格内的行内 Markdown
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>斜体</th>
+          <th>粗体</th>
+          <th>代码</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><em>斜体</em></td>
+          <td><strong>粗体</strong></td>
+          <td><code>代码</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+          <td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.</td>
+          <td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus</td>
+          <td>Proin sit amet velit nec enim imperdiet vehicula.</td>
+          <td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec</td>
+          <td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="代码块">代码块
+</h2><h4 id="使用反引号的代码块">使用反引号的代码块
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="使用四个空格缩进的代码块">使用四个空格缩进的代码块
+</h4><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Test&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="使用-hugo-内置高亮短代码的代码块">使用 Hugo 内置高亮短代码的代码块
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="diff-差异代码块">Diff 差异代码块
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">[dependencies.bevy]
+</span></span><span class="line"><span class="cl">git = &#34;https://github.com/bevyengine/bevy&#34;
+</span></span><span class="line"><span class="cl">rev = &#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&#34;
+</span></span><span class="line"><span class="cl"><span class="gd">- features = [&#34;dynamic&#34;]
+</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+ features = [&#34;jpeg&#34;, &#34;dynamic&#34;]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="列表类型">列表类型
+</h2><h4 id="有序列表">有序列表
+</h4><ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
 </ol>
-<h3 id="引用数据类型数据值存储在堆中自己空间存储地址值">引用数据类型：数据值存储在堆中，自己空间存储地址值
-</h3><p>类、接口、数组</p>
-<h3 id="类型转换">类型转换
-</h3><p>小范围转大范围：高位补0，符号位扩展<br>
-大范围转小范围：直接截取低位</p>
-<h2 id="switch语句">switch语句
-</h2><p>case穿透：执行case语句时，若未发现break，则顺序执行下一个case语句，直到发现break为止<br>
-if和switch的各自应用场景：if一般用于对范围的判断，switch用于在有限个数据任选其一</p>
-<h2 id="循环语句">循环语句
-</h2><h3 id="for和while的对比">for和while的对比
-</h3><p>相同点：运行规则相同<br>
-不同点：for循环一般用于知道循环次数或者循环范围，while循环一般用于不知道循环次数和范围，只知道循环的结束条件</p>
-<h3 id="continue和break">continue和break
-</h3><p>continue：结束本次循环，进入下一次循环
-break：结束整个循环</p>
-<h2 id="数组">数组
-</h2><h3 id="静态初始化指定初始化值">静态初始化（指定初始化值）
-</h3><p>数据类型[] 数组名 = {元素1, 元素2, 元素3&hellip;  }</p>
-<h3 id="动态初始化指定数组长度">动态初始化（指定数组长度）
-</h3><p>数据类型[] 数组名 = new 数据类型[数组长度];</p>
-<h3 id="遍历数组">遍历数组
-</h3><p>for(数据类型 变量名 : 数组名){
-//使用变量名进行操作
-}</p>
-<h2 id="方法">方法
-</h2><h3 id="方法的定义">方法的定义
-</h3><ol>
-<li>我要干什么？——方法体</li>
-<li>我需要什么？——形参</li>
-</ol>
-<h3 id="方法的基本内存原理">方法的基本内存原理
-</h3><p>栈：方法调用时进栈，执行结束时出栈（先进后出）<br>
-堆：创建对象（new）时进堆，存储引用数据类型的值</p>
-<h3 id="基本数据类型和引用数据类型的存储">基本数据类型和引用数据类型的存储
-</h3><p>基本数据类型：数据值存储在自己的空间中（传递时传递数据）<br>
-引用数据类型：数据值存储在堆中，自己空间中存储的是地址值（传递时传递地址）</p>
-<h2 id="二维数组">二维数组
-</h2><h3 id="初始化">初始化
-</h3><p>数据类型[ ][ ] 数组名 = new 数据类型[行数][列数]<br>
-数据类型[ ][ ] 数组名 = { {元素1, 元素2}, {元素3, 元素4} }</p>
-<h3 id="遍历">遍历
-</h3><p>外循环：遍历二维数组获取每一个一维数组 （数组名[ ]获取一维数组地址）<br>
-内循环：遍历一维数组获取每一个元素 （数组名[ ][ ]同时获取一维数组地址和元素）</p>
-<h2 id="面向对象">面向对象
-</h2><h3 id="类和对象的关系">类和对象的关系
-</h3><p>类是对象的模板，对象是类的具体体现</p>
-<h3 id="成员变量和局部变量">成员变量和局部变量
-</h3><p>成员变量：定义在类中，方法外，可以被类中的所有方法使用，默认初始化值<br>
-局部变量：定义在方法中，只能被该方法使用，使用前必须初始化</p>
-<h3 id="构造方法">构造方法
-</h3><ol>
-<li>方法名和类名相同</li>
-<li>没有返回值类型</li>
-<li>用于创建对象并初始化对象成员变量</li>
-</ol>
-<h3 id="方法重载">方法重载
-</h3><p>在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或参数类型不同即可</p>
-<h3 id="就近原则和this关键字">就近原则和this关键字
-</h3><p>就近原则：在方法中使用变量时，优先使用局部变量，如果没有则使用成员变量<br>
-this关键字的两种用法：</p>
+<h4 id="无序列表">无序列表
+</h4><ul>
+<li>列表项</li>
+<li>另一项</li>
+<li>再一项</li>
+</ul>
+<h4 id="嵌套列表">嵌套列表
+</h4><ul>
+<li>水果
+<ul>
+<li>苹果</li>
+<li>橙子</li>
+<li>香蕉</li>
+</ul>
+</li>
+<li>乳制品
+<ul>
+<li>牛奶</li>
+<li>奶酪</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他元素--abbr-sub-sup-kbd-mark">其他元素 — abbr, sub, sup, kbd, mark
+</h2><p><abbr title="Graphics Interchange Format">GIF</abbr> 是一种位图图像格式。</p>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<p>按 <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> 键结束会话。</p>
+<p>大多数 <mark>蝾螈</mark> 是夜行性的，捕食昆虫、蠕虫和其他小生物。</p>
+<h2 id="超链接图片">超链接图片
+</h2><p><a class="link" href="https://google.com"  target="_blank" rel="noopener"
+    ><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Google"
+	
+	
+></a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li>表示当前对象的引用，指向当前对象本身</li>
-<li>在构造方法中，this(形参列表)表示调用本类中的另一个构造方法</li>
-</ol>
-<p>this的内存原理：this存储在栈中，指向堆中的当前对象，代表方法调用者的地址值</p>
-<h3 id="javabean类描述某类事物">JavaBean类（描述某类事物）
-</h3><ol>
-<li>类是公共的（public）</li>
-<li>有一个无参的公共构造方法</li>
-<li>成员变量私有化（private）</li>
-</ol>
-<h3 id="对象的内存解析">对象的内存解析
-</h3><p>栈：存储局部变量和方法调用<br>
-堆：存储对象实例和数组实例，对象和数组的地址值存储在栈中<br>
-方法区：存储类信息、常量、静态变量、方法字节码</p>
-<h3 id="static关键字">static关键字
-</h3><h4 id="静态变量">静态变量
-</h4><p>特点：被类的所有对象共享，随着类的加载而加载，优先于对象存在<br>
-调用方式：类名.静态变量名 或 对象名.静态变量名</p>
-<h4 id="静态方法">静态方法
-</h4><p>特点：多用在测试类和工具类中<br>
-调用方式：类名.静态方法名 或 对象名.静态方法名<br>
-静态方法中不能使用非静态的成员变量和成员方法，非静态方法二者都可以使用，因为静态方法优先于对象存在，而非静态的成员变量和成员方法依赖于对象存在</p>
-<h3 id="工具类">工具类
-</h3><ol>
-<li>提供静态方法，方便调用</li>
-<li>构造方法私有化，避免创建对象</li>
-</ol>
-<h2 id="集合">集合
-</h2><h3 id="arraylist">ArrayList
-</h3><ol>
-<li>动态数组，长度可变</li>
-<li>存储有序的、可重复的数据</li>
-<li>底层使用Object[]数组存储数据</li>
-</ol>
-<h2 id="继承">继承
-</h2><h3 id="继承的基本概念">继承的基本概念
-</h3><ol>
-<li>子类继承父类，子类拥有父类的属性和方法，可以访问父类的非私有成员</li>
-<li>继承方法：使用extends关键字实现继承</li>
-<li>继承特点：单继承、多层继承
-<blockquote>
-<p>单继承：Java中一个类只能有一个直接父类<br>
-多层继承：子类继承父类，父类继承祖父类<br>
-Object类：所有类都继承Object类</p>
-</blockquote>
-</li>
-<li>继承中成员变量访问特点：
-<blockquote>
-<p>就进原则：子类对象访问成员变量时，优先访问局部变量，再访问子类自己的成员变量，再查找父类的成员变量，直到Object类为止，整个是一个向上的查找过程</p>
-</blockquote>
+<li id="fn:1">
+<p>以上引用摘自 Rob Pike 在 2015 年 11 月 18 日 Gopherfest 期间的<a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c"  target="_blank" rel="noopener"
+    >演讲</a>。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-<h3 id="super关键字">super关键字
-</h3><p>表示父类对象的引用，指向父类对象本身</p>
-<blockquote>
-<p>在子类构造方法中，super(形参列表)表示调用父类的构造方法<br>
-super.成员变量名：访问父类的成员变量<br>
-super.成员方法名(实参列表)：访问父类的成员方法</p>
-</blockquote>
-<h3 id="方法重写override">方法重写（Override）
-</h3><ol>
-<li>子类继承父类后，可以对父类的方法进行重新定义和实现</li>
-<li>重写方法的方法名、参数列表、返回值类型必须和父类被重写的方法相同</li>
-<li>重写方法的访问权限不能小于父类被重写的方法的访问权限</li>
-<li>父类被重写的方法不能是private、final、static修饰的</li>
-<li>重写方法中可以调用父类被重写的方法，使用super关键字实现</li>
-</ol>
-<h3 id="多态">多态
-</h3><p>定义：父类引用指向子类对象<br>
-使用：</p>
-<blockquote>
-<p>创建对象时，使用父类创建子类对象；<br>
-定义方法时，形参使用父类类型，可以传入所有子类对象</p>
-</blockquote>
-<p>特点：</p>
-<blockquote>
-<p>多态只能发生在继承关系中<br>
-多态只能调用子类重写父类的方法，不能调用子类特有的方法<br>
-多态的前提是有继承关系和方法重写</p>
-</blockquote>
-<p>多态的体现：方法调用时，编译看左边，运行看右边;变量访问时，编译运行都看左边</p>
-<h2 id="包">包
-</h2><p>包的作用：用于对类进行分类管理，避免类名冲突<br>
-包的声明：package 包名;  声明在类的第一行<br>
-包的导入：import 包名.类名; 或 import 包名.*;*表示导入包中所有类</p>
-<blockquote>
-<p>使用其他类的规则：</p>
-<ol>
-<li>使用同一个包中的类，不需要导包</li>
-<li>使用java.lang包中的类，不需要导包</li>
-<li>其他情况都需要导包</li>
-<li>使用两个包中的同名类，需要使用类的全限定名（包名.类名）</li>
-</ol>
-</blockquote>
-<h2 id="final关键字">final关键字
-</h2><h3 id="final修饰变量">final修饰变量
-</h3><ol>
-<li>基本数据类型：变量值不可改变</li>
-<li>引用数据类型：引用地址不可改变，但对象的内容可以改变</li>
-</ol>
-<h3 id="final修饰方法">final修饰方法
-</h3><p>表示该方法不能被重写</p>
-<h3 id="final修饰类">final修饰类
-</h3><p>表示该类不能被继承</p>
-<h2 id="静态代码块">静态代码块
-</h2><p>使用static关键字修饰，随着类的加载而执行，并且只执行一次<br>
-作用：用于初始化类的信息</p>
-<h2 id="抽象类和抽象方法">抽象类和抽象方法
-</h2><h3 id="抽象方法">抽象方法
-</h3><p>父类中的抽象方法，提取子类的共性，没有方法体，用于被子类重写</p>
-<h3 id="抽象类">抽象类
-</h3><ul>
-<li>抽象类不能实例化</li>
-<li>继承抽象类的子类必须重写父类中的所有抽象方法，除非子类也是抽象类</li>
-<li>抽象类可以有构造方法，用于子类创建对象时调用父类构造方法</li>
-<li>作用：强制让子类按照某种格式重写</li>
-</ul>
-<h2 id="接口">接口
-</h2><h3 id="接口的定义">接口的定义
-</h3><ol>
-<li>使用interface关键字定义</li>
-<li>接口中只能定义常量和抽象方法</li>
-</ol>
-<h3 id="接口的作用">接口的作用
-</h3><ol>
-<li>规范类的行为</li>
-<li>实现多继承，接口可以被多个子类实现</li>
-</ol>
-<h3 id="接口中的成员">接口中的成员
-</h3><ol>
-<li>成员变量：只能是常量，默认修饰符public static final</li>
-<li>成员方法：只能是抽象方法，默认修饰符public abstract</li>
-</ol>
-<h3 id="接口的实现">接口的实现
-</h3><ol>
-<li>使用implements关键字实现接口</li>
-<li>格式：class 类名 implements 接口名1, 接口名2&hellip;{}</li>
-<li>实现接口的类必须重写接口中的所有抽象方法，除非该类是抽象类</li>
-</ol>
-<h3 id="接口和类之间的关系">接口和类之间的关系
-</h3><ul>
-<li>类和类的关系：继承关系，只能单继承，不能多继承</li>
-<li>类和接口的关系：实现关系，可以单实现，也可以多实现，可以在继承一个类的同时实现多个接口</li>
-<li>接口和接口的关系：继承关系，可以单继承，也可以多继承</li>
-</ul>
-<h3 id="接口中新增的方法">接口中新增的方法
-</h3><h4 id="默认方法">默认方法
-</h4><ul>
-<li>使用default关键字修饰，可以有方法体，实现类不强制重写</li>
-<li>实现类可以重写接口中的默认方法，需要去掉default关键字</li>
-</ul>
-<h4 id="静态方法-1">静态方法
-</h4><ul>
-<li>使用static关键字修饰，可以有方法体，实现类不能重写</li>
-<li>只能通过接口名调用接口中的静态方法</li>
-</ul>
-<h4 id="私有方法java-9及以上版本">私有方法（Java 9及以上版本）
-</h4><ul>
-<li>使用private关键字修饰</li>
-<li>只能在接口内部使用，不能被实现类使用</li>
-</ul>
-<h2 id="内部类">内部类
-</h2><h3 id="成员内部类">成员内部类
-</h3><h4 id="创建内部类对象">创建内部类对象：
-</h4><ol>
-<li>外部类名.内部类名 对象名 = new 外部类名().new 内部类名();</li>
-<li>在外部类的成员方法中创建内部类对象，外界通过外部类对象调用该方法获取内部类对象</li>
-</ol>
-<h4 id="内部类方法访问">内部类方法访问
-</h4><ol>
-<li>访问内部类成员：this.成员变量名 或 成员变量名</li>
-<li>访问外部类成员：外部类名.this.成员变量名</li>
-</ol>
-<h3 id="静态内部类">静态内部类
-</h3><h4 id="创建静态内部类对象">创建静态内部类对象
-</h4><p>外部类名.内部类名 对象名 = new 外部类名.内部类名();</p>
-<h4 id="静态内部类方法访问">静态内部类方法访问
-</h4><ol>
-<li>访问静态方法：外部类名.内部类名.静态方法名();</li>
-<li>访问非静态方法：创建对象后，通过对象调用;</li>
-</ol>
-<h3 id="匿名内部类">匿名内部类
-</h3><ul>
-<li>定义：没有类名的内部类，必须继承一个类或实现一个接口，继承类或实现接口的同时创建对象</li>
-<li>作用：简化代码编写</li>
-<li>格式：new 父类名或接口名(){重写父类或接口的方法};</li>
-</ul>
-<h2 id="集合进阶">集合进阶
-</h2><h3 id="collection接口">collection接口
-</h3><ol>
-<li>是单列集合的顶层接口，所有方法被list和set接口继承</li>
-<li>常用方法：add()、remove()、clear()、size()、isEmpty()、contains()、toArray()</li>
-</ol>
-<h3 id="list接口">List接口
-</h3><ol>
-<li>有序、可重复的集合</li>
-<li>常用实现类：ArrayList、LinkedList、Vector</li>
-<li>常用方法：add(index, element)、get(index)、set(index, element)、remove(index)、indexOf(element)、lastIndexOf(element)、subList(fromIndex, toIndex)</li>
-</ol>
-<h3 id="set接口">Set接口
-</h3><ol>
-<li>无序、不可重复的集合</li>
-<li>常用实现类：HashSet、LinkedHashSet、TreeSet</li>
-<li>HashSet：基于哈希表实现，存储元素无序</li>
-<li>LinkedHashSet：基于哈希表和链表实现，存储元素有序</li>
-<li>TreeSet：基于红黑树实现，存储元素有序</li>
-</ol>
-<h3 id="迭代器遍历">迭代器遍历
-</h3><ol>
-<li>用于遍历集合元素</li>
-<li>获取迭代器对象：Iterator<String> iterator = 集合对象.iterator();</li>
-<li>常用方法：hasNext()、next()、remove()<br>
-hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素并移动指针，remove() 删除当前元素</li>
-</ol>
-<h3 id="增强for遍历">增强for遍历
-</h3><ol>
-<li>格式：for(数据类型 变量名 : 集合对象){ //使用变量名进行操作 }</li>
-<li>适用于所有实现了Iterable接口的集合类</li>
-</ol>
-<h3 id="lamda表达式遍历">lamda表达式遍历
-</h3><ol>
-<li>格式：集合对象.forEach(变量名 -&gt; { //使用变量名进行操作 });</li>
-<li>简化代码编写，提高可读性</li>
-</ol>
-
+</div>
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/markdown/">Markdown</a>
+        
+            <a href="/tags/css/">Css</a>
+        
+            <a href="/tags/html/">Html</a>
+        
+            <a href="/tags/themes/">Themes</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
