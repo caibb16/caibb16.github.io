@@ -1465,7 +1465,11 @@ super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
 &lt;li&gt;作用：简化代码编写&lt;/li&gt;
 &lt;li&gt;格式：new 父类名或接口名(){重写父类或接口的方法};&lt;/li&gt;
 &lt;/ul&gt;
+<<<<<<< HEAD
 &lt;h2 id=&#34;集合框架&#34;&gt;集合框架
+=======
+&lt;h2 id=&#34;集合进阶&#34;&gt;集合进阶
+>>>>>>> 11dfa42a8240f2f86c2acabce1bd5da1b660e293
 &lt;/h2&gt;&lt;h3 id=&#34;collection接口&#34;&gt;collection接口
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;是单列集合的顶层接口，所有方法被list和set接口继承&lt;/li&gt;
@@ -1485,8 +1489,12 @@ super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
 &lt;li&gt;LinkedHashSet：基于哈希表和链表实现，存储元素有序&lt;/li&gt;
 &lt;li&gt;TreeSet：基于红黑树实现，存储元素有序&lt;/li&gt;
 &lt;/ol&gt;
+<<<<<<< HEAD
 &lt;h2 id=&#34;集合遍历&#34;&gt;集合遍历
 &lt;/h2&gt;&lt;h3 id=&#34;迭代器遍历&#34;&gt;迭代器遍历
+=======
+&lt;h3 id=&#34;迭代器遍历&#34;&gt;迭代器遍历
+>>>>>>> 11dfa42a8240f2f86c2acabce1bd5da1b660e293
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;用于遍历集合元素&lt;/li&gt;
 &lt;li&gt;获取迭代器对象：Iterator&lt;String&gt; iterator = 集合对象.iterator();&lt;/li&gt;
@@ -1503,6 +1511,7 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;格式：集合对象.forEach(变量名 -&amp;gt; { //使用变量名进行操作 });&lt;/li&gt;
 &lt;li&gt;简化代码编写，提高可读性&lt;/li&gt;
 &lt;/ol&gt;
+<<<<<<< HEAD
 &lt;h2 id=&#34;数据结构&#34;&gt;数据结构
 &lt;/h2&gt;&lt;h3 id=&#34;栈&#34;&gt;栈
 &lt;/h3&gt;&lt;ol&gt;
@@ -1525,6 +1534,8 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;每个节点包含数据值和下一个节点的地址&lt;/li&gt;
 &lt;li&gt;特点：插入和删除操作高效，查询操作较慢&lt;/li&gt;
 &lt;/ol&gt;
+=======
+>>>>>>> 11dfa42a8240f2f86c2acabce1bd5da1b660e293
 </description>
         </item>
         <item>
