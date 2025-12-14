@@ -170,7 +170,7 @@
 
 
                 
-                <span>文件夹</span>
+                <span>归档</span>
             </a>
         </li>
         
@@ -397,6 +397,28 @@
           </ul>
         </li>
         <li><a href="#匿名内部类">匿名内部类</a></li>
+      </ul>
+    </li>
+    <li><a href="#集合框架">集合框架</a>
+      <ul>
+        <li><a href="#collection接口">collection接口</a></li>
+        <li><a href="#list接口">List接口</a></li>
+        <li><a href="#set接口">Set接口</a></li>
+      </ul>
+    </li>
+    <li><a href="#集合遍历">集合遍历</a>
+      <ul>
+        <li><a href="#迭代器遍历">迭代器遍历</a></li>
+        <li><a href="#增强for遍历">增强for遍历</a></li>
+        <li><a href="#lamda表达式遍历">lamda表达式遍历</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据结构">数据结构</a>
+      <ul>
+        <li><a href="#栈">栈</a></li>
+        <li><a href="#队列">队列</a></li>
+        <li><a href="#数组-1">数组</a></li>
+        <li><a href="#链表">链表</a></li>
       </ul>
     </li>
   </ul>
@@ -688,6 +710,7 @@ super.成员方法名(实参列表)：访问父类的成员方法</p>
 <h3 id="接口的实现">接口的实现
 </h3><ol>
 <li>使用implements关键字实现接口</li>
+<li>格式：class 类名 implements 接口名1, 接口名2&hellip;{}</li>
 <li>实现接口的类必须重写接口中的所有抽象方法，除非该类是抽象类</li>
 </ol>
 <h3 id="接口和类之间的关系">接口和类之间的关系
@@ -738,6 +761,66 @@ super.成员方法名(实参列表)：访问父类的成员方法</p>
 <li>作用：简化代码编写</li>
 <li>格式：new 父类名或接口名(){重写父类或接口的方法};</li>
 </ul>
+<h2 id="集合框架">集合框架
+</h2><h3 id="collection接口">collection接口
+</h3><ol>
+<li>是单列集合的顶层接口，所有方法被list和set接口继承</li>
+<li>常用方法：add()、remove()、clear()、size()、isEmpty()、contains()、toArray()</li>
+</ol>
+<h3 id="list接口">List接口
+</h3><ol>
+<li>有序、可重复的集合</li>
+<li>常用实现类：ArrayList、LinkedList、Vector</li>
+<li>常用方法：add(index, element)、get(index)、set(index, element)、remove(index)、indexOf(element)、lastIndexOf(element)、subList(fromIndex, toIndex)</li>
+</ol>
+<h3 id="set接口">Set接口
+</h3><ol>
+<li>无序、不可重复的集合</li>
+<li>常用实现类：HashSet、LinkedHashSet、TreeSet</li>
+<li>HashSet：基于哈希表实现，存储元素无序</li>
+<li>LinkedHashSet：基于哈希表和链表实现，存储元素有序</li>
+<li>TreeSet：基于红黑树实现，存储元素有序</li>
+</ol>
+<h2 id="集合遍历">集合遍历
+</h2><h3 id="迭代器遍历">迭代器遍历
+</h3><ol>
+<li>用于遍历集合元素</li>
+<li>获取迭代器对象：Iterator<String> iterator = 集合对象.iterator();</li>
+<li>常用方法：hasNext()、next()、remove()<br>
+hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素并移动指针，remove() 删除当前元素</li>
+</ol>
+<h3 id="增强for遍历">增强for遍历
+</h3><ol>
+<li>格式：for(数据类型 变量名 : 集合对象){ //使用变量名进行操作 }</li>
+<li>适用于所有实现了Iterable接口的集合类</li>
+</ol>
+<h3 id="lamda表达式遍历">lamda表达式遍历
+</h3><ol>
+<li>格式：集合对象.forEach(变量名 -&gt; { //使用变量名进行操作 });</li>
+<li>简化代码编写，提高可读性</li>
+</ol>
+<h2 id="数据结构">数据结构
+</h2><h3 id="栈">栈
+</h3><ol>
+<li>先进后出（LIFO）的数据结构</li>
+<li>主要操作：push()入栈，pop()出栈，peek()查看栈顶元素</li>
+</ol>
+<h3 id="队列">队列
+</h3><ol>
+<li>先进先出（FIFO）的数据结构</li>
+<li>主要操作：offer()入队，poll()出队，peek()查看队头元素</li>
+</ol>
+<h3 id="数组-1">数组
+</h3><ol>
+<li>由连续的内存空间组成的线性数据结构</li>
+<li>每个元素通过索引访问，查询操作高效，插入和删除操作较慢</li>
+</ol>
+<h3 id="链表">链表
+</h3><ol>
+<li>由节点组成的线性数据结构，每个节点是独立的对象，在内存中不连续</li>
+<li>每个节点包含数据值和下一个节点的地址</li>
+<li>特点：插入和删除操作高效，查询操作较慢</li>
+</ol>
 
 </section>
 
@@ -770,46 +853,55 @@ super.成员方法名(实参列表)：访问父类的成员方法</p>
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="caibb16/hugo-main"
+    data-repo-id="R_kgDOQjF2uA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQjF2uM4CznVb"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
 <script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
         }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
     }
-</style>
 
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (typeof DISQUS == 'object') {
-            DISQUS.reset({
-                reload: true
-            });
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
         }
-    })
+    })();
 </script>
 
     
@@ -941,6 +1033,195 @@ super.成员方法名(实参列表)：访问父类的成员方法</p>
     </section>
 </footer>
 
+
+
+<script src="https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+
+
+<style>
+#live2d-tips {
+    position: fixed;
+    bottom: 250px;
+    left: 40px;
+    background: rgba(129, 220, 226, 0.95);
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #5b6c7d;
+    box-shadow: 0 3px 15px rgba(191, 158, 118, 0.3);
+    max-width: 250px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#live2d-tips.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    #live2d-tips {
+        display: none;
+    }
+}
+</style>
+
+
+<div id="live2d-tips"></div>
+
+<script>
+    
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 150,
+            "height": 300,
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": false
+        },
+        "react": {
+            "opacityDefault": 0.9,
+            "opacityOnHover": 1.0
+        }
+    });
+
+    
+    let messageTimer;
+    function showMessage(text, duration = 4000) {
+        const tips = document.getElementById('live2d-tips');
+        if (!tips || !text) return;
+        
+        tips.innerHTML = text;
+        tips.classList.add('show');
+        
+        clearTimeout(messageTimer);
+        if (duration > 0) {
+            messageTimer = setTimeout(() => {
+                tips.classList.remove('show');
+            }, duration);
+        }
+    }
+
+    
+    function getTimeGreeting() {
+        const hour = new Date().getHours();
+        const greetings = {
+            night: ['夜深了，早点休息吧 💤', '晚安～记得明天来看我哦'],
+            morning: ['早上好！☀️', '新的一天开始啦，加油！'],
+            noon: ['中午了，该吃饭啦！🍱', '记得休息一下哦'],
+            afternoon: ['下午好！☕', '下午茶时间，要不要喝杯咖啡？'],
+            evening: ['晚上好！🌙', '辛苦一天了，慢慢浏览吧']
+        };
+        
+        if (hour < 6) return greetings.night[Math.floor(Math.random() * greetings.night.length)];
+        if (hour < 11) return greetings.morning[Math.floor(Math.random() * greetings.morning.length)];
+        if (hour < 14) return greetings.noon[Math.floor(Math.random() * greetings.noon.length)];
+        if (hour < 18) return greetings.afternoon[Math.floor(Math.random() * greetings.afternoon.length)];
+        if (hour < 22) return greetings.evening[Math.floor(Math.random() * greetings.evening.length)];
+        return greetings.night[Math.floor(Math.random() * greetings.night.length)];
+    }
+
+    
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const isFirstVisit = !localStorage.getItem('visited');
+            if (isFirstVisit) {
+                showMessage('你好！我是初音未来 ♪<br>欢迎来到 caibb16 的博客！', 6000);
+                localStorage.setItem('visited', 'true');
+            } else {
+                showMessage(getTimeGreeting(), 5000);
+            }
+        }, 2000);
+    });
+
+    
+    document.addEventListener('click', function(e) {
+        const canvas = document.querySelector('#landlord canvas');
+        if (canvas && canvas.contains(e.target)) {
+            const clickMessages = [
+                '不要戳我啦！(｡•ˇ‸ˇ•｡)',
+                '哼！再戳就生气了！',
+                '你要干嘛呀？',
+                '讨厌！(*/ω＼*)',
+                '再戳我就要消失啦！'
+            ];
+            showMessage(clickMessages[Math.floor(Math.random() * clickMessages.length)], 3000);
+        }
+    });
+
+    
+    document.addEventListener('mouseover', function(e) {
+        const target = e.target;
+        
+        
+        if (target.matches('.article-title, .article-list .article-title a')) {
+            showMessage('要不要看看这篇文章？📖', 3000);
+        }
+        
+        else if (target.matches('.article-tags a, .tag-cloud a')) {
+            const tag = target.textContent.trim();
+            showMessage(`标签「${tag}」相关的内容哦 🏷️`, 3000);
+        }
+        
+        else if (target.matches('.article-category a')) {
+            const category = target.textContent.trim();
+            showMessage(`分类「${category}」下的文章 📂`, 3000);
+        }
+        
+        else if (target.matches('.site-nav a, .menu a')) {
+            const text = target.textContent.trim();
+            const tips = {
+                '主页': '回到主页看看最新内容 🏠',
+                '归档': '所有文章都在这里哦 📚',
+                '关于': '想了解博主吗？🤔',
+                '搜索': '试试搜索你感兴趣的内容 🔍',
+                '链接': '这里有一些友情链接 🔗'
+            };
+            if (tips[text]) {
+                showMessage(tips[text], 3000);
+            }
+        }
+        
+        else if (target.matches('input[type="search"], .search-input')) {
+            showMessage('输入关键词搜索文章吧 🔍', 3000);
+        }
+        
+        else if (target.closest('.social-links a, .sidebar-social a')) {
+            showMessage('想关注博主吗？👀', 3000);
+        }
+        
+        else if (target.closest('.aplayer, .music-player')) {
+            showMessage('来听听音乐放松一下吧 🎵', 3000);
+        }
+        
+        else if (target.closest('.giscus, .comments')) {
+            showMessage('欢迎在评论区留言哦 💬', 3000);
+        }
+        
+        else if (target.matches('.back-to-top, #back-to-top')) {
+            showMessage('点击回到顶部 ⬆️', 2000);
+        }
+        
+        else if (target.matches('.copy-button, .copy-code-button')) {
+            showMessage('复制代码到剪贴板 📋', 2000);
+        }
+        
+        else if (target.matches('.article-image img, .post-content img')) {
+            showMessage('点击查看大图 🖼️', 2000);
+        }
+    });
+</script>
 
 
 

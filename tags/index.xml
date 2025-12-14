@@ -7,20 +7,36 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Mon, 08 Dec 2025 16:18:37 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>PyTorch</title>
-        <link>https://caibb16.github.io/tags/pytorch/</link>
-        <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
+        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux</title>
+        <link>https://caibb16.github.io/tags/linux/</link>
+        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/tags/pytorch/</guid>
+        <guid>https://caibb16.github.io/tags/linux/</guid>
         <description></description>
         </item>
         <item>
         <title>命令速查</title>
         <link>https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
-        <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
+        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
         <guid>https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>命令行</title>
+        <link>https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>PyTorch</title>
+        <link>https://caibb16.github.io/tags/pytorch/</link>
+        <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/tags/pytorch/</guid>
         <description></description>
         </item>
         <item>
