@@ -289,6 +289,7 @@
     <li><a href="#基础配置">基础配置</a></li>
     <li><a href="#仓库初始化与克隆">仓库初始化与克隆</a></li>
     <li><a href="#分支管理">分支管理</a></li>
+    <li><a href="#本地和远程操作">本地和远程操作</a></li>
   </ul>
 </nav>
         </div>
@@ -441,6 +442,29 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 删除本地分支</span>
 </span></span><span class="line"><span class="cl">git branch -d dev
 </span></span><span class="line"><span class="cl">git branch -D dev  <span class="c1"># 强制删除</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="本地和远程操作">本地和远程操作
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看远程仓库</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加远程仓库</span>
+</span></span><span class="line"><span class="cl">git remote add origin
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送到远程仓库</span>
+</span></span><span class="line"><span class="cl">git push origin main
+</span></span><span class="line"><span class="cl"><span class="c1"># 拉取远程仓库最新代码</span>
+</span></span><span class="line"><span class="cl">git pull origin main
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
