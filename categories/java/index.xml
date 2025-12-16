@@ -422,7 +422,6 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;特点：通过旋转操作保持平衡&lt;/li&gt;
 &lt;li&gt;应用：常用于实现高效的查找、插入和删除操作&lt;/li&gt;
 &lt;/ol&gt;
-<<<<<<< HEAD
 &lt;h3 id=&#34;红黑树&#34;&gt;红黑树
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;定义：一种自平衡的二叉搜索树，每个节点有颜色属性（红色或黑色）&lt;/li&gt;
@@ -472,8 +471,6 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-=======
->>>>>>> 649bd87c1b0b72f69278749969959a4bf07c53d0
 </description>
         </item>
         
