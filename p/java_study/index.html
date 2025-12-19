@@ -399,7 +399,7 @@
         <li><a href="#匿名内部类">匿名内部类</a></li>
       </ul>
     </li>
-    <li><a href="#集合框架">集合框架</a>
+    <li><a href="#单列集合">单列集合</a>
       <ul>
         <li><a href="#collection顶层接口">collection顶层接口</a></li>
         <li><a href="#list接口">List接口</a></li>
@@ -443,6 +443,14 @@
         <li><a href="#hashset">HashSet</a></li>
         <li><a href="#linkedhashset">LinkedHashSet</a></li>
         <li><a href="#treeset">TreeSet</a></li>
+      </ul>
+    </li>
+    <li><a href="#双列集合">双列集合</a>
+      <ul>
+        <li><a href="#map接口">Map接口</a></li>
+        <li><a href="#hashmap">HashMap</a></li>
+        <li><a href="#linkedhashmap">LinkedHashMap</a></li>
+        <li><a href="#treemap">TreeMap</a></li>
       </ul>
     </li>
   </ul>
@@ -783,7 +791,7 @@ super.成员方法名(实参列表)：访问父类的成员方法</p>
 <li>作用：简化代码编写</li>
 <li>格式：new 父类名或接口名(){重写父类或接口的方法};</li>
 </ul>
-<h2 id="集合框架">集合框架
+<h2 id="单列集合">单列集合
 </h2><h3 id="collection顶层接口">collection顶层接口
 </h3><ol>
 <li>是单列集合的顶层接口，所有方法被list和set接口继承</li>
@@ -971,6 +979,49 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 <li>比较器排序：集合使用Comparator接口，重写compare()方法，指定排序规则</li>
 </ul>
 </li>
+</ol>
+<h2 id="双列集合">双列集合
+</h2><h3 id="map接口">Map接口
+</h3><ol>
+<li>双列集合的顶层接口，存储键值对（key-value）</li>
+<li>常用实现类：HashMap、LinkedHashMap、TreeMap</li>
+<li>常用方法：put(key, value)、get(key)、remove(key)、containsKey(key)、containsValue(value)、keySet()、values()、entrySet()</li>
+<li>遍历方法：
+<ul>
+<li>keySet()把键存储到Set集合中，遍历Set集合获取键，再通过键获取值</li>
+<li>EntrySet()把键值对存储到Set集合中，遍历Set集合用getKey()和getValue()方法获取每一个键值对，再通过键值对获取键和值</li>
+<li>Lambda表达式遍历：map.forEach((key, value) -&gt; { //使用key和value进行操作 });</li>
+</ul>
+</li>
+</ol>
+<h3 id="hashmap">HashMap
+</h3><ol>
+<li>底层数据结构：哈希表（数组+链表/红黑树）</li>
+<li>特点：无序、不可重复、无索引</li>
+<li>添加键值对过程：
+<ul>
+<li>计算键的哈希值，确定存储位置</li>
+<li>如果位置为空，直接存储键值对</li>
+<li>如果位置不为空，使用equals()方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中</li>
+</ul>
+</li>
+</ol>
+<h3 id="linkedhashmap">LinkedHashMap
+</h3><ol>
+<li>底层数据结构：哈希表+双向链表（维护键值对的插入顺序）</li>
+<li>特点：有序、不可重复、无索引</li>
+<li>添加键值对过程:
+<ul>
+<li>计算键的哈希值，确定存储位置</li>
+<li>如果位置为空，直接存储键值对，并在双向链表中维护插入顺序</li>
+<li>如果位置不为空，使用equals()方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中，并在双向链表中维护插入顺序</li>
+</ul>
+</li>
+</ol>
+<h3 id="treemap">TreeMap
+</h3><ol>
+<li>底层数据结构：红黑树</li>
+<li>特点：有序(对键进行排序)、不可重复、无索引</li>
 </ol>
 
 </section>
@@ -1244,12 +1295,36 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         "react": {
             "opacityDefault": 0.9,
             "opacityOnHover": 1.0
+        },
+        "dialog": {
+            "enable": false
         }
     });
+    
+    
+    const clickMessages = [
+        '不要戳我啦！(｡•ˇ‸ˇ•｡)',
+        '哼！再戳就生气了！',
+        '你要干嘛呀？',
+        '讨厌！(*/ω＼*)',
+        '再戳我就要消失啦！'
+    ];
+    
+    
+    setTimeout(() => {
+        const canvasContainer = document.querySelector('#live2dcanvas');
+        if (canvasContainer) {
+            canvasContainer.style.cursor = 'pointer';
+            canvasContainer.addEventListener('click', function() {
+                const randomMessage = clickMessages[Math.floor(Math.random() * clickMessages.length)];
+                showMessage(randomMessage, 3000);
+            });
+        }
+    }, 2000);
 
     
     let messageTimer;
-    function showMessage(text, duration = 4000) {
+    function showMessage(text, duration = 1000) {
         const tips = document.getElementById('live2d-tips');
         if (!tips || !text) return;
         
@@ -1297,37 +1372,22 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
     });
 
     
-    document.addEventListener('click', function(e) {
-        const canvas = document.querySelector('#landlord canvas');
-        if (canvas && canvas.contains(e.target)) {
-            const clickMessages = [
-                '不要戳我啦！(｡•ˇ‸ˇ•｡)',
-                '哼！再戳就生气了！',
-                '你要干嘛呀？',
-                '讨厌！(*/ω＼*)',
-                '再戳我就要消失啦！'
-            ];
-            showMessage(clickMessages[Math.floor(Math.random() * clickMessages.length)], 3000);
-        }
-    });
-
-    
     document.addEventListener('mouseover', function(e) {
         const target = e.target;
         
         
         if (target.matches('.article-title, .article-list .article-title a')) {
-            showMessage('要不要看看这篇文章？📖', 3000);
+            showMessage('要不要看看这篇文章？📖');
         }
         
         else if (target.matches('.article-tags a, .tag-cloud a')) {
             const tag = target.textContent.trim();
-            showMessage(`标签「${tag}」相关的内容哦 🏷️`, 3000);
+            showMessage(`标签「${tag}」相关的内容哦 🏷️`);
         }
         
         else if (target.matches('.article-category a')) {
             const category = target.textContent.trim();
-            showMessage(`分类「${category}」下的文章 📂`, 3000);
+            showMessage(`分类「${category}」下的文章 📂`);
         }
         
         else if (target.matches('.site-nav a, .menu a')) {
@@ -1345,19 +1405,19 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         }
         
         else if (target.matches('input[type="search"], .search-input')) {
-            showMessage('输入关键词搜索文章吧 🔍', 3000);
+            showMessage('输入关键词搜索文章吧 🔍');
         }
         
         else if (target.closest('.social-links a, .sidebar-social a')) {
-            showMessage('想关注博主吗？👀', 3000);
+            showMessage('想关注博主吗？👀');
         }
         
         else if (target.closest('.aplayer, .music-player')) {
-            showMessage('来听听音乐放松一下吧 🎵', 3000);
+            showMessage('来听听音乐放松一下吧 🎵');
         }
         
         else if (target.closest('.giscus, .comments')) {
-            showMessage('欢迎在评论区留言哦 💬', 3000);
+            showMessage('欢迎在评论区留言哦 💬');
         }
         
         else if (target.matches('.back-to-top, #back-to-top')) {
