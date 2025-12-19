@@ -649,13 +649,21 @@
 
     
     window.addEventListener('load', function() {
-        setTimeout(() => {
-            showMessage('你好！我是Hatsune Miku ♪<br>欢迎来到 caibb16 的博客！', 3000);
-            
+        const path = window.location.pathname;
+        const isHomePage = path === '/' || path === '/zh-cn/' || path === '/en/' || path.match(/^\/(zh-cn|en)?\/?$/);
+        
+        if (isHomePage) {
             setTimeout(() => {
-                allowHoverTips = true;
-            }, 3500);
-        }, 500);
+                showMessage('你好！我是Hatsune Miku ♪<br>欢迎来到 caibb16 的博客！', 3000);
+                
+                setTimeout(() => {
+                    allowHoverTips = true;
+                }, 3500);
+            }, 500);
+        } else {
+            
+            allowHoverTips = true;
+        }
     });
 
     
