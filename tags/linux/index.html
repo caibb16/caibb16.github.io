@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一个摆烂人的小窝">
 <title>Tag: Linux - caibb16</title>
 
 <link rel='canonical' href='https://caibb16.github.io/tags/linux/'>
 
 <link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Tag: Linux - caibb16">
-<meta property='og:description' content="欢迎来到我的网站">
+<meta property='og:description' content="一个摆烂人的小窝">
 <meta property='og:url' content='https://caibb16.github.io/tags/linux/'>
 <meta property='og:site_name' content='caibb16'>
 <meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-10T14:28:59&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Linux - caibb16">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="https://caibb16.github.io/tags/linux/index.xml">
+<meta name="twitter:description" content="一个摆烂人的小窝"><link rel="alternate" type="application/rss&#43;xml" href="https://caibb16.github.io/tags/linux/index.xml">
     </head>
     <body class="">
     <script>
@@ -66,9 +66,31 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">caibb16</a></h1>
-            <h2 class="site-description">欢迎来到我的网站</h2>
+            <h2 class="site-description">一个摆烂人的小窝</h2>
         </div>
     </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/219954243?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 5L9 7" />
+  <path d="M16.5 5L15 7" />
+  <rect x="4" y="8" width="16" height="11" rx="2" />
+  <circle cx="8.5" cy="13" r="1" fill="currentColor" />
+  <circle cx="15.5" cy="13" r="1" fill="currentColor" />
+  <path d="M9 16.5C9.5 17 10.5 17.5 12 17.5C13.5 17.5 14.5 17 15 16.5" />
+</svg>
+
+                        
+                    </a>
+                </li>
             
                 <li>
                     <a 
@@ -560,8 +582,8 @@
 <style>
 #live2d-tips {
     position: fixed;
-    bottom: 250px;
-    left: 40px;
+    bottom: 220px;
+    left: 30px;
     background: rgba(129, 220, 226, 0.95);
     border: 1px solid #ffffff;
     border-radius: 12px;
@@ -594,6 +616,20 @@
 
 <script>
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     L2Dwidget.init({
         "model": {
             jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
@@ -602,19 +638,19 @@
         "display": {
             "position": "left",
             "width": 150,
-            "height": 300,
+            "height": 250,
             "hOffset": 0,
             "vOffset": -20
         },
         "mobile": {
-            "show": false
+            "show": true  
         },
         "react": {
             "opacityDefault": 0.9,
             "opacityOnHover": 1.0
         },
         "dialog": {
-            "enable": false
+            "enable": false  
         }
     });
 
@@ -665,11 +701,11 @@
                 allowHoverTips = true;
             }, 3500);
         }, 500);
-    });if (!allowHoverTips) return; 
-        
+    });
 
     
     document.addEventListener('mouseover', function(e) {
+        if (!allowHoverTips) return; 
         const target = e.target;
         
         
@@ -705,8 +741,21 @@
             showMessage('输入关键词搜索文章吧 🔍');
         }
         
-        else if (target.closest('.social-links a, .sidebar-social a')) {
-            showMessage('想关注博主吗？👀');
+        else if (target.closest('.menu-social a, .social-links a, .sidebar-social a')) {
+            const link = target.closest('a');
+            const href = link ? link.href.toLowerCase() : '';
+            
+            if (href.includes('github')) {
+                showMessage('来 GitHub 看看我的代码吧 👨‍💻');
+            } else if (href.includes('twitter') || href.includes('x.com')) {
+                showMessage('X 上关注我吧 🐦');
+            } else if (href.includes('bilibili')) {
+                showMessage('B站关注我吧 📺');
+            } else if (href.includes('qq.com') || href.includes('tencent')) {
+                showMessage('加我 QQ 好友吧 💬');
+            } else {
+                showMessage('想关注博主吗？👀');
+            }
         }
         
         else if (target.closest('.aplayer, .music-player')) {

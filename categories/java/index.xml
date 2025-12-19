@@ -513,6 +513,12 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;底层数据结构：红黑树&lt;/li&gt;
 &lt;li&gt;特点：有序(对键进行排序)、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;添加键值对过程：
+&lt;ul&gt;
+&lt;li&gt;使用compareTo()或compare()方法比较键的大小，确定存储位置&lt;/li&gt;
+&lt;li&gt;按照键的大小顺序存储键值对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>

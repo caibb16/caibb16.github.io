@@ -72,6 +72,28 @@
             
                 <li>
                     <a 
+                        href='https://space.bilibili.com/219954243?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 5L9 7" />
+  <path d="M16.5 5L15 7" />
+  <rect x="4" y="8" width="16" height="11" rx="2" />
+  <circle cx="8.5" cy="13" r="1" fill="currentColor" />
+  <circle cx="15.5" cy="13" r="1" fill="currentColor" />
+  <path d="M9 16.5C9.5 17 10.5 17.5 12 17.5C13.5 17.5 14.5 17 15 16.5" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
                         href='https://github.com/caibb16'
                         target="_blank"
                         title="GitHub"
@@ -357,8 +379,8 @@
 <style>
 #live2d-tips {
     position: fixed;
-    bottom: 250px;
-    left: 40px;
+    bottom: 220px;
+    left: 30px;
     background: rgba(129, 220, 226, 0.95);
     border: 1px solid #ffffff;
     border-radius: 12px;
@@ -391,6 +413,20 @@
 
 <script>
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     L2Dwidget.init({
         "model": {
             jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
@@ -399,19 +435,19 @@
         "display": {
             "position": "left",
             "width": 150,
-            "height": 300,
+            "height": 250,
             "hOffset": 0,
             "vOffset": -20
         },
         "mobile": {
-            "show": false
+            "show": true  
         },
         "react": {
             "opacityDefault": 0.9,
             "opacityOnHover": 1.0
         },
         "dialog": {
-            "enable": false
+            "enable": false  
         }
     });
 
@@ -462,11 +498,11 @@
                 allowHoverTips = true;
             }, 3500);
         }, 500);
-    });if (!allowHoverTips) return; 
-        
+    });
 
     
     document.addEventListener('mouseover', function(e) {
+        if (!allowHoverTips) return; 
         const target = e.target;
         
         
@@ -502,8 +538,21 @@
             showMessage('输入关键词搜索文章吧 🔍');
         }
         
-        else if (target.closest('.social-links a, .sidebar-social a')) {
-            showMessage('想关注博主吗？👀');
+        else if (target.closest('.menu-social a, .social-links a, .sidebar-social a')) {
+            const link = target.closest('a');
+            const href = link ? link.href.toLowerCase() : '';
+            
+            if (href.includes('github')) {
+                showMessage('来 GitHub 看看我的代码吧 👨‍💻');
+            } else if (href.includes('twitter') || href.includes('x.com')) {
+                showMessage('X 上关注我吧 🐦');
+            } else if (href.includes('bilibili')) {
+                showMessage('B站关注我吧 📺');
+            } else if (href.includes('qq.com') || href.includes('tencent')) {
+                showMessage('加我 QQ 好友吧 💬');
+            } else {
+                showMessage('想关注博主吗？👀');
+            }
         }
         
         else if (target.closest('.aplayer, .music-player')) {
