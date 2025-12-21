@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java on caibb16</title>
-        <link>http://localhost:1313/categories/java/</link>
+        <link>https://caibb16.github.io/categories/java/</link>
         <description>Recent content in Java on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>java_study</title>
-        <link>http://localhost:1313/p/java_study/</link>
+        <link>https://caibb16.github.io/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/java_study/</guid>
+        <guid>https://caibb16.github.io/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
