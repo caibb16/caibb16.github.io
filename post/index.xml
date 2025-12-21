@@ -2,17 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on caibb16</title>
-        <link>https://caibb16.github.io/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 21 Dec 2025 14:49:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Reinforcement Learning</title>
+        <link>http://localhost:1313/p/reinforcement-learning/</link>
+        <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/reinforcement-learning/</guid>
+        <description>&lt;h2 id=&#34;什么是强化学习&#34;&gt;什么是强化学习
+&lt;/h2&gt;&lt;p&gt;强化学习（Reinforcement Learning，RL）是一种机器学习范式，旨在训练智能体通过与环境交互来学习最佳行为策略，以最大化累积奖励。与监督学习不同，强化学习没有明确的输入输出对，而是通过试错和奖励信号来指导学习过程。&lt;/p&gt;
+&lt;h2 id=&#34;强化学习的基本概念&#34;&gt;强化学习的基本概念
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;智能体（Agent）&lt;/strong&gt;：执行动作以与环境交互的实体。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环境（Environment）&lt;/strong&gt;：智能体所处的外部系统，智能体通过与环境交互来获取状态和奖励。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态（State）&lt;/strong&gt;：环境在某一时刻的描述，智能体根据状态做出决策。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动作（Action）&lt;/strong&gt;：智能体在特定状态下可以执行的操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;奖励（Reward）&lt;/strong&gt;：智能体执行动作后从环境中获得的反馈信号，用于评估动作的好坏。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;策略（Policy）&lt;/strong&gt;：智能体在给定状态下选择动作的规则或函数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;价值函数（Value Function）&lt;/strong&gt;：评估在某一状态下，智能体未来可能获得的累积奖励。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;马尔可夫决策过程&#34;&gt;马尔可夫决策过程
+&lt;/h2&gt;&lt;p&gt;强化学习通常建模为马尔可夫决策过程（Markov Decision Process，MDP），包括状态空间、动作空间、转移概率和奖励函数。MDP假设未来状态仅依赖于当前状态和动作，而与过去状态无关。&lt;/p&gt;
+&lt;h2 id=&#34;ppo算法简介&#34;&gt;PPO算法简介
+&lt;/h2&gt;&lt;p&gt;Proximal Policy Optimization（PPO）是一种常用的强化学习算法，属于策略梯度方法。PPO通过限制策略更新的幅度，确保新策略不会偏离旧策略过远，从而提高训练的稳定性和效率。PPO通常使用剪切概率比（clipped probability ratio）来限制策略更新。&lt;/p&gt;
+&lt;h3 id=&#34;基本架构&#34;&gt;基本架构
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;策略网络（Policy Network）&lt;/strong&gt;：用于输出在给定状态下选择各个动作的概率分布。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;价值网络（Value Network）&lt;/strong&gt;：用于估计在给定状态下的价值函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;训练过程&#34;&gt;训练过程
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;采样数据&lt;/strong&gt;：智能体与环境交互，策略网络根据当前状态 s 和自身策略，选择并执行动作 a，收集状态、动作、奖励和下一个状态的数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算优势函数&lt;/strong&gt;：使用价值网络估计状态的价值，并计算优势函数以评估动作的好坏。优势用于衡量在给定状态下选择某个动作相对于平均水平的好处，其计算方法通常是用动作价值函数减去状态价值函数。公式如下：
+ &lt;center&gt;A(s, a) = Q(s, a) - V(s)&lt;/center&gt; 
+ 其中， A(s, a)是优势函数，Q(s, a)表示在状态 s 下采取动作 a 随后继续遵循策略π的价值，V(s) 表示在状态 s 下遵循策略π的价值。
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更新策略网络&lt;/strong&gt;：利用优势函数来更新自己的策略网络，使自己更倾向于选择能获得高评分的动作。同时使用剪切概率比限制策略更新的幅度，确保新策略不会偏离旧策略过远。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更新价值网络&lt;/strong&gt;：使用TD误差优化价值网络参数，TD误差可以衡量价值网络预测值与实际回报之间的差异。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>Linux 常用命令速查</title>
-        <link>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 Linux 命令，偏&amp;quot;日常使用备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -520,10 +559,10 @@
         </item>
         <item>
         <title>PyTorch 张量操作命令速查</title>
-        <link>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 PyTorch 张量操作命令，偏&amp;quot;查表备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1033,10 +1072,10 @@
         </item>
         <item>
         <title>git命令自用</title>
-        <link>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
+        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
+        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1149,10 +1188,10 @@
         </item>
         <item>
         <title>Turtlebot3_test</title>
-        <link>https://caibb16.github.io/p/turtlebot3_test/</link>
+        <link>http://localhost:1313/p/turtlebot3_test/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/turtlebot3_test/</guid>
+        <guid>http://localhost:1313/p/turtlebot3_test/</guid>
         <description>&lt;h2 id=&#34;启动-turtlebot3-基础世界仿真&#34;&gt;启动 TurtleBot3 基础世界仿真
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1213,10 +1252,10 @@
         </item>
         <item>
         <title>java_study</title>
-        <link>https://caibb16.github.io/p/java_study/</link>
+        <link>http://localhost:1313/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/java_study/</guid>
+        <guid>http://localhost:1313/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
@@ -1737,11 +1776,11 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Chinese Test</title>
-        <link>https://caibb16.github.io/p/test-chinese/</link>
+        <link>http://localhost:1313/p/test-chinese/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/test-chinese/</guid>
-        <description>&lt;img src="https://caibb16.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试
+        <guid>http://localhost:1313/p/test-chinese/</guid>
+        <description>&lt;img src="http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试
 &lt;/h2&gt;&lt;p&gt;而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p&gt;
 &lt;p&gt;奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p&gt;
 &lt;h2 id=&#34;引用&#34;&gt;引用
@@ -1754,10 +1793,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
     &gt;最暖的憂傷 - 田馥甄&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;图片&#34;&gt;图片
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://caibb16.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34;
 	width=&#34;667&#34;
 	height=&#34;1000&#34;
-	srcset=&#34;https://caibb16.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e98fca2b4272416e.jpg 480w, https://caibb16.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e3d37c9ded115b12.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e98fca2b4272416e.jpg 480w, http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e3d37c9ded115b12.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Photo by Florian Klauer on Unsplash&#34;
@@ -1767,10 +1806,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 		data-flex-grow=&#34;66&#34;
 		data-flex-basis=&#34;160px&#34;
 	
-&gt;  &lt;img src=&#34;https://caibb16.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34;
+&gt;  &lt;img src=&#34;http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;https://caibb16.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_e13c58d5189f892c.jpg 480w, https://caibb16.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_8fc948b7ee525251.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_e13c58d5189f892c.jpg 480w, http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_8fc948b7ee525251.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Photo by Luca Bravo on Unsplash&#34;
@@ -1781,10 +1820,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 		data-flex-basis=&#34;359px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://caibb16.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;https://caibb16.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_503c0ebcc5245e10.jpg 480w, https://caibb16.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_48c98de55fb3c999.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_503c0ebcc5245e10.jpg 480w, http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_48c98de55fb3c999.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Photo by Helena Hertz on Unsplash&#34;
@@ -1794,10 +1833,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 		data-flex-grow=&#34;133&#34;
 		data-flex-basis=&#34;320px&#34;
 	
-&gt;  &lt;img src=&#34;https://caibb16.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34;
+&gt;  &lt;img src=&#34;http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34;
 	width=&#34;667&#34;
 	height=&#34;1000&#34;
-	srcset=&#34;https://caibb16.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_f81a3588c5c4a663.jpg 480w, https://caibb16.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_1c52ba2a4ad7b9a0.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_f81a3588c5c4a663.jpg 480w, http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_1c52ba2a4ad7b9a0.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Photo by Hudai Gayiran on Unsplash&#34;
@@ -1826,11 +1865,11 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Markdown 语法指南</title>
-        <link>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
+        <link>http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
-        <description>&lt;img src="https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;p&gt;本文提供了可在 Hugo 内容文件中使用的基本 Markdown 语法示例，同时展示了 Hugo 主题中 CSS 对基本 HTML 元素的装饰效果。&lt;/p&gt;
+        <guid>http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
+        <description>&lt;img src="http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;p&gt;本文提供了可在 Hugo 内容文件中使用的基本 Markdown 语法示例，同时展示了 Hugo 主题中 CSS 对基本 HTML 元素的装饰效果。&lt;/p&gt;
 &lt;h2 id=&#34;标题&#34;&gt;标题
 &lt;/h2&gt;&lt;p&gt;以下 HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 元素代表六个级别的章节标题。&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; 是最高级别，而 &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 是最低级别。&lt;/p&gt;
 &lt;h1 id=&#34;h1&#34;&gt;H1
@@ -2056,10 +2095,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>https://caibb16.github.io/p/math-typesetting/</link>
+        <link>http://localhost:1313/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/math-typesetting/</guid>
+        <guid>http://localhost:1313/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
