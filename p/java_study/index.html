@@ -475,6 +475,11 @@
         <li><a href="#treemap">TreeMap</a></li>
       </ul>
     </li>
+    <li><a href="#不可变集合">不可变集合</a>
+      <ul>
+        <li><a href="#创建不可变集合的方法">创建不可变集合的方法</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -1051,6 +1056,15 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 </ul>
 </li>
 </ol>
+<h2 id="不可变集合">不可变集合
+</h2><p>一旦创建后，集合的内容不能被修改（添加、删除、修改元素）</p>
+<h3 id="创建不可变集合的方法">创建不可变集合的方法
+</h3><ul>
+<li>list.of(E&hellip; elements)：创建不可变的List集合</li>
+<li>set.of(E&hellip; elements)：创建不可变的Set集合，元素不能重复</li>
+<li>map.of(K k1, V v1, K k2, V v2, &hellip;)：创建不可变的Map集合，键值对数量上限为10</li>
+<li>map.ofEntries(Map.Entry&lt;? extends K, ? extends V&gt;&hellip; entries)：创建不可变的Map集合，键值对数量不限</li>
+</ul>
 
 </section>
 

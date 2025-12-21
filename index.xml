@@ -1724,6 +1724,15 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;不可变集合&#34;&gt;不可变集合
+&lt;/h2&gt;&lt;p&gt;一旦创建后，集合的内容不能被修改（添加、删除、修改元素）&lt;/p&gt;
+&lt;h3 id=&#34;创建不可变集合的方法&#34;&gt;创建不可变集合的方法
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;list.of(E&amp;hellip; elements)：创建不可变的List集合&lt;/li&gt;
+&lt;li&gt;set.of(E&amp;hellip; elements)：创建不可变的Set集合，元素不能重复&lt;/li&gt;
+&lt;li&gt;map.of(K k1, V v1, K k2, V v2, &amp;hellip;)：创建不可变的Map集合，键值对数量上限为10&lt;/li&gt;
+&lt;li&gt;map.ofEntries(Map.Entry&amp;lt;? extends K, ? extends V&amp;gt;&amp;hellip; entries)：创建不可变的Map集合，键值对数量不限&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
