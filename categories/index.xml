@@ -2,97 +2,113 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on caibb16</title>
-        <link>https://caibb16.github.io/categories/</link>
+        <link>http://localhost:1313/categories/</link>
         <description>Recent content in Categories on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 21 Dec 2025 14:49:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Machine Learning</title>
+        <link>http://localhost:1313/categories/machine-learning/</link>
+        <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/machine-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Reinforcement Learning</title>
+        <link>http://localhost:1313/categories/reinforcement-learning/</link>
+        <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/reinforcement-learning/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Linux</title>
-        <link>https://caibb16.github.io/categories/linux/</link>
+        <link>http://localhost:1313/categories/linux/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/categories/linux/</guid>
+        <guid>http://localhost:1313/categories/linux/</guid>
         <description></description>
         </item>
         <item>
         <title>运维</title>
-        <link>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
+        <link>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
+        <guid>http://localhost:1313/categories/%E8%BF%90%E7%BB%B4/</guid>
         <description></description>
         </item>
         <item>
         <title>Deep Learning</title>
-        <link>https://caibb16.github.io/categories/deep-learning/</link>
+        <link>http://localhost:1313/categories/deep-learning/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/categories/deep-learning/</guid>
+        <guid>http://localhost:1313/categories/deep-learning/</guid>
         <description></description>
         </item>
         <item>
         <title>PyTorch</title>
-        <link>https://caibb16.github.io/categories/pytorch/</link>
+        <link>http://localhost:1313/categories/pytorch/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/categories/pytorch/</guid>
+        <guid>http://localhost:1313/categories/pytorch/</guid>
         <description></description>
         </item>
         <item>
         <title>Git</title>
-        <link>https://caibb16.github.io/categories/git/</link>
+        <link>http://localhost:1313/categories/git/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/git/</guid>
+        <guid>http://localhost:1313/categories/git/</guid>
         <description></description>
         </item>
         <item>
         <title>ROS</title>
-        <link>https://caibb16.github.io/categories/ros/</link>
+        <link>http://localhost:1313/categories/ros/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/ros/</guid>
+        <guid>http://localhost:1313/categories/ros/</guid>
         <description></description>
         </item>
         <item>
         <title>Java</title>
-        <link>https://caibb16.github.io/categories/java/</link>
+        <link>http://localhost:1313/categories/java/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/java/</guid>
+        <guid>http://localhost:1313/categories/java/</guid>
         <description></description>
         </item>
         <item>
         <title>Test</title>
-        <link>https://caibb16.github.io/categories/test/</link>
+        <link>http://localhost:1313/categories/test/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/test/</guid>
-        <description>&lt;img src="https://caibb16.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>http://localhost:1313/categories/test/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         <item>
         <title>测试</title>
-        <link>https://caibb16.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
+        <link>http://localhost:1313/categories/%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
+        <guid>http://localhost:1313/categories/%E6%B5%8B%E8%AF%95/</guid>
         <description></description>
         </item>
         <item>
         <title>Syntax</title>
-        <link>https://caibb16.github.io/categories/syntax/</link>
+        <link>http://localhost:1313/categories/syntax/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/syntax/</guid>
+        <guid>http://localhost:1313/categories/syntax/</guid>
         <description></description>
         </item>
         <item>
         <title>Themes</title>
-        <link>https://caibb16.github.io/categories/themes/</link>
+        <link>http://localhost:1313/categories/themes/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/categories/themes/</guid>
+        <guid>http://localhost:1313/categories/themes/</guid>
         <description></description>
         </item>
         

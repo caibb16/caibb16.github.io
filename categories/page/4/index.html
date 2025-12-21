@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一个摆烂人的小窝">
 <title>Categories</title>
 
 <link rel='canonical' href='http://localhost:1313/categories/'>
 
 <link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Categories">
-<meta property='og:description' content="欢迎来到我的网站">
+<meta property='og:description' content="一个摆烂人的小窝">
 <meta property='og:url' content='http://localhost:1313/categories/'>
 <meta property='og:site_name' content='caibb16'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-10T14:28:59&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-21T14:49:14&#43;08:00 '/>
 <meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/categories/index.xml">
+<meta name="twitter:description" content="一个摆烂人的小窝"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/categories/index.xml">
     </head>
     <body class="">
     <script>
@@ -66,9 +66,31 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">caibb16</a></h1>
-            <h2 class="site-description">欢迎来到我的网站</h2>
+            <h2 class="site-description">一个摆烂人的小窝</h2>
         </div>
     </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/219954243?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 5L9 7" />
+  <path d="M16.5 5L15 7" />
+  <rect x="4" y="8" width="16" height="11" rx="2" />
+  <circle cx="8.5" cy="13" r="1" fill="currentColor" />
+  <circle cx="15.5" cy="13" r="1" fill="currentColor" />
+  <path d="M9 16.5C9.5 17 10.5 17.5 12 17.5C13.5 17.5 14.5 17 15 16.5" />
+</svg>
+
+                        
+                    </a>
+                </li>
             
                 <li>
                     <a 
@@ -318,8 +340,16 @@
                 Linux
             </a>
         
+            <a href="/categories/machine-learning/" class="font_size_1">
+                Machine Learning
+            </a>
+        
             <a href="/categories/pytorch/" class="font_size_1">
                 PyTorch
+            </a>
+        
+            <a href="/categories/reinforcement-learning/" class="font_size_1">
+                Reinforcement Learning
             </a>
         
             <a href="/categories/ros/" class="font_size_1">
@@ -332,14 +362,6 @@
         
             <a href="/categories/test/" class="font_size_1">
                 Test
-            </a>
-        
-            <a href="/categories/themes/" class="font_size_1">
-                Themes
-            </a>
-        
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="font_size_1">
-                测试
             </a>
         
     </div>
@@ -482,7 +504,7 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">11 个页面</h3>
+                <h3 class="section-count">13 个页面</h3>
                 <h1 class="section-term">Categories</h1>
                 
             </div>
@@ -490,17 +512,6 @@
     </header>
     
     <section class="article-list--compact">
-        
-            <article>
-    <a href="/categories/syntax/">
-        <div class="article-details">
-            <h2 class="article-title">Syntax</h2>
-            <footer class="article-time">
-                <time datetime='2019-03-11T00:00:00Z'>Mar 11, 2019</time>
-            </footer>
-        </div>
-    </a>
-</article>
         
             <article>
     <a href="/categories/themes/">
@@ -597,8 +608,8 @@
 <style>
 #live2d-tips {
     position: fixed;
-    bottom: 250px;
-    left: 40px;
+    bottom: 220px;
+    left: 30px;
     background: rgba(129, 220, 226, 0.95);
     border: 1px solid #ffffff;
     border-radius: 12px;
@@ -631,6 +642,20 @@
 
 <script>
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     L2Dwidget.init({
         "model": {
             jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
@@ -639,22 +664,27 @@
         "display": {
             "position": "left",
             "width": 150,
-            "height": 300,
+            "height": 250,
             "hOffset": 0,
             "vOffset": -20
         },
         "mobile": {
-            "show": false
+            "show": true  
         },
         "react": {
             "opacityDefault": 0.9,
             "opacityOnHover": 1.0
+        },
+        "dialog": {
+            "enable": false  
         }
     });
 
     
     let messageTimer;
-    function showMessage(text, duration = 4000) {
+    let allowHoverTips = false; 
+    
+    function showMessage(text, duration = 1000) {
         const tips = document.getElementById('live2d-tips');
         if (!tips || !text) return;
         
@@ -690,49 +720,41 @@
 
     
     window.addEventListener('load', function() {
-        setTimeout(() => {
-            const isFirstVisit = !localStorage.getItem('visited');
-            if (isFirstVisit) {
-                showMessage('你好！我是初音未来 ♪<br>欢迎来到 caibb16 的博客！', 6000);
-                localStorage.setItem('visited', 'true');
-            } else {
-                showMessage(getTimeGreeting(), 5000);
-            }
-        }, 2000);
-    });
-
-    
-    document.addEventListener('click', function(e) {
-        const canvas = document.querySelector('#landlord canvas');
-        if (canvas && canvas.contains(e.target)) {
-            const clickMessages = [
-                '不要戳我啦！(｡•ˇ‸ˇ•｡)',
-                '哼！再戳就生气了！',
-                '你要干嘛呀？',
-                '讨厌！(*/ω＼*)',
-                '再戳我就要消失啦！'
-            ];
-            showMessage(clickMessages[Math.floor(Math.random() * clickMessages.length)], 3000);
+        const path = window.location.pathname;
+        const isHomePage = path === '/' || path === '/zh-cn/' || path === '/en/' || path.match(/^\/(zh-cn|en)?\/?$/);
+        
+        if (isHomePage) {
+            setTimeout(() => {
+                showMessage('你好！我是Hatsune Miku ♪<br>欢迎来到 caibb16 的博客！', 3000);
+                
+                setTimeout(() => {
+                    allowHoverTips = true;
+                }, 3500);
+            }, 500);
+        } else {
+            
+            allowHoverTips = true;
         }
     });
 
     
     document.addEventListener('mouseover', function(e) {
+        if (!allowHoverTips) return; 
         const target = e.target;
         
         
         if (target.matches('.article-title, .article-list .article-title a')) {
-            showMessage('要不要看看这篇文章？📖', 3000);
+            showMessage('要不要看看这篇文章？📖');
         }
         
         else if (target.matches('.article-tags a, .tag-cloud a')) {
             const tag = target.textContent.trim();
-            showMessage(`标签「${tag}」相关的内容哦 🏷️`, 3000);
+            showMessage(`标签「${tag}」相关的内容哦 🏷️`);
         }
         
         else if (target.matches('.article-category a')) {
             const category = target.textContent.trim();
-            showMessage(`分类「${category}」下的文章 📂`, 3000);
+            showMessage(`分类「${category}」下的文章 📂`);
         }
         
         else if (target.matches('.site-nav a, .menu a')) {
@@ -745,36 +767,49 @@
                 '链接': '这里有一些友情链接 🔗'
             };
             if (tips[text]) {
-                showMessage(tips[text], 3000);
+                showMessage(tips[text]);
             }
         }
         
         else if (target.matches('input[type="search"], .search-input')) {
-            showMessage('输入关键词搜索文章吧 🔍', 3000);
+            showMessage('输入关键词搜索文章吧 🔍');
         }
         
-        else if (target.closest('.social-links a, .sidebar-social a')) {
-            showMessage('想关注博主吗？👀', 3000);
+        else if (target.closest('.menu-social a, .social-links a, .sidebar-social a')) {
+            const link = target.closest('a');
+            const href = link ? link.href.toLowerCase() : '';
+            
+            if (href.includes('github')) {
+                showMessage('来 GitHub 看看我的代码吧 👨‍💻');
+            } else if (href.includes('twitter') || href.includes('x.com')) {
+                showMessage('X 上关注我吧 🐦');
+            } else if (href.includes('bilibili')) {
+                showMessage('B站关注我吧 📺');
+            } else if (href.includes('qq.com') || href.includes('tencent')) {
+                showMessage('加我 QQ 好友吧 💬');
+            } else {
+                showMessage('想关注博主吗？👀');
+            }
         }
         
         else if (target.closest('.aplayer, .music-player')) {
-            showMessage('来听听音乐放松一下吧 🎵', 3000);
+            showMessage('来听听音乐放松一下吧 🎵');
         }
         
         else if (target.closest('.giscus, .comments')) {
-            showMessage('欢迎在评论区留言哦 💬', 3000);
+            showMessage('欢迎在评论区留言哦 💬');
         }
         
         else if (target.matches('.back-to-top, #back-to-top')) {
-            showMessage('点击回到顶部 ⬆️', 2000);
+            showMessage('点击回到顶部 ⬆️');
         }
         
         else if (target.matches('.copy-button, .copy-code-button')) {
-            showMessage('复制代码到剪贴板 📋', 2000);
+            showMessage('复制代码到剪贴板 📋');
         }
         
         else if (target.matches('.article-image img, .post-content img')) {
-            showMessage('点击查看大图 🖼️', 2000);
+            showMessage('点击查看大图 🖼️');
         }
     });
 </script>
