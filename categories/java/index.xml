@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java on caibb16</title>
-        <link>http://localhost:1313/categories/java/</link>
+        <link>https://caibb16.github.io/categories/java/</link>
         <description>Recent content in Java on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>java_study</title>
-        <link>http://localhost:1313/p/java_study/</link>
+        <link>https://caibb16.github.io/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/java_study/</guid>
+        <guid>https://caibb16.github.io/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
@@ -529,6 +529,30 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;map.of(K k1, V v1, K k2, V v2, &amp;hellip;)：创建不可变的Map集合，键值对数量上限为10&lt;/li&gt;
 &lt;li&gt;map.ofEntries(Map.Entry&amp;lt;? extends K, ? extends V&amp;gt;&amp;hellip; entries)：创建不可变的Map集合，键值对数量不限&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;stream流&#34;&gt;Stream流
+&lt;/h2&gt;&lt;h3 id=&#34;使用&#34;&gt;使用
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;collection集合
+&lt;ul&gt;
+&lt;li&gt;集合对象.stream()：获取集合的Stream流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;map集合
+&lt;ul&gt;
+&lt;li&gt;需要先使用entrySet()将map转换为单列集合，再转换为Stream流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Arrays工具类
+&lt;ul&gt;
+&lt;li&gt;Arrays.stream(数组对象)：获取数组的Stream流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stream接口
+&lt;ul&gt;
+&lt;li&gt;静态方法：of()、iterate()、generate()、concat()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         </item>
         

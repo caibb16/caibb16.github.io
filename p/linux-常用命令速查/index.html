@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="记录 Linux 基础常用命令">
 <title>Linux 常用命令速查</title>
 
-<link rel='canonical' href='http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/'>
+<link rel='canonical' href='https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/'>
 
 <link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Linux 常用命令速查">
 <meta property='og:description' content="记录 Linux 基础常用命令">
-<meta property='og:url' content='http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/'>
+<meta property='og:url' content='https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/'>
 <meta property='og:site_name' content='caibb16'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='命令行' /><meta property='article:tag' content='命令速查' /><meta property='article:published_time' content='2025-12-10T14:28:59&#43;08:00'/><meta property='article:modified_time' content='2025-12-10T14:28:59&#43;08:00'/>
 <meta name="twitter:title" content="Linux 常用命令速查">
@@ -251,9 +251,9 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="http://localhost:1313/en/" >English</option>
+                                    <option value="https://caibb16.github.io/en/" >English</option>
                                 
-                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                    <option value="https://caibb16.github.io/" selected>简体中文</option>
                                 
                             </select>
                         </li>
@@ -314,14 +314,13 @@
         <li><a href="#创建与删除">创建与删除</a></li>
         <li><a href="#复制与移动">复制与移动</a></li>
         <li><a href="#查看文件内容">查看文件内容</a></li>
+        <li><a href="#软件安装">软件安装</a></li>
       </ul>
     </li>
     <li><a href="#文件搜索">文件搜索</a></li>
     <li><a href="#文本处理">文本处理</a>
       <ul>
         <li><a href="#grep搜索文本">grep（搜索文本）</a></li>
-        <li><a href="#sed流编辑器">sed（流编辑器）</a></li>
-        <li><a href="#awk文本分析">awk（文本分析）</a></li>
       </ul>
     </li>
     <li><a href="#权限管理">权限管理</a>
@@ -514,6 +513,21 @@
 </span></span><span class="line"><span class="cl">tail -f log.txt        <span class="c1"># 实时跟踪文件更新（日志）</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="软件安装">软件安装
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update                   <span class="c1"># 更新软件包列表</span>
+</span></span><span class="line"><span class="cl">sudo apt install package_name     <span class="c1"># 安装软件包</span>
+</span></span><span class="line"><span class="cl">sudo apt remove package_name      <span class="c1"># 卸载软件包</span>
+</span></span><span class="line"><span class="cl">sudo dpkg -i package.deb            <span class="c1"># 安装 .deb 包  </span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><hr>
 <h2 id="文件搜索">文件搜索
 </h2><div class="highlight"><div class="chroma">
@@ -559,34 +573,6 @@
 </span></span><span class="line"><span class="cl">grep -n <span class="s2">&#34;keyword&#34;</span> file.txt        <span class="c1"># 显示行号</span>
 </span></span><span class="line"><span class="cl">grep -v <span class="s2">&#34;keyword&#34;</span> file.txt        <span class="c1"># 反向匹配（排除）</span>
 </span></span><span class="line"><span class="cl">grep -E <span class="s2">&#34;regex&#34;</span> file.txt          <span class="c1"># 使用正则表达式</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="sed流编辑器">sed（流编辑器）
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed <span class="s1">&#39;s/old/new/&#39;</span> file.txt         <span class="c1"># 替换每行第一个匹配</span>
-</span></span><span class="line"><span class="cl">sed <span class="s1">&#39;s/old/new/g&#39;</span> file.txt        <span class="c1"># 替换所有匹配</span>
-</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/old/new/g&#39;</span> file.txt     <span class="c1"># 直接修改文件</span>
-</span></span><span class="line"><span class="cl">sed -n <span class="s1">&#39;10,20p&#39;</span> file.txt          <span class="c1"># 打印第10-20行</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="awk文本分析">awk（文本分析）
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">awk <span class="s1">&#39;{print $1}&#39;</span> file.txt         <span class="c1"># 打印第一列</span>
-</span></span><span class="line"><span class="cl">awk <span class="s1">&#39;{print $1, $3}&#39;</span> file.txt     <span class="c1"># 打印第1和第3列</span>
-</span></span><span class="line"><span class="cl">awk -F: <span class="s1">&#39;{print $1}&#39;</span> /etc/passwd  <span class="c1"># 指定分隔符为冒号</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -1114,7 +1100,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.30c9f370e7a4ea8e4c6c5b229cb5ea5c8a5d4a4c503b2c5728501955803efc86.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
