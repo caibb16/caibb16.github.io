@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>强化学习 on caibb16</title>
-        <link>http://localhost:1313/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+        <link>https://caibb16.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <description>Recent content in 强化学习 on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Sun, 21 Dec 2025 14:49:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 21 Dec 2025 14:49:14 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Reinforcement Learning</title>
-        <link>http://localhost:1313/p/reinforcement-learning/</link>
+        <link>https://caibb16.github.io/p/reinforcement-learning/</link>
         <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/reinforcement-learning/</guid>
+        <guid>https://caibb16.github.io/p/reinforcement-learning/</guid>
         <description>&lt;h2 id=&#34;什么是强化学习&#34;&gt;什么是强化学习
 &lt;/h2&gt;&lt;p&gt;强化学习（Reinforcement Learning，RL）是一种机器学习范式，旨在训练智能体通过与环境交互来学习最佳行为策略，以最大化累积奖励。与监督学习不同，强化学习没有明确的输入输出对，而是通过试错和奖励信号来指导学习过程。&lt;/p&gt;
 &lt;h2 id=&#34;强化学习的基本概念&#34;&gt;强化学习的基本概念
