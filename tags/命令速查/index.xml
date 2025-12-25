@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>命令速查 on caibb16</title>
-        <link>https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>http://localhost:1313/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <description>Recent content in 命令速查 on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux 常用命令速查</title>
-        <link>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 Linux 命令，偏&amp;quot;日常使用备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -507,10 +507,10 @@
         </item>
         <item>
         <title>PyTorch 张量操作命令速查</title>
-        <link>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 PyTorch 张量操作命令，偏&amp;quot;查表备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1020,10 +1020,10 @@
         </item>
         <item>
         <title>git命令自用</title>
-        <link>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
+        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
+        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1136,10 +1136,10 @@
         </item>
         <item>
         <title>Turtlebot3_test</title>
-        <link>https://caibb16.github.io/p/turtlebot3_test/</link>
+        <link>http://localhost:1313/p/turtlebot3_test/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/turtlebot3_test/</guid>
+        <guid>http://localhost:1313/p/turtlebot3_test/</guid>
         <description>&lt;h2 id=&#34;启动-turtlebot3-基础世界仿真&#34;&gt;启动 TurtleBot3 基础世界仿真
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
