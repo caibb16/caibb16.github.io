@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://caibb16.github.io/p/java_study/'>
 
-<link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="java_study">
+<link rel="stylesheet" href="/scss/style.min.84945aa8ed0beadc700fc6923a008654510d25f2ae928fe9a5cb1e0450f90b1a.css"><meta property='og:title' content="java_study">
 <meta property='og:description' content="学习java入门时做的笔记">
 <meta property='og:url' content='https://caibb16.github.io/p/java_study/'>
 <meta property='og:site_name' content='caibb16'>
@@ -1099,7 +1099,13 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 </h2><ol>
 <li>定义：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体</li>
 <li>lambda表达式格式：参数列表 -&gt; 方法体</li>
-<li>方法引用格式：类名或对象名::方法名</li>
+<li>方法引用格式：类名或对象名::方法名
+<ul>
+<li>引用静态方法：类名::静态方法名</li>
+<li>引用成员方法：对象名::成员方法名</li>
+<li>引用构造方法：类名::new</li>
+</ul>
+</li>
 </ol>
 
 </section>

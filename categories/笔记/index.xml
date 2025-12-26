@@ -381,7 +381,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps aux &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;s2&#34;&gt;&amp;#34;run.py.*navila&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 停止当前评估&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pkill -9 -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;run.py.*navila&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 汇总并查看得分&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 完成评估后汇总并查看得分&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python scripts/eval_jsons.py ./eval_out/navila-llama3-8b-8f/VLN-CE-v1/val_unseen NUM_CHUNKS
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -442,8 +442,8 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;并会在&lt;code&gt;valuation/eval_out/navila-llama3-8b-8f/VLN-CE-v1/val_unseen/videos&lt;/code&gt;路径下生成大量评估视频，视频左下方为导航指令，视频名称中的spl是导航中常用的评估指标，基准值为1/0代表是否成功，再乘上一个最短路径与实际路径比值。&lt;br&gt;
-每个视频是一个episode，会选取一个场景进行评估，解压R2R数据集下的val_unseen.json.gz文件后可以看到episodes总共有1838个，8张显卡大概要跑2～3小时，如果不需要查看最终分数的话不跑完也可以。&lt;/li&gt;
-&lt;li&gt;其中一个spl=1的episode如下：
+每个视频是一个episode，会选取一个场景进行评估，解压R2R数据集下的val_unseen.json.gz文件后可以看到episodes总共有1838个，8张显卡大概要跑2～3小时，如果不查看最终分数的话不跑完也可以。&lt;/li&gt;
+&lt;li&gt;其中一个 spl=1 的episode如下：&lt;br&gt;
 &lt;video src=&#34;episode=53-ckpt=0-spl=1.00.mp4&#34; controls=&#34;controls&#34; width=&#34;700&#34;&gt;&lt;/video&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -1037,7 +1037,13 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;定义：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体&lt;/li&gt;
 &lt;li&gt;lambda表达式格式：参数列表 -&amp;gt; 方法体&lt;/li&gt;
-&lt;li&gt;方法引用格式：类名或对象名::方法名&lt;/li&gt;
+&lt;li&gt;方法引用格式：类名或对象名::方法名
+&lt;ul&gt;
+&lt;li&gt;引用静态方法：类名::静态方法名&lt;/li&gt;
+&lt;li&gt;引用成员方法：对象名::成员方法名&lt;/li&gt;
+&lt;li&gt;引用构造方法：类名::new&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>

@@ -557,7 +557,13 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;定义：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体&lt;/li&gt;
 &lt;li&gt;lambda表达式格式：参数列表 -&amp;gt; 方法体&lt;/li&gt;
-&lt;li&gt;方法引用格式：类名或对象名::方法名&lt;/li&gt;
+&lt;li&gt;方法引用格式：类名或对象名::方法名
+&lt;ul&gt;
+&lt;li&gt;引用静态方法：类名::静态方法名&lt;/li&gt;
+&lt;li&gt;引用成员方法：对象名::成员方法名&lt;/li&gt;
+&lt;li&gt;引用构造方法：类名::new&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>

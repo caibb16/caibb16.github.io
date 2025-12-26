@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://caibb16.github.io/p/turtlebot3_test/'>
 
-<link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Turtlebot3_test">
+<link rel="stylesheet" href="/scss/style.min.84945aa8ed0beadc700fc6923a008654510d25f2ae928fe9a5cb1e0450f90b1a.css"><meta property='og:title' content="Turtlebot3_test">
 <meta property='og:description' content="记录Turtlebot3的相关命令">
 <meta property='og:url' content='https://caibb16.github.io/p/turtlebot3_test/'>
 <meta property='og:site_name' content='caibb16'>
@@ -308,12 +308,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#启动-turtlebot3-基础世界仿真">启动 TurtleBot3 基础世界仿真</a></li>
+    <li><a href="#前置准备">前置准备</a></li>
+    <li><a href="#启动脚本加载turtlebot3及世界模型">启动脚本，加载TurtleBot3及世界模型</a></li>
     <li><a href="#启动-slam_toolbox">启动 slam_toolbox</a></li>
     <li><a href="#启动-cartographer">启动 cartographer</a></li>
     <li><a href="#运行-rviz2-可视化-slamcartographer自带rviz无需启动">运行 RViz2 可视化 SLAM（cartographer自带rviz，无需启动）</a></li>
     <li><a href="#键盘控制机器人运动">键盘控制机器人运动</a></li>
     <li><a href="#保存地图供nav2使用">保存地图供nav2使用</a></li>
+    <li><a href="#启动nav2导航">启动nav2导航</a></li>
   </ul>
 </nav>
         </div>
@@ -383,7 +385,32 @@
     <section class="article-content">
     
     
-    <h2 id="启动-turtlebot3-基础世界仿真">启动 TurtleBot3 基础世界仿真
+    <h2 id="前置准备">前置准备
+</h2><p>运行相关命令前需先安装对应功能包，如turtlebot3、slam_toolbox、cartographer、nav2等。<br>
+若从源码编译安装，请确保已编译对应功能包。
+编译命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/colcon_ws
+</span></span><span class="line"><span class="cl">colcon build --symlink-install --packages-select &lt;package_name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>source命令如下，可添加至~/.bashrc文件中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/colcon_ws/install/setup.bash
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /usr/share/gazebo/setup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="启动脚本加载turtlebot3及世界模型">启动脚本，加载TurtleBot3及世界模型
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -437,6 +464,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 run nav2_map_server map_saver_cli -f ~/map
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="启动nav2导航">启动nav2导航
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 launch turtlebot3_navigation2 navigation2.launch.py map:<span class="o">=</span><span class="nv">$HOME</span>/map.yaml
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

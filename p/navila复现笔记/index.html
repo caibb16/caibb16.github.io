@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Navila复现笔记">
+<link rel="stylesheet" href="/scss/style.min.84945aa8ed0beadc700fc6923a008654510d25f2ae928fe9a5cb1e0450f90b1a.css"><meta property='og:title' content="Navila复现笔记">
 <meta property='og:description' content="引言 本文尝试对Navila论文进行复现，引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
 <meta property='og:url' content='https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/'>
 <meta property='og:site_name' content='caibb16'>
@@ -762,7 +762,7 @@
 </span></span><span class="line"><span class="cl">ps aux <span class="p">|</span> grep <span class="s2">&#34;run.py.*navila&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 停止当前评估</span>
 </span></span><span class="line"><span class="cl">pkill -9 -f <span class="s2">&#34;run.py.*navila&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 汇总并查看得分</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 完成评估后汇总并查看得分</span>
 </span></span><span class="line"><span class="cl">python scripts/eval_jsons.py ./eval_out/navila-llama3-8b-8f/VLN-CE-v1/val_unseen NUM_CHUNKS
 </span></span></code></pre></td></tr></table>
 </div>
@@ -823,8 +823,8 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 	
 ></li>
 <li>并会在<code>valuation/eval_out/navila-llama3-8b-8f/VLN-CE-v1/val_unseen/videos</code>路径下生成大量评估视频，视频左下方为导航指令，视频名称中的spl是导航中常用的评估指标，基准值为1/0代表是否成功，再乘上一个最短路径与实际路径比值。<br>
-每个视频是一个episode，会选取一个场景进行评估，解压R2R数据集下的val_unseen.json.gz文件后可以看到episodes总共有1838个，8张显卡大概要跑2～3小时，如果不需要查看最终分数的话不跑完也可以。</li>
-<li>其中一个spl=1的episode如下：
+每个视频是一个episode，会选取一个场景进行评估，解压R2R数据集下的val_unseen.json.gz文件后可以看到episodes总共有1838个，8张显卡大概要跑2～3小时，如果不查看最终分数的话不跑完也可以。</li>
+<li>其中一个 spl=1 的episode如下：<br>
 <video src="episode=53-ckpt=0-spl=1.00.mp4" controls="controls" width="700"></video></li>
 </ul>
 
