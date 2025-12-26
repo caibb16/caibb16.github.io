@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
+<<<<<<< HEAD
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="引言 本文尝试对Navila论文进行复现，引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+=======
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="引言 本文尝试对Navila论文进行复现,引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
 <title>Navila复现笔记</title>
 
 <link rel='canonical' href='https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.de33bca10c66233f5fdc112d31794097f8d6ad96cdace4991039bf5f387da96c.css"><meta property='og:title' content="Navila复现笔记">
+<<<<<<< HEAD
 <meta property='og:description' content="引言 本文尝试对Navila论文进行复现，引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+=======
+<meta property='og:description' content="引言 本文尝试对Navila论文进行复现,引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
 <meta property='og:url' content='https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/'>
 <meta property='og:site_name' content='caibb16'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Navila' /><meta property='article:tag' content='论文复现' /><meta property='article:published_time' content='2025-12-24T12:39:23&#43;08:00'/><meta property='article:modified_time' content='2025-12-24T12:39:23&#43;08:00'/>
 <meta name="twitter:title" content="Navila复现笔记">
+<<<<<<< HEAD
 <meta name="twitter:description" content="引言 本文尝试对Navila论文进行复现，引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+=======
+<meta name="twitter:description" content="引言 本文尝试对Navila论文进行复现,引用如下：\nPaper Link\nProject Link\n论文解读 NaVILA: Legged Robot Vision-Language-Action Model for Navigation\n基本目标 在收到人类指令后，NaVILA 使用视觉语言模型处理 RGB 视频帧，并运用运动技能在机器人上执行任务。该机器人能够成功完成长时程导航任务，并在复杂环境中安全运行。\n该项目的创新基于端到端的VLA系统，该系统对通用 VLM 进行微调，以生成量化的低级动作，这个过程的推理和执行十分具有挑战性。本项目为了用更好的方式表示动作，建立了一个两级框架，将高层次的视觉语言理解与低层次的运动控制分开。\n">
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
     </head>
     <body class="
     article-page
@@ -343,11 +355,19 @@
     
     <header class="article-category">
         
+<<<<<<< HEAD
             <a href="/categories/%E7%AC%94%E8%AE%B0/" style="background-color: #77c3baff; color: #fff;">
                 笔记
             </a>
         
             <a href="/categories/vla/" style="background-color: #c05f5fff; color: #fff;">
+=======
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+            <a href="/categories/vla/" >
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
                 VLA
             </a>
         
@@ -395,7 +415,11 @@
     
     
     <h2 id="引言">引言
+<<<<<<< HEAD
 </h2><p>本文尝试对Navila论文进行复现，引用如下：<br>
+=======
+</h2><p>本文尝试对Navila论文进行复现,引用如下：<br>
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
 <a class="link" href="https://arxiv.org/abs/2412.04453"  target="_blank" rel="noopener"
     >Paper Link</a><br>
 <a class="link" href="https://github.com/AnjieCheng/NaVILA"  target="_blank" rel="noopener"

@@ -13,7 +13,11 @@
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
         <guid>https://caibb16.github.io/categories/vla/</guid>
+<<<<<<< HEAD
         <description>&lt;img src="https://caibb16.github.io/categories/vla/image.png" alt="Featured image of post VLA" /&gt;</description>
+=======
+        <description></description>
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
         </item>
         <item>
         <title>笔记</title>
@@ -21,7 +25,11 @@
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
         <guid>https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/</guid>
+<<<<<<< HEAD
         <description>&lt;img src="https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/notebook-1840276_1280.jpg" alt="Featured image of post 笔记" /&gt;</description>
+=======
+        <description></description>
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
         </item>
         <item>
         <title>工具</title>
@@ -29,7 +37,19 @@
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
         <guid>https://caibb16.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+<<<<<<< HEAD
         <description>&lt;img src="https://caibb16.github.io/categories/%E5%B7%A5%E5%85%B7/1667020227932433.jpg" alt="Featured image of post 工具" /&gt;</description>
+=======
+        <description></description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://caibb16.github.io/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/test/</guid>
+        <description>&lt;img src="https://caibb16.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+>>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
         </item>
         
     </channel>
