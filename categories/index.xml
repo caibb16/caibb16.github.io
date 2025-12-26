@@ -7,93 +7,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Wed, 10 Dec 2025 14:28:59 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Linux</title>
-        <link>https://caibb16.github.io/categories/linux/</link>
+        <lastBuildDate>Wed, 24 Dec 2025 12:39:23 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VLA</title>
+        <link>https://caibb16.github.io/categories/vla/</link>
+        <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/vla/</guid>
+        <description>&lt;img src="https://caibb16.github.io/categories/vla/image.png" alt="Featured image of post VLA" /&gt;</description>
+        </item>
+        <item>
+        <title>笔记</title>
+        <link>https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
+        
+        <guid>https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/notebook-1840276_1280.jpg" alt="Featured image of post 笔记" /&gt;</description>
+        </item>
+        <item>
+        <title>工具</title>
+        <link>https://caibb16.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/categories/linux/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>运维</title>
-        <link>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
-        <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Deep Learning</title>
-        <link>https://caibb16.github.io/categories/deep-learning/</link>
-        <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/deep-learning/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>PyTorch</title>
-        <link>https://caibb16.github.io/categories/pytorch/</link>
-        <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/pytorch/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Git</title>
-        <link>https://caibb16.github.io/categories/git/</link>
-        <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/git/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>ROS</title>
-        <link>https://caibb16.github.io/categories/ros/</link>
-        <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/ros/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java</title>
-        <link>https://caibb16.github.io/categories/java/</link>
-        <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/java/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test</title>
-        <link>https://caibb16.github.io/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/test/</guid>
-        <description>&lt;img src="https://caibb16.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://caibb16.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Syntax</title>
-        <link>https://caibb16.github.io/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/syntax/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Themes</title>
-        <link>https://caibb16.github.io/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://caibb16.github.io/categories/themes/</guid>
-        <description></description>
+        <guid>https://caibb16.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+        <description>&lt;img src="https://caibb16.github.io/categories/%E5%B7%A5%E5%85%B7/1667020227932433.jpg" alt="Featured image of post 工具" /&gt;</description>
         </item>
         
     </channel>
