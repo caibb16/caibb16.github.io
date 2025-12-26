@@ -553,15 +553,12 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-<<<<<<< HEAD
 &lt;h2 id=&#34;方法引用&#34;&gt;方法引用
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;定义：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体&lt;/li&gt;
 &lt;li&gt;lambda表达式格式：参数列表 -&amp;gt; 方法体&lt;/li&gt;
 &lt;li&gt;方法引用格式：类名或对象名::方法名&lt;/li&gt;
 &lt;/ol&gt;
-=======
->>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
 </description>
         </item>
         <item>

@@ -14,11 +14,7 @@
         
         <guid>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
-<<<<<<< HEAD
 &lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现，引用如下：&lt;br&gt;
-=======
-&lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现,引用如下：&lt;br&gt;
->>>>>>> 53f3a6d0594b12abf448401390fd691b92cd7322
 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2412.04453&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Paper Link&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://github.com/AnjieCheng/NaVILA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
