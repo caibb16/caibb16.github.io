@@ -310,63 +310,16 @@
             <nav id="TableOfContents">
   <ul>
     <li><a href="#标题">标题</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#h2">H2</a>
-      <ul>
-        <li><a href="#h3">H3</a>
-          <ul>
-            <li><a href="#h4">H4</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#段落">段落</a></li>
-    <li><a href="#引用块">引用块</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#无署名引用">无署名引用</a></li>
-            <li><a href="#有署名引用">有署名引用</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#表格">表格</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#表格内的行内-markdown">表格内的行内 Markdown</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#代码块">代码块</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#使用反引号的代码块">使用反引号的代码块</a></li>
-            <li><a href="#使用四个空格缩进的代码块">使用四个空格缩进的代码块</a></li>
-            <li><a href="#使用-hugo-内置高亮短代码的代码块">使用 Hugo 内置高亮短代码的代码块</a></li>
-            <li><a href="#diff-差异代码块">Diff 差异代码块</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#列表类型">列表类型</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#有序列表">有序列表</a></li>
-            <li><a href="#无序列表">无序列表</a></li>
-            <li><a href="#嵌套列表">嵌套列表</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#其他元素--abbr-sub-sup-kbd-mark">其他元素 — abbr, sub, sup, kbd, mark</a></li>
-    <li><a href="#超链接图片">超链接图片</a></li>
+    <li><a href="#引用块">引用块</a></li>
+    <li><a href="#列表">列表</a></li>
+    <li><a href="#代码块">代码块</a></li>
+    <li><a href="#表格">表格</a></li>
+    <li><a href="#链接与图片">链接与图片</a></li>
+    <li><a href="#强调">强调</a></li>
+    <li><a href="#其他元素">其他元素</a></li>
+    <li><a href="#视频与多媒体">视频与多媒体</a></li>
+    <li><a href="#数学公式">数学公式</a></li>
   </ul>
 </nav>
         </div>
@@ -448,229 +401,152 @@
     <section class="article-content">
     
     
-    <p>本文提供了可在 Hugo 内容文件中使用的基本 Markdown 语法示例，同时展示了 Hugo 主题中 CSS 对基本 HTML 元素的装饰效果。</p>
+    <h1 id="markdown-语法说明">Markdown 语法说明
+</h1><p>Markdown 是一种轻量级标记语言，广泛用于编写文档、博客、说明书等。它语法简洁，易于阅读和编写，可快速转换为 HTML 网页。</p>
 <h2 id="标题">标题
-</h2><p>以下 HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> 元素代表六个级别的章节标题。<code>&lt;h1&gt;</code> 是最高级别，而 <code>&lt;h6&gt;</code> 是最低级别。</p>
-<h1 id="h1">H1
-</h1><h2 id="h2">H2
-</h2><h3 id="h3">H3
-</h3><h4 id="h4">H4
-</h4><h5 id="h5">H5
-</h5><h6 id="h6">H6
-</h6><h2 id="段落">段落
-</h2><p>这是一段示例文本。段落是文档中最基本的文本单元，用于组织和呈现相关的思想和信息。在 Markdown 中，段落由一个或多个连续的文本行组成，通过一个或多个空白行与其他段落分隔。</p>
-<p>这是另一段示例文本。通过将文本分成段落，可以提高文档的可读性，使读者更容易理解和吸收信息。良好的段落结构是清晰写作的关键。</p>
-<h2 id="引用块">引用块
-</h2><p>引用块元素表示从其他来源引用的内容，可选择性地包含引文（必须在 <code>footer</code> 或 <code>cite</code> 元素中），以及可选的行内修改（如注释和缩写）。</p>
-<h4 id="无署名引用">无署名引用
-</h4><blockquote>
-<p>这是一段示例引用文本。
-<strong>注意</strong>你可以在引用块中使用 <em>Markdown 语法</em>。</p>
-</blockquote>
-<h4 id="有署名引用">有署名引用
-</h4><blockquote>
-<p>不要通过共享内存来通信，而应该通过通信来共享内存。<br>
-— <cite>Rob Pike<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
-</blockquote>
-<h2 id="表格">表格
-</h2><p>表格不是核心 Markdown 规范的一部分，但 Hugo 开箱即用地支持它们。</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>姓名</th>
-          <th>年龄</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>张三</td>
-          <td>27</td>
-      </tr>
-      <tr>
-          <td>李四</td>
-          <td>23</td>
-      </tr>
-  </tbody>
-</table></div>
-<h4 id="表格内的行内-markdown">表格内的行内 Markdown
-</h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>斜体</th>
-          <th>粗体</th>
-          <th>代码</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><em>斜体</em></td>
-          <td><strong>粗体</strong></td>
-          <td><code>代码</code></td>
-      </tr>
-  </tbody>
-</table></div>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>A</th>
-          <th>B</th>
-          <th>C</th>
-          <th>D</th>
-          <th>E</th>
-          <th>F</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-          <td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.</td>
-          <td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus</td>
-          <td>Proin sit amet velit nec enim imperdiet vehicula.</td>
-          <td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec</td>
-          <td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien</td>
-      </tr>
-  </tbody>
-</table></div>
-<h2 id="代码块">代码块
-</h2><h4 id="使用反引号的代码块">使用反引号的代码块
-</h4><div class="highlight"><div class="chroma">
+</h2><p>使用 <code>#</code> 号表示标题，支持六级标题：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 一级标题
+</span></span><span class="line"><span class="cl">## 二级标题
+</span></span><span class="line"><span class="cl">### 三级标题
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="使用四个空格缩进的代码块">使用四个空格缩进的代码块
-</h4><pre><code>&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Test&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="使用-hugo-内置高亮短代码的代码块">使用 Hugo 内置高亮短代码的代码块
-</h4><div class="highlight"><div class="chroma">
+</div><h2 id="段落">段落
+</h2><p>直接输入文本即可形成段落。段落之间用空行分隔。</p>
+<h2 id="引用块">引用块
+</h2><p>使用 <code>&gt;</code> 表示引用内容：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; 这是引用内容
+</span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="列表">列表
+</h2><ul>
+<li>无序列表：使用 <code>*</code>、<code>-</code> 或 <code>+</code> 作为标记</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* 项目一
+</span></span><span class="line"><span class="cl">* 项目二
+</span></span></code></pre></td></tr></table>
 </div>
-<h4 id="diff-差异代码块">Diff 差异代码块
-</h4><div class="highlight"><div class="chroma">
+</div><ul>
+<li>有序列表：使用数字加点</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 第一项
+</span></span><span class="line"><span class="cl">2. 第二项
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>支持嵌套列表</li>
+</ul>
+<h2 id="代码块">代码块
+</h2><ul>
+<li>行内代码：用反引号包裹，如 <code>print('Hello')</code></li>
+<li>多行代码块：用三个反引号包裹</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">import torch
+</span></span><span class="line"><span class="cl">print(torch.__version__)
+</span></span><span class="line"><span class="cl">```
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="表格">表格
+</h2><p>使用 <code>|</code> 和 <code>-</code> 创建表格：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">| 姓名 | 年龄 |
+</span></span><span class="line"><span class="cl">| ---- | ---- |
+</span></span><span class="line"><span class="cl">| 张三 | 27   |
+</span></span><span class="line"><span class="cl">| 李四 | 23   |
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="链接与图片">链接与图片
+</h2><ul>
+<li>链接：<code>[描述](网址)</code></li>
+<li>图片：<code>![描述](图片地址)</code></li>
+</ul>
+<h2 id="强调">强调
+</h2><ul>
+<li><em>斜体</em>：用一个星号或下划线包裹</li>
+<li><strong>粗体</strong>：用两个星号或下划线包裹</li>
+<li><del>删除线</del>：用两个波浪线包裹</li>
+</ul>
+<h2 id="其他元素">其他元素
+</h2><ul>
+<li>分割线：<code>---</code> 或 <code>***</code></li>
+<li>脚注：<code>[^1]</code>，在文档底部添加脚注内容</li>
+<li>行内 HTML：可直接嵌入 HTML 标签</li>
+<li>特殊格式：如 <code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;</code>、<code>&lt;mark&gt;高亮&lt;/mark&gt;</code>、<code>&lt;sub&gt;下标&lt;/sub&gt;</code>、<code>&lt;sup&gt;上标&lt;/sup&gt;</code></li>
+</ul>
+<h2 id="视频与多媒体">视频与多媒体
+</h2><ul>
+<li>图片：<code>![图片描述](图片地址)</code></li>
+<li>视频：<code>&lt;video src=&quot;xxx.mp4&quot; controls width=&quot;700&quot;&gt;&lt;/video&gt;</code></li>
+</ul>
+<h2 id="数学公式">数学公式
+</h2><p>支持 LaTeX 语法：</p>
+<ul>
+<li>行内公式：<code>$公式$</code></li>
+<li>块级公式：<code>$$公式$$</code></li>
+<li>多行公式：<code>$$$公式$$$</code></li>
+</ul>
+<p>常用 LaTeX 命令：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">[dependencies.bevy]
-</span></span><span class="line"><span class="cl">git = &#34;https://github.com/bevyengine/bevy&#34;
-</span></span><span class="line"><span class="cl">rev = &#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&#34;
-</span></span><span class="line"><span class="cl"><span class="gd">- features = [&#34;dynamic&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+ features = [&#34;jpeg&#34;, &#34;dynamic&#34;]
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha, \beta, \gamma, \delta, \epsilon # 希腊字母
+</span></span><span class="line"><span class="cl">\sum_{下标}^{上标}, \prod_{下标}^{上标}, \int_{下标}^{上标} # 求和、乘积、积分
+</span></span><span class="line"><span class="cl">\frac{分子}{分母}  # 分数
+</span></span><span class="line"><span class="cl">\sqrt{表达式}     # 平方根
+</span></span><span class="line"><span class="cl">\sqrt[n]{表达式}  # n 次根
+</span></span><span class="line"><span class="cl">\begin{matrix} ... \end{matrix} # 矩阵
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="列表类型">列表类型
-</h2><h4 id="有序列表">有序列表
-</h4><ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<h4 id="无序列表">无序列表
-</h4><ul>
-<li>列表项</li>
-<li>另一项</li>
-<li>再一项</li>
-</ul>
-<h4 id="嵌套列表">嵌套列表
-</h4><ul>
-<li>水果
-<ul>
-<li>苹果</li>
-<li>橙子</li>
-<li>香蕉</li>
-</ul>
-</li>
-<li>乳制品
-<ul>
-<li>牛奶</li>
-<li>奶酪</li>
-</ul>
-</li>
-</ul>
-<h2 id="其他元素--abbr-sub-sup-kbd-mark">其他元素 — abbr, sub, sup, kbd, mark
-</h2><p><abbr title="Graphics Interchange Format">GIF</abbr> 是一种位图图像格式。</p>
-<p>H<sub>2</sub>O</p>
-<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
-<p>按 <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> 键结束会话。</p>
-<p>大多数 <mark>蝾螈</mark> 是夜行性的，捕食昆虫、蠕虫和其他小生物。</p>
-<h2 id="超链接图片">超链接图片
-</h2><p><a class="link" href="https://google.com"  target="_blank" rel="noopener"
-    ><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Google"
-	
-	
-></a></p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>以上引用摘自 Rob Pike 在 2015 年 11 月 18 日 Gopherfest 期间的<a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c"  target="_blank" rel="noopener"
-    >演讲</a>。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
+</div><hr>
+<p>Markdown 语法简单易学，适合快速编写结构化文档。更多高级用法可参考 <a class="link" href="https://markdown.com.cn/"  target="_blank" rel="noopener"
+    >Markdown 官方文档</a>  。</p>
+
 </section>
 
 

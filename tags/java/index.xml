@@ -565,6 +565,21 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;异常&#34;&gt;异常
+&lt;/h2&gt;&lt;h3 id=&#34;异常的分类&#34;&gt;异常的分类
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;检查异常（编译时异常）：在编译阶段被检查的异常，必须处理，否则编译不通过，如IOException、SQLException&lt;/li&gt;
+&lt;li&gt;非检查异常（运行时异常）：在运行阶段被检查的异常，不强制处理，如NullPointerException、ArrayIndexOutOfBoundsException&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;异常的处理&#34;&gt;异常的处理
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;try-catch语句
+&lt;ul&gt;
+&lt;li&gt;try块：包含可能抛出异常的代码&lt;/li&gt;
+&lt;li&gt;catch块：捕获并处理异常，可以有多个catch块处理不同类型的异常。如果catch没有捕获到异常，异常会继续向上抛出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         </item>
         
