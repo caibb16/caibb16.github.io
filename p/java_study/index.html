@@ -1123,8 +1123,27 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 </h3><ol>
 <li>try-catch语句
 <ul>
-<li>try块：包含可能抛出异常的代码</li>
+<li>用在方法调用处，能让代码继续运行</li>
+<li>try块：包含可能抛出异常的代码，当执行到异常时，跳转到对应的catch块处理异常，不再执行try块中后续代码</li>
 <li>catch块：捕获并处理异常，可以有多个catch块处理不同类型的异常。如果catch没有捕获到异常，异常会继续向上抛出</li>
+</ul>
+</li>
+<li>throws关键字
+<ul>
+<li>写在方法定义处，表示该方法可能抛出的异常类型，调用该方法时必须处理异常(编译异常一定要加throws)</li>
+<li>格式：返回值类型 方法名(参数列表) throws 异常类型1, 异常类型2&hellip;</li>
+</ul>
+</li>
+<li>throw关键字
+<ul>
+<li>写在方法体中，表示抛出一个异常对象</li>
+<li>格式：throw new 异常类型(&ldquo;异常信息&rdquo;);</li>
+</ul>
+</li>
+<li>自定义异常
+<ul>
+<li>手动定义异常类，继承Exception类或RuntimeException类，重写构造方法</li>
+<li>用于表示特定的异常情况，让报错信息更加见名知义</li>
 </ul>
 </li>
 </ol>
@@ -1465,7 +1484,7 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
             "vOffset": -20
         },
         "mobile": {
-            "show": true  
+            "show": false  
         },
         "react": {
             "opacityDefault": 0.9,
