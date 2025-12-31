@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>笔记 on caibb16</title>
-        <link>https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/categories/%E7%AC%94%E8%AE%B0/</link>
         <description>Recent content in 笔记 on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Mon, 29 Dec 2025 12:32:33 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 Dec 2025 12:32:33 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数值分析笔记</title>
-        <link>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 29 Dec 2025 12:32:33 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
+        <guid>http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;绪论&#34;&gt;绪论
 &lt;/h2&gt;&lt;h3 id=&#34;误差&#34;&gt;误差
 &lt;/h3&gt;&lt;p&gt;绝对误差： $e = x^* - x$&lt;br&gt;
@@ -198,26 +198,245 @@ $$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;矩阵范数&#34;&gt;矩阵范数
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;算子范数：$||A|| = \max\limits_{x \neq 0} \frac{||Ax||}{||x||}$&lt;/li&gt;
-&lt;li&gt;谱半径：$\rho(A) = \max\limits_{1 \leq i \leq n} |\lambda_i|$，其中 $\lambda_i$ 为矩阵 $A$ 的特征值&lt;/li&gt;
-&lt;li&gt;常用矩阵范数：
+&lt;li&gt;
+&lt;p&gt;算子范数：$||A|| = \max\limits_{x \neq 0} \frac{||Ax||}{||x||}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;谱半径：$\rho(A) = \max\limits_{1 \leq i \leq n} |\lambda_i|$，其中 $\lambda_i$ 为矩阵 $A$ 的特征值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常用矩阵范数：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;$L_1$ 范数：$||A||_ 1 = \max\limits_{1 \leq j \leq n} \sum\limits_{i=1}^{n} |a_{ij}|$&lt;/li&gt;
-&lt;li&gt;$L_{\infty}$ 范数：$||A||_ {\infty} = \max\limits_{1 \leq i \leq n} \sum\limits_{j=1}^{n} |a_{ij}|$&lt;/li&gt;
+&lt;li&gt;$L_1$ 范数：$||A||_ 1 = \max\limits_{1 \leq j \leq n} \sum\limits_{i=1}^{n} |a_{ij}| \quad$ 按列求和的最大值&lt;/li&gt;
+&lt;li&gt;$L_{\infty}$ 范数：$||A||_ {\infty} = \max\limits_{1 \leq i \leq n} \sum\limits_{j=1}^{n} |a_{ij}| \quad$ 按行求和的最大值&lt;/li&gt;
 &lt;li&gt;$L_2$ 范数：$||A||_ 2 = \sqrt{\rho(A^T A)}$&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;条件数：$cond(A) = ||A|| \cdot ||A^{-1}||$&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;谱半径与2范数的关系：$\rho(A) \leq ||A||_ 2$&lt;br&gt;
-如果 $A$ 是对称矩阵，则 $\rho(A) = ||A||_ 2$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;谱半径与2范数的关系：$\rho(A) \leq ||A||_ 2$&lt;br&gt;
+如果 $A$ 是对称矩阵，则 $\rho(A) = ||A||_ 2$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;迭代法求解线性方程组&#34;&gt;迭代法求解线性方程组
+&lt;/h3&gt;&lt;p&gt;将线性方程组 Ax = b 写为分量形式：
+&lt;/p&gt;
+$$
+\begin{cases}
+a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n = b_1 \\
+a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n = b_2 \\
+\quad \quad \quad \vdots \\
+a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n = b_n
+\end{cases}
+$$&lt;p&gt;
+从第 $i$ 个方程中解出 $x_i$，得到如下同解方程组：
+&lt;/p&gt;
+$$
+\begin{cases}
+x_1 = (b_1-a_{12}x_2-a_{13} x_3 \cdots - a_{1n} x_n)/a_{11} \\
+x_2 = (b_2 - a_{21} x_1 - a_{23} x_3 - \cdots - a_{2n} x_n)/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n = (b_n - a_{n1} x_1 - a_{n2} x_2 - \cdots - a_{n,n-1} x_{n-1})/a_{nn}
+\end{cases}
+$$&lt;ol&gt;
+&lt;li&gt;Jacobi 迭代格式：
+$$
+\begin{cases}
+x_1^{(k+1)} = (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)})/a_{11} \\
+x_2^{(k+1)} = (b_2 - a_{21} x_1^{(k)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)})/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (b_n - a_{n1} x_1^{(k)} - a_{n2} x_2^{(k)} - \cdots - a_{n,n-1} x_{n-1}^{(k)})/a_{nn}
+\end{cases}
+$$&lt;/li&gt;
+&lt;li&gt;Gauss-Seidel 迭代格式：&lt;br&gt;
+用新分量替换旧分量
+$$
+\begin{cases}
+x_1^{(k+1)} = (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)})/a_{11} \\
+x_2^{(k+1)} = (b_2 - a_{21} x_1^{(k+1)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)})/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (b_n - a_{n1} x_1^{(k+1)} - a_{n2} x_2^{(k+1)} - \cdots - a_{n,n-1} x_{n-1}^{(k+1)})/a_{nn}
+\end{cases}
+$$&lt;/li&gt;
+&lt;li&gt;SOR 迭代格式：&lt;br&gt;
+第k+1次迭代近似值和第k次迭代近似值的加权平均
+$$
+\begin{cases}
+x_1^{(k+1)} = (1-\omega) x_1^{(k)} + \omega (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)}) /a_{11} \\
+x_2^{(k+1)} = (1-\omega) x_2^{(k)} + \omega (b_2 - a_{21} x_1^{(k+1)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)}) /a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (1-\omega) x_n^{(k)} + \omega (b_n - a_{n1} x_1^{(k+1)} - a_{n2} x_2^{(k+1)} - \cdots - a_{n,n-1} x_{n-1}^{(k+1)}) /a_{nn}
+\end{cases}
+$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;迭代格式的收敛性&#34;&gt;迭代格式的收敛性
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;迭代格式收敛的充分必要条件：迭代矩阵 $B$ 的谱半径 $\rho(B) &amp;lt; 1$&lt;/li&gt;
+&lt;li&gt;Jacobi 迭代格式的收敛性:
+&lt;ul&gt;
+&lt;li&gt;谱半径判断：迭代矩阵特征方程为 $|\lambda D+L+U| = 0$ (系数矩阵的对角线乘 $\lambda$ )&lt;/li&gt;
+&lt;li&gt;充分条件判断：如果系数矩阵 $A$ 严格对角占优，则 Jacobi 迭代格式收敛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Gauss-Seidel 迭代格式的收敛性:
+&lt;ul&gt;
+&lt;li&gt;谱半径判断：迭代矩阵特征方程为 $|\lambda (D+L)+U| = 0$ (系数矩阵的下三角乘 $\lambda$ )&lt;/li&gt;
+&lt;li&gt;充分条件判断：如果系数矩阵 $A$ 严格对角占优，则 Gauss-Seidel 迭代格式收敛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SOR 迭代格式的收敛性:
+&lt;ul&gt;
+&lt;li&gt;收敛的必要条件：$0 &amp;lt; \omega &amp;lt; 2$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;多项式插值&#34;&gt;多项式插值
+&lt;/h2&gt;&lt;h3 id=&#34;拉格朗日插值多项式&#34;&gt;拉格朗日插值多项式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义：设插值节点为 $x_0, x_1, \cdots, x_n$，对应的函数值为 $f(x_0), f(x_1), \cdots, f(x_n)$，若存在一个次数不超过 $n$ 的多项式 $p_n(x)$，使得
+&lt;/p&gt;
+$$p_n(x_i) = f(x_i), \quad i = 0, 1, \cdots, n$$&lt;p&gt;
+成立，则称 $p_n(x)$ 为函数 $f(x)$ 的 $n$ 次插值多项式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定理：满足上述条件的 $n$ 次多项式 $p_n(x)$ 存在且唯一。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基本插值多项式：定义 $n+1$ 个基本插值多项式 $l_k(x)$，满足
+&lt;/p&gt;
+$$
+l_k(x_j) = \begin{cases}1, &amp; j = k \\ 0, &amp; j \neq k \end{cases}
+$$&lt;p&gt;
+则 $l_k(x)$ 可表示为：
+&lt;/p&gt;
+$$
+l_k(x) = \prod\limits_{ \substack{i=0  \\  i \neq k}}^{n} \frac{x - x_i}{x_k - x_i}
+$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用基本插值多项式， $n$ 次 Lagrange 插值多项式为：
+&lt;/p&gt;
+$$
+L_n(x) = \sum\limits_{k=0}^{n} f(x_k) l_k(x)= \sum\limits_{k=0}^{n} f(x_k) \prod\limits_{ \substack{i=0  \\  i \neq k}}^{n} \frac{x - x_i}{x_k - x_i}
+$$&lt;p&gt;
+$l_0(x), l_1(x), \cdots, l_n(x)$ 线性无关，称为 $n$ 次 Lagrange 插值基函数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插值余项及误差估计：若函数 $f(x)$ 在区间 $[a, b]$ 上具有 $n+1$ 阶连续导数，则对任意 $x \in [a, b]$，存在 $\xi \in (a, b)$，使得
+&lt;/p&gt;
+$$
+R_n(x)=f(x) - L_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \omega_{n+1}(x)
+$$&lt;p&gt;
+其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;newton-插值多项式&#34;&gt;Newton 插值多项式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;差商的定义：
+$$
+f[x_i] = f(x_i)
+$$
+$$
+f[x_i, x_{i+1}, \cdots, x_{i+k}] = \frac{f[x_{i+1}, \cdots, x_{i+k}] - f[x_i, \cdots, x_{i+k-1}]}{x_{i+k} - x_i}
+$$&lt;/li&gt;
+&lt;li&gt;$n$ 次 Newton 插值多项式定义为：
+$$
+L_n(x) = f[x_0] + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) \&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;\cdots + f[x_0, x_1, \cdots, x_n](x - x_0)(x - x_1) \cdots (x - x_{n-1})
+$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;$k$ 阶差商与 $k$ 阶导数的关系：
+$$
+f[x_0, x_1, \cdots, x_k] = \frac{f^{(k)}(\eta)}{k!}, \quad \eta \in (\min(x_0, \cdots, x_k), \max(x_0, \cdots, x_k))
+$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;hermite-插值多项式&#34;&gt;Hermite 插值多项式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义：给定$n+1$ 个互异节点 $x_0, x_1, \cdots, x_n$上的函数值和直到$m_i$阶的导数值，令 $m = \sum \limits_0^n(m_i+1)-1$，
+若存在一个次数不超过 $m$ 的多项式 $H_m(x)$，使得
+&lt;/p&gt;
+$$
+\begin{cases}
+H_m^{(j)}(x_i) = f^{(j)}(x_i), \quad j = 0, 1, \cdots, m_i \\
+i = 0, 1, \cdots, n
+\end{cases}
+$$&lt;p&gt;
+则称 $H_m(x)$ 为函数 $f(x)$ 的 Hermite 插值多项式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重节点插值：将上述插值问题看成是在 $m + 1$ 不同节点上的 Newton 插值, 然后取极限就成为 $n + 1$ 不同节点上的 Hermite 插值, 称之为重节点插值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$m$次 Hermite 插值多项式为：
+$$
+H_m(x) = f[x_0] + f[x_0, x_0](x - x_0) + f[x_0, x_0, x_1](x - x_0)^2 \&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\cdots + f[\underbrace{x_0, x_0, \cdots, x_0}&lt;em&gt;{m_0+1}, \underbrace{x_1, x_1, \cdots, x_1}&lt;/em&gt;{m_1+1}, \cdots, \underbrace{x_n, x_n, \cdots, x_n}&lt;em&gt;{m_n+1}](x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n}
+$$
+重节点差商公式：
+$$
+f[\underbrace{x_i, x_i, \cdots, x_i}&lt;/em&gt;{k+1}] = \frac{f^{(k)}(x_i)}{k!} \
+f[x_0, x_0,x_1] = \frac{f[x_0, x_1] - f[x_0, x_0]}{x_1 - x_0}
+$$
+插值余项为：
+$$
+R_m(x) = f(x) - H_m(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} (x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n+1}
+$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3次样条插值函数&#34;&gt;3次样条插值函数
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。&lt;/li&gt;
+&lt;li&gt;求法：&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
         <item>
+        <title>Flow学习笔记</title>
+        <link>http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Sat, 27 Dec 2025 16:15:50 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;生成式模型&#34;&gt;生成式模型
+&lt;/h2&gt;&lt;p&gt;generate something——generate samples from data distributions&lt;br&gt;
+A generative model——convert samples from a initial distribution(e.g.Gaussian) into samples from the data distribution
+&lt;img src=&#34;http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image.png&#34;
+	width=&#34;650&#34;
+	height=&#34;178&#34;
+	srcset=&#34;http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image_hu_9ee1b26accf57f0b.png 480w, http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image_hu_accb71ad25848791.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;生成过程&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;365&#34;
+		data-flex-basis=&#34;876px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;组成&#34;&gt;组成
+&lt;/h2&gt;&lt;p&gt;一个空间的向量场 $u_t$（神经网络）定义了一个常微分方程（ODE），轨迹 $X_t$ 是ODE在某初始条件下的一个解，flow——$Φ_t（x_0）$则是针对不同初始条件的一系列解的集合
+ODE（用于流模型，本文采用）：
+$X_0=x_0, \quad \frac{dX_t}{dt} = u_t(X_t)$&lt;br&gt;
+SDE（在ODE基础上添加扩散系数σt，用于扩散模型）：&lt;br&gt;
+$X_0=x_0, \quad dX_t = u_t(X_t)dt + σ_tdW_t$&lt;/p&gt;
+&lt;h2 id=&#34;训练目标&#34;&gt;训练目标
+&lt;/h2&gt;&lt;p&gt;最大似然估计（MLE）&lt;br&gt;
+给定数据分布 $p_{data}$ 和模型分布 $p_{model}$，MLE目标是最大化观测数据在模型下的似然函数：&lt;br&gt;
+$L(θ) = \prod_{i=1}^{N} p_{model}(x_i; θ)$&lt;br&gt;
+等价于最小化负对数似然：&lt;br&gt;
+$J(θ) = -\sum_{i=1}^{N} \log p_{model}(x_i; θ)$&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Navila复现笔记</title>
-        <link>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现，引用如下：&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2412.04453&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -233,10 +452,10 @@ $$&lt;/li&gt;
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高层次视觉语言理解：VLM输出语言形式的中级动作，例如“右转 30 度”。中级动作输出传达了位置和方向信息，指导机器人的导航策略。&lt;/li&gt;
 &lt;li&gt;低层次运动控制：训练一个低级视觉运动策略来遵循指令以对导航指令进行执行，具体来说就是将VLM的高层语言导航指令转换为精确的联合动作。
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
 	width=&#34;1128&#34;
 	height=&#34;308&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila架构图&#34;
@@ -259,10 +478,10 @@ $$&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;训练过程如下图：&lt;br&gt;
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;441&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila控制策略&#34;
@@ -632,10 +851,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/ol&gt;
 &lt;h3 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
+&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
 	width=&#34;625&#34;
 	height=&#34;344&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;终端显示&#34;
@@ -655,10 +874,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Reinforcement Learning</title>
-        <link>https://caibb16.github.io/p/reinforcement-learning/</link>
+        <link>http://localhost:1313/p/reinforcement-learning/</link>
         <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/reinforcement-learning/</guid>
+        <guid>http://localhost:1313/p/reinforcement-learning/</guid>
         <description>&lt;h2 id=&#34;什么是强化学习&#34;&gt;什么是强化学习
 &lt;/h2&gt;&lt;p&gt;强化学习（Reinforcement Learning，RL）是一种机器学习范式，旨在训练智能体通过与环境交互来学习最佳行为策略，以最大化累积奖励。与监督学习不同，强化学习没有明确的输入输出对，而是通过试错和奖励信号来指导学习过程。&lt;/p&gt;
 &lt;h2 id=&#34;强化学习的基本概念&#34;&gt;强化学习的基本概念
@@ -694,10 +913,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>java_study</title>
-        <link>https://caibb16.github.io/p/java_study/</link>
+        <link>http://localhost:1313/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/java_study/</guid>
+        <guid>http://localhost:1313/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;

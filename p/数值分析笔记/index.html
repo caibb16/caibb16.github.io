@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="期末救急用，记录一些考点公式">
 <title>数值分析笔记</title>
 
-<link rel='canonical' href='https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/'>
+<link rel='canonical' href='http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.84945aa8ed0beadc700fc6923a008654510d25f2ae928fe9a5cb1e0450f90b1a.css"><meta property='og:title' content="数值分析笔记">
 <meta property='og:description' content="期末救急用，记录一些考点公式">
-<meta property='og:url' content='https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/'>
+<meta property='og:url' content='http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/'>
 <meta property='og:site_name' content='caibb16'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数值分析' /><meta property='article:published_time' content='2025-12-29T12:32:33&#43;08:00'/><meta property='article:modified_time' content='2025-12-29T12:32:33&#43;08:00'/>
 <meta name="twitter:title" content="数值分析笔记">
@@ -251,9 +251,9 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://caibb16.github.io/en/" >English</option>
+                                    <option value="http://localhost:1313/en/" >English</option>
                                 
-                                    <option value="https://caibb16.github.io/" selected>简体中文</option>
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
                                 
                             </select>
                         </li>
@@ -328,6 +328,16 @@
         <li><a href="#三对角方程组的追赶法">三对角方程组的追赶法</a></li>
         <li><a href="#向量范数">向量范数</a></li>
         <li><a href="#矩阵范数">矩阵范数</a></li>
+        <li><a href="#迭代法求解线性方程组">迭代法求解线性方程组</a></li>
+        <li><a href="#迭代格式的收敛性">迭代格式的收敛性</a></li>
+      </ul>
+    </li>
+    <li><a href="#多项式插值">多项式插值</a>
+      <ul>
+        <li><a href="#拉格朗日插值多项式">拉格朗日插值多项式</a></li>
+        <li><a href="#newton-插值多项式">Newton 插值多项式</a></li>
+        <li><a href="#hermite-插值多项式">Hermite 插值多项式</a></li>
+        <li><a href="#3次样条插值函数">3次样条插值函数</a></li>
       </ul>
     </li>
   </ul>
@@ -584,17 +594,194 @@ $$</li>
 </ol>
 <h3 id="矩阵范数">矩阵范数
 </h3><ol>
-<li>算子范数：$||A|| = \max\limits_{x \neq 0} \frac{||Ax||}{||x||}$</li>
-<li>谱半径：$\rho(A) = \max\limits_{1 \leq i \leq n} |\lambda_i|$，其中 $\lambda_i$ 为矩阵 $A$ 的特征值</li>
-<li>常用矩阵范数：
+<li>
+<p>算子范数：$||A|| = \max\limits_{x \neq 0} \frac{||Ax||}{||x||}$</p>
+</li>
+<li>
+<p>谱半径：$\rho(A) = \max\limits_{1 \leq i \leq n} |\lambda_i|$，其中 $\lambda_i$ 为矩阵 $A$ 的特征值</p>
+</li>
+<li>
+<p>常用矩阵范数：</p>
 <ul>
-<li>$L_1$ 范数：$||A||_ 1 = \max\limits_{1 \leq j \leq n} \sum\limits_{i=1}^{n} |a_{ij}|$</li>
-<li>$L_{\infty}$ 范数：$||A||_ {\infty} = \max\limits_{1 \leq i \leq n} \sum\limits_{j=1}^{n} |a_{ij}|$</li>
+<li>$L_1$ 范数：$||A||_ 1 = \max\limits_{1 \leq j \leq n} \sum\limits_{i=1}^{n} |a_{ij}| \quad$ 按列求和的最大值</li>
+<li>$L_{\infty}$ 范数：$||A||_ {\infty} = \max\limits_{1 \leq i \leq n} \sum\limits_{j=1}^{n} |a_{ij}| \quad$ 按行求和的最大值</li>
 <li>$L_2$ 范数：$||A||_ 2 = \sqrt{\rho(A^T A)}$</li>
 </ul>
+<p>条件数：$cond(A) = ||A|| \cdot ||A^{-1}||$</p>
 </li>
-<li>谱半径与2范数的关系：$\rho(A) \leq ||A||_ 2$<br>
-如果 $A$ 是对称矩阵，则 $\rho(A) = ||A||_ 2$</li>
+<li>
+<p>谱半径与2范数的关系：$\rho(A) \leq ||A||_ 2$<br>
+如果 $A$ 是对称矩阵，则 $\rho(A) = ||A||_ 2$</p>
+</li>
+</ol>
+<h3 id="迭代法求解线性方程组">迭代法求解线性方程组
+</h3><p>将线性方程组 Ax = b 写为分量形式：
+</p>
+$$
+\begin{cases}
+a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n = b_1 \\
+a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n = b_2 \\
+\quad \quad \quad \vdots \\
+a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n = b_n
+\end{cases}
+$$<p>
+从第 $i$ 个方程中解出 $x_i$，得到如下同解方程组：
+</p>
+$$
+\begin{cases}
+x_1 = (b_1-a_{12}x_2-a_{13} x_3 \cdots - a_{1n} x_n)/a_{11} \\
+x_2 = (b_2 - a_{21} x_1 - a_{23} x_3 - \cdots - a_{2n} x_n)/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n = (b_n - a_{n1} x_1 - a_{n2} x_2 - \cdots - a_{n,n-1} x_{n-1})/a_{nn}
+\end{cases}
+$$<ol>
+<li>Jacobi 迭代格式：
+$$
+\begin{cases}
+x_1^{(k+1)} = (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)})/a_{11} \\
+x_2^{(k+1)} = (b_2 - a_{21} x_1^{(k)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)})/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (b_n - a_{n1} x_1^{(k)} - a_{n2} x_2^{(k)} - \cdots - a_{n,n-1} x_{n-1}^{(k)})/a_{nn}
+\end{cases}
+$$</li>
+<li>Gauss-Seidel 迭代格式：<br>
+用新分量替换旧分量
+$$
+\begin{cases}
+x_1^{(k+1)} = (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)})/a_{11} \\
+x_2^{(k+1)} = (b_2 - a_{21} x_1^{(k+1)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)})/a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (b_n - a_{n1} x_1^{(k+1)} - a_{n2} x_2^{(k+1)} - \cdots - a_{n,n-1} x_{n-1}^{(k+1)})/a_{nn}
+\end{cases}
+$$</li>
+<li>SOR 迭代格式：<br>
+第k+1次迭代近似值和第k次迭代近似值的加权平均
+$$
+\begin{cases}
+x_1^{(k+1)} = (1-\omega) x_1^{(k)} + \omega (b_1 - a_{12} x_2^{(k)} - a_{13} x_3^{(k)} - \cdots - a_{1n} x_n^{(k)}) /a_{11} \\
+x_2^{(k+1)} = (1-\omega) x_2^{(k)} + \omega (b_2 - a_{21} x_1^{(k+1)} - a_{23} x_3^{(k)} - \cdots - a_{2n} x_n^{(k)}) /a_{22} \\
+\quad \quad \quad \vdots \\
+x_n^{(k+1)} = (1-\omega) x_n^{(k)} + \omega (b_n - a_{n1} x_1^{(k+1)} - a_{n2} x_2^{(k+1)} - \cdots - a_{n,n-1} x_{n-1}^{(k+1)}) /a_{nn}
+\end{cases}
+$$</li>
+</ol>
+<h3 id="迭代格式的收敛性">迭代格式的收敛性
+</h3><ol>
+<li>迭代格式收敛的充分必要条件：迭代矩阵 $B$ 的谱半径 $\rho(B) &lt; 1$</li>
+<li>Jacobi 迭代格式的收敛性:
+<ul>
+<li>谱半径判断：迭代矩阵特征方程为 $|\lambda D+L+U| = 0$ (系数矩阵的对角线乘 $\lambda$ )</li>
+<li>充分条件判断：如果系数矩阵 $A$ 严格对角占优，则 Jacobi 迭代格式收敛。</li>
+</ul>
+</li>
+<li>Gauss-Seidel 迭代格式的收敛性:
+<ul>
+<li>谱半径判断：迭代矩阵特征方程为 $|\lambda (D+L)+U| = 0$ (系数矩阵的下三角乘 $\lambda$ )</li>
+<li>充分条件判断：如果系数矩阵 $A$ 严格对角占优，则 Gauss-Seidel 迭代格式收敛。</li>
+</ul>
+</li>
+<li>SOR 迭代格式的收敛性:
+<ul>
+<li>收敛的必要条件：$0 &lt; \omega &lt; 2$</li>
+</ul>
+</li>
+</ol>
+<h2 id="多项式插值">多项式插值
+</h2><h3 id="拉格朗日插值多项式">拉格朗日插值多项式
+</h3><ol>
+<li>
+<p>定义：设插值节点为 $x_0, x_1, \cdots, x_n$，对应的函数值为 $f(x_0), f(x_1), \cdots, f(x_n)$，若存在一个次数不超过 $n$ 的多项式 $p_n(x)$，使得
+</p>
+$$p_n(x_i) = f(x_i), \quad i = 0, 1, \cdots, n$$<p>
+成立，则称 $p_n(x)$ 为函数 $f(x)$ 的 $n$ 次插值多项式。</p>
+</li>
+<li>
+<p>定理：满足上述条件的 $n$ 次多项式 $p_n(x)$ 存在且唯一。</p>
+</li>
+<li>
+<p>基本插值多项式：定义 $n+1$ 个基本插值多项式 $l_k(x)$，满足
+</p>
+$$
+l_k(x_j) = \begin{cases}1, & j = k \\ 0, & j \neq k \end{cases}
+$$<p>
+则 $l_k(x)$ 可表示为：
+</p>
+$$
+l_k(x) = \prod\limits_{ \substack{i=0  \\  i \neq k}}^{n} \frac{x - x_i}{x_k - x_i}
+$$</li>
+<li>
+<p>利用基本插值多项式， $n$ 次 Lagrange 插值多项式为：
+</p>
+$$
+L_n(x) = \sum\limits_{k=0}^{n} f(x_k) l_k(x)= \sum\limits_{k=0}^{n} f(x_k) \prod\limits_{ \substack{i=0  \\  i \neq k}}^{n} \frac{x - x_i}{x_k - x_i}
+$$<p>
+$l_0(x), l_1(x), \cdots, l_n(x)$ 线性无关，称为 $n$ 次 Lagrange 插值基函数。</p>
+</li>
+<li>
+<p>插值余项及误差估计：若函数 $f(x)$ 在区间 $[a, b]$ 上具有 $n+1$ 阶连续导数，则对任意 $x \in [a, b]$，存在 $\xi \in (a, b)$，使得
+</p>
+$$
+R_n(x)=f(x) - L_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \omega_{n+1}(x)
+$$<p>
+其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$。</p>
+</li>
+</ol>
+<h3 id="newton-插值多项式">Newton 插值多项式
+</h3><ol>
+<li>差商的定义：
+$$
+f[x_i] = f(x_i)
+$$
+$$
+f[x_i, x_{i+1}, \cdots, x_{i+k}] = \frac{f[x_{i+1}, \cdots, x_{i+k}] - f[x_i, \cdots, x_{i+k-1}]}{x_{i+k} - x_i}
+$$</li>
+<li>$n$ 次 Newton 插值多项式定义为：
+$$
+L_n(x) = f[x_0] + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) \\+ \cdots + f[x_0, x_1, \cdots, x_n](x - x_0)(x - x_1) \cdots (x - x_{n-1})
+$$</li>
+<li>$k$ 阶差商与 $k$ 阶导数的关系：
+$$
+f[x_0, x_1, \cdots, x_k] = \frac{f^{(k)}(\eta)}{k!}, \quad \eta \in (\min(x_0, \cdots, x_k), \max(x_0, \cdots, x_k))
+$$</li>
+</ol>
+<h3 id="hermite-插值多项式">Hermite 插值多项式
+</h3><ol>
+<li>
+<p>定义：给定$n+1$ 个互异节点 $x_0, x_1, \cdots, x_n$上的函数值和直到$m_i$阶的导数值，令 $m = \sum \limits_0^n(m_i+1)-1$，
+若存在一个次数不超过 $m$ 的多项式 $H_m(x)$，使得
+</p>
+$$
+\begin{cases}
+H_m^{(j)}(x_i) = f^{(j)}(x_i), \quad j = 0, 1, \cdots, m_i \\
+i = 0, 1, \cdots, n
+\end{cases}
+$$<p>
+则称 $H_m(x)$ 为函数 $f(x)$ 的 Hermite 插值多项式。</p>
+</li>
+<li>
+<p>重节点插值：将上述插值问题看成是在 $m + 1$ 不同节点上的 Newton 插值, 然后取极限就成为 $n + 1$ 不同节点上的 Hermite 插值, 称之为重节点插值。</p>
+</li>
+</ol>
+<p>$m$次 Hermite 插值多项式为：
+</p>
+$$
+H_m(x) = f[x_0] + f[x_0, x_0](x - x_0) + f[x_0, x_0, x_1](x - x_0)^2 \\+
+ \cdots + f[\underbrace{x_0, x_0, \cdots, x_0}_{m_0+1}, \underbrace{x_1, x_1, \cdots, x_1}_{m_1+1}, \cdots, \underbrace{x_n, x_n, \cdots, x_n}_{m_n+1}](x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n}
+$$<p>
+重节点差商公式：
+</p>
+$$
+f[\underbrace{x_i, x_i, \cdots, x_i}_{k+1}] = \frac{f^{(k)}(x_i)}{k!} \\
+f[x_0, x_0,x_1] = \frac{f[x_0, x_1] - f[x_0, x_0]}{x_1 - x_0} 
+$$<p>
+插值余项为：
+</p>
+$$
+R_m(x) = f(x) - H_m(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} (x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n+1}
+$$<h3 id="3次样条插值函数">3次样条插值函数
+</h3><ol>
+<li>定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。</li>
+<li>求法：</li>
 </ol>
 
 </section>
@@ -667,6 +854,19 @@ $$</li>
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Flow学习笔记</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -867,7 +1067,7 @@ $$</li>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.30c9f370e7a4ea8e4c6c5b229cb5ea5c8a5d4a4c503b2c5728501955803efc86.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -963,7 +1163,7 @@ $$</li>
             "vOffset": -20
         },
         "mobile": {
-            "show": true  
+            "show": false  
         },
         "react": {
             "opacityDefault": 0.9,
