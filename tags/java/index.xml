@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java on caibb16</title>
-        <link>http://localhost:1313/tags/java/</link>
+        <link>https://caibb16.github.io/tags/java/</link>
         <description>Recent content in Java on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>java_study</title>
-        <link>http://localhost:1313/p/java_study/</link>
+        <link>https://caibb16.github.io/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/java_study/</guid>
+        <guid>https://caibb16.github.io/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
@@ -575,8 +575,27 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;try-catch语句
 &lt;ul&gt;
-&lt;li&gt;try块：包含可能抛出异常的代码&lt;/li&gt;
+&lt;li&gt;用在方法调用处，能让代码继续运行&lt;/li&gt;
+&lt;li&gt;try块：包含可能抛出异常的代码，当执行到异常时，跳转到对应的catch块处理异常，不再执行try块中后续代码&lt;/li&gt;
 &lt;li&gt;catch块：捕获并处理异常，可以有多个catch块处理不同类型的异常。如果catch没有捕获到异常，异常会继续向上抛出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;throws关键字
+&lt;ul&gt;
+&lt;li&gt;写在方法定义处，表示该方法可能抛出的异常类型，调用该方法时必须处理异常(编译异常一定要加throws)&lt;/li&gt;
+&lt;li&gt;格式：返回值类型 方法名(参数列表) throws 异常类型1, 异常类型2&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;throw关键字
+&lt;ul&gt;
+&lt;li&gt;写在方法体中，表示抛出一个异常对象&lt;/li&gt;
+&lt;li&gt;格式：throw new 异常类型(&amp;ldquo;异常信息&amp;rdquo;);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自定义异常
+&lt;ul&gt;
+&lt;li&gt;手动定义异常类，继承Exception类或RuntimeException类，重写构造方法&lt;/li&gt;
+&lt;li&gt;用于表示特定的异常情况，让报错信息更加见名知义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

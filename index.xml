@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>caibb16</title>
-        <link>http://localhost:1313/</link>
+        <link>https://caibb16.github.io/</link>
         <description>Recent content on caibb16</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
-        <lastBuildDate>Mon, 29 Dec 2025 12:32:33 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 Dec 2025 12:32:33 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数值分析笔记</title>
-        <link>http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
+        <link>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 29 Dec 2025 12:32:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;绪论&#34;&gt;绪论
 &lt;/h2&gt;&lt;h3 id=&#34;误差&#34;&gt;误差
 &lt;/h3&gt;&lt;p&gt;绝对误差： $e = x^* - x$&lt;br&gt;
@@ -384,54 +384,137 @@ $$
 R_m(x) = f(x) - H_m(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} (x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n+1}
 $$&lt;h3 id=&#34;3次样条插值函数&#34;&gt;3次样条插值函数
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。&lt;/li&gt;
+&lt;li&gt;定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。&lt;br&gt;
+要求3次样条插值函数 $S(x)$，每个小区间要确定4个参数，共要确定 $4n$ 个参数。&lt;br&gt;
+在每个节点处满足下面的连续性条件:&lt;br&gt;
+$S(x_j-0) = S(x_j+0),\quad S&amp;rsquo;(x_j-0) = S&amp;rsquo;(x_j+0),\quad S&amp;rsquo;&amp;rsquo;(x_j-0) = S&amp;rsquo;&amp;rsquo;(x_j+0), \quad j = 1, 2, \cdots, n-1$&lt;br&gt;
+共有 $3(n-1)$ 个条件，加上$n+1$ 个插值条件，共有 $4n - 2$ 个条件，还要加上2个条件，才能确定 $4n$ 个参数。&lt;br&gt;
+常用的附加条件有：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;(边界条件) 已知两端点的一阶导数, 即 $S&amp;rsquo;(x_0) = f&amp;rsquo;(x_0), \quad S&amp;rsquo;(x_n) = f&amp;rsquo;(x_n)$&lt;/li&gt;
+&lt;li&gt;(边界条件) 已知两端点的二阶导数, 即 $S&amp;rsquo;&amp;rsquo;(x_0) = f&amp;rsquo;&amp;rsquo;(x_0), \quad S&amp;rsquo;&amp;rsquo;(x_n) = f&amp;rsquo;&amp;rsquo;(x_n)$
+若令 $S&amp;rsquo;&amp;rsquo;(x_0) = 0, \quad S&amp;rsquo;&amp;rsquo;(x_n) = 0$，则称为自然边界条件。&lt;/li&gt;
+&lt;li&gt;(连接条件) 要求 $S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x)$ 在 $x_1$ 和 $x_{n-1}$ 处连续，即 $S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_1-0) = S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_1+0), \quad S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_{n-1}-0) = S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_{n-1}+0)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;求法：&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>Flow学习笔记</title>
-        <link>http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Sat, 27 Dec 2025 16:15:50 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-        <description>&lt;h2 id=&#34;生成式模型&#34;&gt;生成式模型
-&lt;/h2&gt;&lt;p&gt;generate something——generate samples from data distributions&lt;br&gt;
-A generative model——convert samples from a initial distribution(e.g.Gaussian) into samples from the data distribution
-&lt;img src=&#34;http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image.png&#34;
-	width=&#34;650&#34;
-	height=&#34;178&#34;
-	srcset=&#34;http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image_hu_9ee1b26accf57f0b.png 480w, http://localhost:1313/p/flow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image_hu_accb71ad25848791.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;生成过程&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;365&#34;
-		data-flex-basis=&#34;876px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;组成&#34;&gt;组成
-&lt;/h2&gt;&lt;p&gt;一个空间的向量场 $u_t$（神经网络）定义了一个常微分方程（ODE），轨迹 $X_t$ 是ODE在某初始条件下的一个解，flow——$Φ_t（x_0）$则是针对不同初始条件的一系列解的集合
-ODE（用于流模型，本文采用）：
-$X_0=x_0, \quad \frac{dX_t}{dt} = u_t(X_t)$&lt;br&gt;
-SDE（在ODE基础上添加扩散系数σt，用于扩散模型）：&lt;br&gt;
-$X_0=x_0, \quad dX_t = u_t(X_t)dt + σ_tdW_t$&lt;/p&gt;
-&lt;h2 id=&#34;训练目标&#34;&gt;训练目标
-&lt;/h2&gt;&lt;p&gt;最大似然估计（MLE）&lt;br&gt;
-给定数据分布 $p_{data}$ 和模型分布 $p_{model}$，MLE目标是最大化观测数据在模型下的似然函数：&lt;br&gt;
-$L(θ) = \prod_{i=1}^{N} p_{model}(x_i; θ)$&lt;br&gt;
-等价于最小化负对数似然：&lt;br&gt;
-$J(θ) = -\sum_{i=1}^{N} \log p_{model}(x_i; θ)$&lt;/p&gt;
+&lt;p&gt;$S(x)=y_j+{f[x_j,x_{j+1}]-(\frac{1}{3}M_j+\frac{1}{6}M_{j+1})h_j}(x-x_j)+ \frac{M_j}{2}(x - x_j)^2 + \frac{M_{j+1} - M_j}{6h_j}(x - x_j)^3, \quad x \in [x_j, x_{j+1}]，j=0,1,⋯,n-1$&lt;/p&gt;
+&lt;p&gt;其中 $h_j = x_{j+1} - x_j$，$M_j = S&amp;rsquo;&amp;rsquo;(x_j)$&lt;/p&gt;
+&lt;p&gt;对于边界条件 $S&amp;rsquo;(x_0) = f&amp;rsquo;(x_0), \quad S&amp;rsquo;(x_n) = f&amp;rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+&lt;/p&gt;
+$$\begin{bmatrix}
+2 &amp; 1 \\
+\mu_1 &amp; 2 &amp; \lambda_1 \\
+&amp; \mu_2 &amp; 2 &amp; \lambda_2 \\
+&amp; &amp; \ddots &amp; \ddots &amp; \ddots \\
+&amp; &amp; &amp; \mu_{n-1} &amp; 2 &amp; \lambda_{n-1} \\
+&amp; &amp; &amp; &amp; 1 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+M_0 \\
+M_1 \\
+M_2 \\
+\vdots \\
+M_{n-1} \\
+M_n
+\end{bmatrix} =
+\begin{bmatrix}
+d_0 \\
+d_1 \\
+d_2 \\
+\vdots \\
+d_{n-1} \\
+d_n
+\end{bmatrix}
+$$&lt;p&gt;
+对于边界条件 $S&amp;rsquo;&amp;rsquo;(x_0) = f&amp;rsquo;&amp;rsquo;(x_0), \quad S&amp;rsquo;&amp;rsquo;(x_n) = f&amp;rsquo;&amp;rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+&lt;/p&gt;
+$$\begin{bmatrix}
+2 &amp; \lambda_1 \\
+\mu_2 &amp; 2 &amp; \lambda_2 \\
+&amp; \mu_3 &amp; 2 &amp; \lambda_3 \\
+&amp; &amp; \ddots &amp; \ddots &amp; \ddots \\
+&amp; &amp; &amp; \mu_{n-2} &amp; 2 &amp; \lambda_{n-2} \\
+&amp; &amp; &amp; &amp; \mu_{n-1} &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+M_1 \\
+M_2 \\
+M_3 \\
+\vdots \\
+M_{n-2} \\ 
+M_{n-1}
+\end{bmatrix} =
+\begin{bmatrix}
+d_1-\mu_1 f&#39;&#39;(x_0) \\
+d_2 \\
+d_3 \\
+\vdots \\
+d_{n-2} \\
+d_{n-1}-\lambda_{n-1} f&#39;&#39;(x_n)
+\end{bmatrix}
+$$&lt;p&gt;
+其中
+&lt;/p&gt;
+$$\mu_j = \frac{h_{j-1}}{h_{j-1} + h_j}, \quad \lambda_j = \frac{h_j}{h_{j-1} + h_j}=1-\mu_j, \quad j = 1, 2, \cdots, n-1$$&lt;p&gt;
+&lt;/p&gt;
+$$d_0 = 6f[x_0,x_0,x_1], \quad d_n = 6f[x_{n-1},x_n,x_n]$$&lt;p&gt;
+&lt;/p&gt;
+$$d_j = 6 \left( f[x_{j-1}, x_j, x_{j+1}] \right), \quad j = 1, 2, \cdots, n-1$$&lt;h2 id=&#34;多项式逼近&#34;&gt;多项式逼近
+&lt;/h2&gt;&lt;h3 id=&#34;最佳一致逼近&#34;&gt;最佳一致逼近
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;连续函数的范数：设$f\in C[a,b]$，记
+$$
+||f||_1 = \int_a^b |f(x)| dx,\quad
+||f||_{\infty} = \max_{a \leq x \leq b} |f(x)|,\quad
+||f||_2 = \sqrt{ \int_a^b |f(x)|^2 dx } $$&lt;/li&gt;
+&lt;li&gt;最佳一致逼近多项式&lt;br&gt;
+定义：设 $f(x) \in C[a,b]$，$M_n$ 为次数不超过 $n$ 的任意多项式集合，若$\exists p_n\in M_n$，使得对任意 $q_n \in M_n$，有
+$$||f - p_n||_{\infty} \leq ||f - q_n||_{\infty}$$
+则称 $p_n(x)$ 为函数 $f(x)$ 在区间 $[a,b]$ 上的$n$次最佳一致逼近多项式。&lt;/li&gt;
+&lt;li&gt;一次最佳一致逼近多项式求法：&lt;br&gt;
+设 $p_1(x) = c_0 + c_1 x$，若 $f&amp;rsquo;&amp;rsquo;(x)$ 在 $(a, b)$ 内存在且保号，则 $f(x) − p_1 (x)$ 在 [a, b] 内有 3 个交错偏差点 $a, x_1 , b$, 于是可得
+$$\begin{cases}
+f(a) - p_1(a) = -[f(x_1)-p_1(x_1)] = f(b)-p_1(b) \\
+f&#39;(x_1) - p_1&#39;(x_1) = 0
+\end{cases}$$&lt;/li&gt;
+&lt;li&gt;最佳平方逼近多项式&lt;br&gt;
+定义：设$X$为内积空间， $f \in X$，$M$ 为$X$的子空间，$\varphi_0,\varphi_1,\cdots,\varphi_m$为$M$的一组基，若$\exists \varphi\in M_n$，使得对任意 $\psi \in M$，有
+$$||f - \varphi|| \leq ||f - \psi||$$
+则称 $ \varphi$ 是 $f$ 在 $M$ 中的最佳平方逼近元&lt;/li&gt;
+&lt;li&gt;最佳平方逼近多项式求法：&lt;br&gt;
+如果$\varphi_i(x)=x^i(i=0,1,\cdots,m)$，设 $p(x) = \sum\limits_{i=0}^{m} c_i \varphi_i(x)$，则 $p(x)$ 称为 $f(x)$ 在 $[a, b]$ 上的 $m$ 次最佳平方逼近多项式&lt;br&gt;
+$c_0 , c_1 , \cdots , c_m$ 是下面的 (正规) 方程组的解:
+$$\begin{bmatrix}
+(\varphi_0, \varphi_0) &amp; (\varphi_0, \varphi_1) &amp; \cdots &amp; (\varphi_0, \varphi_m) \\
+(\varphi_1, \varphi_0) &amp; (\varphi_1, \varphi_1) &amp; \cdots &amp; (\varphi_1, \varphi_m) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+(\varphi_m, \varphi_0) &amp; (\varphi_m, \varphi_1) &amp; \cdots &amp; (\varphi_m, \varphi_m)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\
+c_1 \\
+\vdots \\
+c_m
+\end{bmatrix} =
+\begin{bmatrix}
+(f, \varphi_0) \\
+(f, \varphi_1) \\
+\vdots \\
+(f, \varphi_m)
+\end{bmatrix}$$
+其中 $(f, g) = \int_a^b f(x) g(x) dx$ 为内积。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
         <title>Navila复现笔记</title>
-        <link>http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现，引用如下：&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2412.04453&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -447,10 +530,10 @@ $J(θ) = -\sum_{i=1}^{N} \log p_{model}(x_i; θ)$&lt;/p&gt;
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高层次视觉语言理解：VLM输出语言形式的中级动作，例如“右转 30 度”。中级动作输出传达了位置和方向信息，指导机器人的导航策略。&lt;/li&gt;
 &lt;li&gt;低层次运动控制：训练一个低级视觉运动策略来遵循指令以对导航指令进行执行，具体来说就是将VLM的高层语言导航指令转换为精确的联合动作。
-&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
 	width=&#34;1128&#34;
 	height=&#34;308&#34;
-	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila架构图&#34;
@@ -473,10 +556,10 @@ $J(θ) = -\sum_{i=1}^{N} \log p_{model}(x_i; θ)$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;训练过程如下图：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;441&#34;
-	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila控制策略&#34;
@@ -846,10 +929,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/ol&gt;
 &lt;h3 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
+&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
 	width=&#34;625&#34;
 	height=&#34;344&#34;
-	srcset=&#34;http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, http://localhost:1313/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;终端显示&#34;
@@ -869,10 +952,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Reinforcement Learning</title>
-        <link>http://localhost:1313/p/reinforcement-learning/</link>
+        <link>https://caibb16.github.io/p/reinforcement-learning/</link>
         <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/reinforcement-learning/</guid>
+        <guid>https://caibb16.github.io/p/reinforcement-learning/</guid>
         <description>&lt;h2 id=&#34;什么是强化学习&#34;&gt;什么是强化学习
 &lt;/h2&gt;&lt;p&gt;强化学习（Reinforcement Learning，RL）是一种机器学习范式，旨在训练智能体通过与环境交互来学习最佳行为策略，以最大化累积奖励。与监督学习不同，强化学习没有明确的输入输出对，而是通过试错和奖励信号来指导学习过程。&lt;/p&gt;
 &lt;h2 id=&#34;强化学习的基本概念&#34;&gt;强化学习的基本概念
@@ -908,10 +991,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Linux 常用命令速查</title>
-        <link>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 Linux 命令，偏&amp;quot;日常使用备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1406,10 +1489,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>PyTorch 张量操作命令速查</title>
-        <link>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 PyTorch 张量操作命令，偏&amp;quot;查表备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1919,10 +2002,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>git命令自用</title>
-        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
+        <link>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
+        <guid>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2047,10 +2130,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Turtlebot3_test</title>
-        <link>http://localhost:1313/p/turtlebot3_test/</link>
+        <link>https://caibb16.github.io/p/turtlebot3_test/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/turtlebot3_test/</guid>
+        <guid>https://caibb16.github.io/p/turtlebot3_test/</guid>
         <description>&lt;h2 id=&#34;前置准备&#34;&gt;前置准备
 &lt;/h2&gt;&lt;p&gt;运行相关命令前需先安装对应功能包，如turtlebot3、slam_toolbox、cartographer、nav2等。&lt;br&gt;
 若从源码编译安装，请确保已编译对应功能包。
@@ -2145,10 +2228,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>java_study</title>
-        <link>http://localhost:1313/p/java_study/</link>
+        <link>https://caibb16.github.io/p/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/java_study/</guid>
+        <guid>https://caibb16.github.io/p/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
@@ -2711,8 +2794,27 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;try-catch语句
 &lt;ul&gt;
-&lt;li&gt;try块：包含可能抛出异常的代码&lt;/li&gt;
+&lt;li&gt;用在方法调用处，能让代码继续运行&lt;/li&gt;
+&lt;li&gt;try块：包含可能抛出异常的代码，当执行到异常时，跳转到对应的catch块处理异常，不再执行try块中后续代码&lt;/li&gt;
 &lt;li&gt;catch块：捕获并处理异常，可以有多个catch块处理不同类型的异常。如果catch没有捕获到异常，异常会继续向上抛出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;throws关键字
+&lt;ul&gt;
+&lt;li&gt;写在方法定义处，表示该方法可能抛出的异常类型，调用该方法时必须处理异常(编译异常一定要加throws)&lt;/li&gt;
+&lt;li&gt;格式：返回值类型 方法名(参数列表) throws 异常类型1, 异常类型2&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;throw关键字
+&lt;ul&gt;
+&lt;li&gt;写在方法体中，表示抛出一个异常对象&lt;/li&gt;
+&lt;li&gt;格式：throw new 异常类型(&amp;ldquo;异常信息&amp;rdquo;);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自定义异常
+&lt;ul&gt;
+&lt;li&gt;手动定义异常类，继承Exception类或RuntimeException类，重写构造方法&lt;/li&gt;
+&lt;li&gt;用于表示特定的异常情况，让报错信息更加见名知义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -2720,19 +2822,19 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://caibb16.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://caibb16.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Markdown 语法指南</title>
-        <link>http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
+        <link>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
-        <description>&lt;img src="http://localhost:1313/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;h1 id=&#34;markdown-语法说明&#34;&gt;Markdown 语法说明
+        <guid>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
+        <description>&lt;img src="https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;h1 id=&#34;markdown-语法说明&#34;&gt;Markdown 语法说明
 &lt;/h1&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，广泛用于编写文档、博客、说明书等。它语法简洁，易于阅读和编写，可快速转换为 HTML 网页。&lt;/p&gt;
 &lt;h2 id=&#34;标题&#34;&gt;标题
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 号表示标题，支持六级标题：&lt;/p&gt;
@@ -2881,10 +2983,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>http://localhost:1313/p/math-typesetting/</link>
+        <link>https://caibb16.github.io/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
+        <guid>https://caibb16.github.io/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
@@ -2923,27 +3025,27 @@ $$</description>
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://caibb16.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://caibb16.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;一名路过的seu研究生，目前正在转码，希望能通过博客记录学习过程中的点滴。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>链接</title>
-        <link>http://localhost:1313/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://caibb16.github.io/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://caibb16.github.io/%E9%93%BE%E6%8E%A5/</guid>
         <description></description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://caibb16.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://caibb16.github.io/search/</guid>
         <description></description>
         </item>
         
