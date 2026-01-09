@@ -340,6 +340,31 @@
         <li><a href="#3次样条插值函数">3次样条插值函数</a></li>
       </ul>
     </li>
+    <li><a href="#多项式逼近">多项式逼近</a>
+      <ul>
+        <li><a href="#最佳一致逼近">最佳一致逼近</a></li>
+      </ul>
+    </li>
+    <li><a href="#数值积分与数值微分">数值积分与数值微分</a>
+      <ul>
+        <li><a href="#插值型求积公式">插值型求积公式</a></li>
+        <li><a href="#复化求积公式">复化求积公式</a></li>
+        <li><a href="#romberg-求积方法">Romberg 求积方法</a></li>
+        <li><a href="#gauss-求积公式">Gauss 求积公式</a></li>
+        <li><a href="#数值微分">数值微分</a></li>
+      </ul>
+    </li>
+    <li><a href="#常微分方程数值解">常微分方程数值解</a>
+      <ul>
+        <li><a href="#euler-方法">Euler 方法</a></li>
+        <li><a href="#runge-kutta-方法">Runge-Kutta 方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#偏微分方程数值解">偏微分方程数值解</a>
+      <ul>
+        <li><a href="#抛物型方程的差分解法">抛物型方程的差分解法</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -780,8 +805,387 @@ $$
 R_m(x) = f(x) - H_m(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} (x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n+1}
 $$<h3 id="3次样条插值函数">3次样条插值函数
 </h3><ol>
-<li>定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。</li>
+<li>定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。<br>
+要求3次样条插值函数 $S(x)$，每个小区间要确定4个参数，共要确定 $4n$ 个参数。<br>
+在每个节点处满足下面的连续性条件:<br>
+$S(x_j-0) = S(x_j+0),\quad S&rsquo;(x_j-0) = S&rsquo;(x_j+0),\quad S&rsquo;&rsquo;(x_j-0) = S&rsquo;&rsquo;(x_j+0), \quad j = 1, 2, \cdots, n-1$<br>
+共有 $3(n-1)$ 个条件，加上$n+1$ 个插值条件，共有 $4n - 2$ 个条件，还要加上2个条件，才能确定 $4n$ 个参数。<br>
+常用的附加条件有：</li>
+</ol>
+<ul>
+<li>(边界条件) 已知两端点的一阶导数, 即 $S&rsquo;(x_0) = f&rsquo;(x_0), \quad S&rsquo;(x_n) = f&rsquo;(x_n)$</li>
+<li>(边界条件) 已知两端点的二阶导数, 即 $S&rsquo;&rsquo;(x_0) = f&rsquo;&rsquo;(x_0), \quad S&rsquo;&rsquo;(x_n) = f&rsquo;&rsquo;(x_n)$
+若令 $S&rsquo;&rsquo;(x_0) = 0, \quad S&rsquo;&rsquo;(x_n) = 0$，则称为自然边界条件。</li>
+<li>(连接条件) 要求 $S&rsquo;&rsquo;&rsquo;(x)$ 在 $x_1$ 和 $x_{n-1}$ 处连续，即 $S&rsquo;&rsquo;&rsquo;(x_1-0) = S&rsquo;&rsquo;&rsquo;(x_1+0), \quad S&rsquo;&rsquo;&rsquo;(x_{n-1}-0) = S&rsquo;&rsquo;&rsquo;(x_{n-1}+0)$</li>
+</ul>
+<ol start="2">
 <li>求法：</li>
+</ol>
+<p>$S(x)=y_j+{f[x_j,x_{j+1}]-(\frac{1}{3}M_j+\frac{1}{6}M_{j+1})h_j}(x-x_j)+ \frac{M_j}{2}(x - x_j)^2 + \frac{M_{j+1} - M_j}{6h_j}(x - x_j)^3, \quad x \in [x_j, x_{j+1}]，j=0,1,⋯,n-1$</p>
+<p>其中 $h_j = x_{j+1} - x_j$，$M_j = S&rsquo;&rsquo;(x_j)$</p>
+<p>对于边界条件 $S&rsquo;(x_0) = f&rsquo;(x_0), \quad S&rsquo;(x_n) = f&rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+</p>
+$$\begin{bmatrix}
+2 & 1 \\
+\mu_1 & 2 & \lambda_1 \\
+& \mu_2 & 2 & \lambda_2 \\
+& & \ddots & \ddots & \ddots \\
+& & & \mu_{n-1} & 2 & \lambda_{n-1} \\
+& & & & 1 & 2
+\end{bmatrix}
+\begin{bmatrix}
+M_0 \\
+M_1 \\
+M_2 \\
+\vdots \\
+M_{n-1} \\
+M_n
+\end{bmatrix} =
+\begin{bmatrix}
+d_0 \\
+d_1 \\
+d_2 \\
+\vdots \\
+d_{n-1} \\
+d_n
+\end{bmatrix}
+$$<p>
+对于边界条件 $S&rsquo;&rsquo;(x_0) = f&rsquo;&rsquo;(x_0), \quad S&rsquo;&rsquo;(x_n) = f&rsquo;&rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+</p>
+$$\begin{bmatrix}
+2 & \lambda_1 \\
+\mu_2 & 2 & \lambda_2 \\
+& \mu_3 & 2 & \lambda_3 \\
+& & \ddots & \ddots & \ddots \\
+& & & \mu_{n-2} & 2 & \lambda_{n-2} \\
+& & & & \mu_{n-1} & 2
+\end{bmatrix}
+\begin{bmatrix}
+M_1 \\
+M_2 \\
+M_3 \\
+\vdots \\
+M_{n-2} \\ 
+M_{n-1}
+\end{bmatrix} =
+\begin{bmatrix}
+d_1-\mu_1 f''(x_0) \\
+d_2 \\
+d_3 \\
+\vdots \\
+d_{n-2} \\
+d_{n-1}-\lambda_{n-1} f''(x_n)
+\end{bmatrix}
+$$<p>
+其中
+</p>
+$$\mu_j = \frac{h_{j-1}}{h_{j-1} + h_j}, \quad \lambda_j = \frac{h_j}{h_{j-1} + h_j}=1-\mu_j, \quad j = 1, 2, \cdots, n-1$$<p>
+</p>
+$$d_0 = 6f[x_0,x_0,x_1], \quad d_n = 6f[x_{n-1},x_n,x_n]$$<p>
+</p>
+$$d_j = 6 \left( f[x_{j-1}, x_j, x_{j+1}] \right), \quad j = 1, 2, \cdots, n-1$$<h2 id="多项式逼近">多项式逼近
+</h2><h3 id="最佳一致逼近">最佳一致逼近
+</h3><ul>
+<li>连续函数的范数：设$f\in C[a,b]$，记
+$$
+||f||_1 = \int_a^b |f(x)| dx,\quad
+||f||_{\infty} = \max_{a \leq x \leq b} |f(x)|,\quad
+||f||_2 = \sqrt{ \int_a^b |f(x)|^2 dx } $$</li>
+<li>最佳一致逼近多项式<br>
+定义：设 $f(x) \in C[a,b]$，$M_n$ 为次数不超过 $n$ 的任意多项式集合，若$\exists p_n\in M_n$，使得对任意 $q_n \in M_n$，有
+$$||f - p_n||_{\infty} \leq ||f - q_n||_{\infty}$$
+则称 $p_n(x)$ 为函数 $f(x)$ 在区间 $[a,b]$ 上的$n$次最佳一致逼近多项式。</li>
+<li>一次最佳一致逼近多项式求法：<br>
+设 $p_1(x) = c_0 + c_1 x$，若 $f&rsquo;&rsquo;(x)$ 在 $(a, b)$ 内存在且保号，则 $f(x) − p_1 (x)$ 在 [a, b] 内有 3 个交错偏差点 $a, x_1 , b$, 于是可得
+$$\begin{cases}
+f(a) - p_1(a) = -[f(x_1)-p_1(x_1)] = f(b)-p_1(b) \\
+f'(x_1) - p_1'(x_1) = 0
+\end{cases}$$</li>
+<li>最佳平方逼近多项式<br>
+定义：设$X$为内积空间， $f \in X$，$M$ 为$X$的子空间，$\varphi_0,\varphi_1,\cdots,\varphi_m$为$M$的一组基，若$\exists \varphi\in M_n$，使得对任意 $\psi \in M$，有
+$$||f - \varphi|| \leq ||f - \psi||$$
+则称 $ \varphi$ 是 $f$ 在 $M$ 中的最佳平方逼近元</li>
+<li>最佳平方逼近多项式求法：<br>
+如果$\varphi_i(x)=x^i(i=0,1,\cdots,m)$，设 $p(x) = \sum\limits_{i=0}^{m} c_i \varphi_i(x)$，则 $p(x)$ 称为 $f(x)$ 在 $[a, b]$ 上的 $m$ 次最佳平方逼近多项式<br>
+$c_0 , c_1 , \cdots , c_m$ 是下面的 (正规) 方程组的解:
+$$\begin{bmatrix}
+(\varphi_0, \varphi_0) & (\varphi_0, \varphi_1) & \cdots & (\varphi_0, \varphi_m) \\
+(\varphi_1, \varphi_0) & (\varphi_1, \varphi_1) & \cdots & (\varphi_1, \varphi_m) \\
+\vdots & \vdots & \ddots & \vdots \\
+(\varphi_m, \varphi_0) & (\varphi_m, \varphi_1) & \cdots & (\varphi_m, \varphi_m)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\
+c_1 \\
+\vdots \\
+c_m
+\end{bmatrix} =
+\begin{bmatrix}
+(f, \varphi_0) \\
+(f, \varphi_1) \\
+\vdots \\
+(f, \varphi_m)
+\end{bmatrix}$$
+其中 $(f, g) = \int_a^b f(x) g(x) dx$ 为内积。</li>
+<li>超定方程组的最小二乘解：<br>
+设超定方程组为 $Ax = b$，其中 $A$ 为 $m \times n$ 矩阵，$m &gt; n$，则其最小二乘解 $x^*$ 满足正规方程组
+$$A^T A x = A^T b$$</li>
+<li>离散数据的最佳平方逼近多项式：<br>
+给定离散数据点 $(x_i, y_i), i = 0, 1, \cdots, n$，设 $p(x) = \sum\limits_{i=0}^{m} c_i \varphi_i(x)$，如果$\varphi_k(x)=x^k$，则 $p(x)$ 称为数据点的 $m$ 次最小二乘拟合多项式。
+记
+$$
+\mathbf{\varphi}_k =
+\begin{bmatrix}
+\varphi_k(x_0) \\
+\varphi_k(x_1) \\
+\vdots \\
+\varphi_k(x_n)
+\end{bmatrix}, \quad
+\mathbf{y} =
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+$$<br>
+$c_0 , c_1 , \cdots , c_n$ 是下面的 (正规) 方程组的解:
+$$\begin{bmatrix}
+(\varphi_0, \varphi_0) & (\varphi_0, \varphi_1) & \cdots & (\varphi_0, \varphi_m) \\
+(\varphi_1, \varphi_0) & (\varphi_1, \varphi_1) & \cdots & (\varphi_1, \varphi_m) \\
+\vdots & \vdots & \ddots & \vdots \\
+(\varphi_m, \varphi_0) & (\varphi_m, \varphi_1) & \cdots & (\varphi_m, \varphi_m)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\
+c_1 \\
+\vdots \\
+c_m
+\end{bmatrix} =
+\begin{bmatrix}
+(y, \varphi_0) \\
+(y, \varphi_1) \\
+\vdots \\
+(y, \varphi_m)
+\end{bmatrix}$$</li>
+</ul>
+<h2 id="数值积分与数值微分">数值积分与数值微分
+</h2><h3 id="插值型求积公式">插值型求积公式
+</h3><ol>
+<li>定义<br>
+设有计算定积分 $I(f) = \int_a^b f(x) dx$ 的求积公式
+$$I_n(f) = \sum\limits_{k=0}^{n} A_k f(x_k)$$
+如果求积系数 $A_k=\int_a^b l_k(x) dx$，其中 $l_k(x)$ 为插值节点上的 Lagrange 基函数，则称 $I_n(f)$ 为插值型求积公式。<br>
+截断误差为：
+$$R_n(f) = I(f) - I_n(f) = \int_a^b \frac{f^{(n+1)}(\xi)}{(n+1)!}  \prod_{i=0}^n (x - x_i) dx, \quad \xi \in (a, b)$$
+若函数 $f(x)$ 在</li>
+</ol>
+<p>如果求积节点 $x_k$ 为等距节点，即
+</p>
+$$x_k = a + k h, \quad h = \frac{b-a}{n}, \quad k = 0, 1, \cdots, n$$<p>
+则称为 Newton-Cotes 求积公式，可写为：
+</p>
+$$I_n(f) = (b-a) \sum\limits_{k=0}^{n} C_{n,k} f(x_k)$$<p>
+2. 常用的等距节点插值型求积公式<br>
+* 梯形公式（n=1）：</p>
+$$T(f) = \frac{b-a}{2} [f(a) + f(b)]$$<p>
+* Simpson 公式（n=2）：</p>
+$$S(f) = \frac{b-a}{6} [f(a) + 4f\left(\frac{a+b}{2}\right) + f(b)]$$<p>
+3. 代数精度</p>
+<ul>
+<li>定义：设求积公式 $I_n(f)$ 对任意次数不超过 $m$ 的多项式均精确成立，即
+$$I(f) = I_n(f), \quad \forall f \in P_m$$
+而至少对一个 $m+1$ 次多项式不精确成立，则称求积公式 $I_n(f)$ 的代数精度为 $m$</li>
+<li>定理：
+<ul>
+<li>求积公式 $I_n(f)$ 的代数精度至少为 $n$ $\Leftrightarrow$
+该求积公式是插值型求积公式</li>
+<li>求积公式 $I_n(f)$ 的代数精度为$m$ $\Leftrightarrow$
+求积公式对 $1,x,x^2,\cdots,x^m$ 均精确成立，而对 $x^{m+1}$ 不精确成立</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>截断误差表达式推导
+<ul>
+<li>梯形公式：$$R_T(f) = -\frac{(b-a)^3}{12} f''(\xi), \quad \xi \in (a, b)$$</li>
+<li>Simpson 公式：$$R_S(f) = -\frac{(b-a)^5}{2880} f^{(4)}(\xi), \quad \xi \in (a, b)$$</li>
+</ul>
+</li>
+</ol>
+<h3 id="复化求积公式">复化求积公式
+</h3><ol>
+<li>定义<br>
+将区间 $[a, b]$ 等分为 $n$ 个小区间，每个小区间上使用相同的求积公式进行积分近似，称为复化求积公式。<br>
+记 $h = \frac{b-a}{n},\quad x_k = a + k h,\quad k=0,1,\cdots,n$，则复化求积公式可写为：
+$$I(f) = \sum\limits_{k=0}^{n-1} \int_{x_k}^{x_{k+1}} f(x) dx$$</li>
+<li>复化梯形公式
+$$T_n(f) = \sum\limits_{k=0}^{n-1} \frac{h}{2} [f(x_k) + f(x_{k+1})]$$
+截断误差
+$$I(f)-T_n(f) = -\frac{b-a}{12}h^2 f''(\eta), \quad \eta \in (a, b)$$
+$$I(f)-T_{2n}(f) \approx \frac{1}{3} [T_{2n}(f) - T_n(f)]$$
+递推关系式
+$$T_{2n}(f) = \frac{1}{2} [T_n(f) + h \sum\limits_{k=0}^{n-1} f\left(x_{k+\frac{1}{2}}\right)]$$
+其中$x_{k+\frac{1}{2}} = \frac{x_k + x_{k+1}}{2}$为新增的n个节点, $h=\frac{b-a}{n}$</li>
+<li>复化 Simpson 公式
+$$S_n(f) = \sum\limits_{k=0}^{n-1} \frac{h}{6} [f(x_{k}) + 4f(x_{k+\frac{1}{2}}) + f(x_{k+1})]$$
+截断误差
+$$I(f)-S_n(f) = -\frac{b-a}{180}\left(\frac{h}{2}\right)^4 f^{(4)}(\eta), \quad \eta \in (a, b)$$
+$$I(f)-S_{2n}(f) \approx \frac{1}{15} [S_{2n}(f) - S_n(f)]$$</li>
+<li>复化求积公式的阶数
+$$h\rightarrow 0,\quad I(f)-I_n(f) = O(h^p)$$
+则称复化求积公式的阶数为 $p$，由上文可知复化梯形公式为 2 阶, 复化 Simpson 公式为 4 阶</li>
+</ol>
+<h3 id="romberg-求积方法">Romberg 求积方法
+</h3><p>先利用复化梯形公式计算出一系列 $T_{2^k}(f)$，然后利用
+</p>
+$$S_n(f) \approx \frac{4}{3} T_{2n}(f) - \frac{1}{3} T_n(f)$$<p>
+</p>
+$$C_n(f) \approx \frac{16}{15} S_{2n}(f) - \frac{1}{15} S_n(f)$$<p>
+</p>
+$$R_n(f) \approx \frac{64}{63} C_{2n}(f) - \frac{1}{63} C_n(f)$$<p>
+依次递推，直到满足精度
+</p>
+$$I(f) - R_n(f) \approx \frac{1}{255} [R_{2n}(f) - R_{n}(f)] < \varepsilon$$<h3 id="gauss-求积公式">Gauss 求积公式
+</h3><ol>
+<li>定义：适当选择求积节点 $x_k$，使得求积公式的代数精度达到 $(2n+1)$，称为 Gauss 求积公式，对应的求积点 $x_k$ 称为 Gauss 点。</li>
+<li>区间[-1,1] 上的 Gauss 求积公式
+当 $n=0$ 时，1 点 Gauss 求积公式为：
+$$G_0(f) = 2 f(0)$$
+当 $n=1$ 时，2 点 Gauss 求积公式为：
+$$G_1(f) = f\left(-\frac{1}{\sqrt{3}}\right) + f\left(\frac{1}{\sqrt{3}}\right)$$
+当 $n=2$ 时，3 点 Gauss 求积公式为：
+$$G_2(f) = \frac{5}{9} f\left(-\sqrt{\frac{3}{5}}\right) + \frac{8}{9} f(0) + \frac{5}{9} f\left(\sqrt{\frac{3}{5}}\right)$$</li>
+<li>区间[a,b] 上的 Gauss 求积公式<br>
+考虑区间 $[a, b]$ 上的积分
+$$\int_a^b f(x) dx$$
+通过变量代换
+$x = \frac{a+b}{2} + \frac{b-a}{2} t$
+将区间 $[a, b]$ 上的积分转化为区间 $[-1, 1]$ 上的积分，得到
+$$\int_a^b f(x) dx = \frac{b-a}{2} \int_{-1}^{1} f\left(\frac{a+b}{2} + \frac{b-a}{2} t\right) dt$$
+得到 Gauss 求积公式：
+$$I_n(f) =  \sum\limits_{k=0}^{n}\frac{b-a}{2} \tilde{A_k} f\left(\frac{a+b}{2} + \frac{b-a}{2} t_k\right)$$
+再令$$x_k = \frac{a+b}{2} + \frac{b-a}{2} t_k,\quad A_k = \frac{b-a}{2} \tilde{A_k}$$
+则有
+$$I_n(f) =  \sum\limits_{k=0}^{n} A_k f(x_k)$$</li>
+<li>截断误差表达式<br>
+Gauss 求积公式的截断误差为：
+$$R_n(f) = \frac{f^{(2n+2)}(\xi)}{(2n+2)!} \int_a^b \left[ \prod_{k=0}^{n} (x - x_k) \right]^2 dx, \quad \xi \in (a, b)$$</li>
+</ol>
+<h3 id="数值微分">数值微分
+</h3><ol>
+<li>
+<p>差商代替导数值
+</p>
+$$向前差商：f'(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}$$<p>
+</p>
+$$向后差商：f'(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}$$<p>
+</p>
+$$中心差商：f'(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}$$</li>
+<li>
+<p>截断误差<br>
+将 $f(x_0 + h), f(x_0 − h)$ 在 $x_0$ 点 Taylor 展开, 可以得
+</p>
+$$f'(x_0) - \frac{f(x_0 + h) - f(x_0)}{h} = -\frac{h}{2} f''(x_0)+O(h^2)$$<p>
+</p>
+$$f'(x_0) - \frac{f(x_0) - f(x_0 - h)}{h} = \frac{h}{2} f''(x_0)+O(h^2)$$<p>
+</p>
+$$f'(x_0) - \frac{f(x_0 + h) - f(x_0 - h)}{2h} = -\frac{h^2}{6} f^{(3)}(x_0)+O(h^3)$$</li>
+<li>
+<p>插值型求导公式<br>
+建立插值多项式 $p_n(x)$作为函数 $f(x)$ 的近似，取其导数 $p_n&rsquo;(x)$ 作为 $f&rsquo;(x)$ 的近似，称为插值型求导公式。</p>
+</li>
+</ol>
+<h2 id="常微分方程数值解">常微分方程数值解
+</h2><h3 id="euler-方法">Euler 方法
+</h3><ol>
+<li>
+<p>Euler 公式：
+</p>
+$$y_{i+1} = y_i + h f(x_i, y_i), \quad i=0,1,\cdots,n-1$$<p>
+其中 $h$ 为步长，$y_i$ 为 $y(x_i)$ 的近似值。</p>
+</li>
+<li>
+<p>梯形公式：
+</p>
+$$y_{i+1} = y_i + \frac{h}{2} [f(x_i, y_i) + f(x_{i+1}, y_{i+1})], \quad i=0,1,\cdots,n-1$$</li>
+<li>
+<p>预测校正公式(改进的Euler公式)：
+</p>
+$$\begin{cases}
+预测：y^{(p)}_{i+1} = y_i + h f(x_i, y_i) \\
+校正：y_{i+1} = y_i + \frac{h}{2} [f(x_i, y_i) + f(x_{i+1}, y^{(p)}_{i+1})]
+\end{cases}$$<p>
+局部截断误差：$R_{i+1} = y(x_{i+1}) - y(x_i) - \frac{h}{2} [f(x_i, y(x_i)) + f(x_{i+1}, y(x_i)+hf(x_i,y(x_i))]$</p>
+</li>
+</ol>
+<p>求法：分别求出预测公式的截断误差 $R^{（p）}_ {i+1}$ 和校正公式的截断误差 $R^{（c）}_ {i+1}$ ，则$R_{i+1}$可以通过加项减项凑出$R^{（p）}_ {i+1}$和$R^{（c）}_ {i+1}$<br>
+若$R_{i+1}=O(h^{p+1})$，则称该公式为 $p$ 阶的。Euler 公式为 1 阶，梯形公式和预测校正公式为 2 阶。</p>
+<ol start="4">
+<li>整体截断误差：$E(h)= \max\limits_{0 \leq i \leq n} |y(x_i) - y_i^{[h]}|$</li>
+</ol>
+<h3 id="runge-kutta-方法">Runge-Kutta 方法
+</h3><ol>
+<li>r级 Runge-Kutta 公式：
+$$\begin{cases}
+y_{i+1} = y_i + h \sum\limits_{j=1}^{r} \alpha_j k_j \\
+k_1 = f(x_i, y_i) \\
+k_2 = f(x_i + \lambda_2 h, y_i + h (\mu_{21} k_1)) \\
+k_3 = f(x_i + \lambda_3 h, y_i + h (\mu_{31} k_1 + \mu_{32} k_2)) \\
+\quad \vdots \\
+k_r = f(x_i + \lambda_j h, y_i + h (\mu_{r1} k_1 + \mu_{r2} k_2 + \cdots + \mu_{r,r-1} k_{r-1}))
+\end{cases}$$</li>
+<li>2阶 Runge-Kutta 公式推导：
+当 $r=2$ 时，有
+$$\begin{cases}
+y_{i+1} = y_i + h (\alpha_1 k_1 + \alpha_2 k_2) \\
+k_1 = f(x_i, y_i) \\
+k_2 = f(x_i + \lambda_2 h, y_i + h \mu_{21} k_1)
+\end{cases}$$
+其局部截断误差为
+$$\begin{cases}
+R_{i+1} = y(x_{i+1}) - y(x_i) - h (\alpha_1 K_1 + \alpha_2 K_2) \\
+K_1 = f(x_i, y(x_i)) \\
+K_2 = f(x_i + \lambda_2 h, y(x_i) + h \mu_{21} K_1)
+\end{cases}$$</li>
+</ol>
+<p>将 $y(x_{i+1})$ 在 $x_i$ 点 Taylor 展开, 将 $K_2$ 在 $(x_i, y_i)$ 点 Taylor 展开<br>
+代入使公式具有二阶精度，即$R_{i+1}=O(h^{3})$，得
+</p>
+$$\begin{cases}
+\alpha_1 + \alpha_2 = 1 \\
+\alpha_2 \lambda_2 = \frac{1}{2} \\
+\alpha_2 \mu_{21} = \frac{1}{2}
+\end{cases}$$<h2 id="偏微分方程数值解">偏微分方程数值解
+</h2><h3 id="抛物型方程的差分解法">抛物型方程的差分解法
+</h3><ol>
+<li>
+<p>网格剖分
+将求解区域 $[0, l] \times [0, T]$ 作等距网格剖分，设空间步长为 $h = \frac{l}{M}$，时间步长为 $\tau = \frac{T}{N}$，则网格点为
+</p>
+$$(x_i, t_k) = (i h, k \tau), \quad 0 \leq i \leq M, 0 \leq k \leq N$$<p>
+记 $u_i^k$ 为 $u(x_i, t_k)$ 的近似值。$r = \frac{a \tau}{h^2}$ 为步长比。</p>
+</li>
+<li>
+<p>差分格式推导<br>
+考虑下面的定解问题：
+</p>
+$$\frac{\partial u}{\partial t} - a \frac{\partial^2 u}{\partial x^2}=f(x,t), \quad a > 0$$<p>
+</p>
+$$u(x,0) = \varphi(x), \quad x \in [0, l]$$<p>
+</p>
+$$u(0,t) = \alpha(t), \quad u(l,t) = \beta(t), \quad t \in [0, T]$$<p>
+差分格式推导常用公式：
+</p>
+$$g'(x_0)= \frac{1}{h}[g(x_0+h)-g(x_0)] - \frac{h}{2} g''(\xi),\quad x_0 < \xi < x_0 + h;$$<p>
+</p>
+$$g'(x_0)= \frac{1}{h}[g(x_0)-g(x_0-h)] + \frac{h}{2} g''(\xi),\quad x_0 - h < \xi < x_0;$$<p>
+</p>
+$$g'(x_0)= \frac{1}{2h}[g(x_0+h)-g(x_0-h)] - \frac{h^2}{6} g^{(3)}(\xi),\quad x_0 - h < \xi < x_0 + h;$$<p>
+</p>
+$$g''(x_0)= \frac{1}{h^2}[g(x_0+h)-2g(x_0)+g(x_0-h)] - \frac{h^2}{12} g^{(4)}(\xi),\quad x_0 - h < \xi < x_0 + h;$$<p>
+</p>
+$$g(x_0)= \frac{1}{2}[g(x_0+h)+g(x_0-h)] - \frac{h^2}{2} g''(\xi),\quad x_0 - h < \xi < x_0 + h.$$</li>
 </ol>
 
 </section>
@@ -960,7 +1364,7 @@ $$<h3 id="3次样条插值函数">3次样条插值函数
         
             2020 - 
         
-        2025 caibb16
+        2026 caibb16
     </section>
     
     <section class="powerby">
@@ -1072,7 +1476,7 @@ $$<h3 id="3次样条插值函数">3次样条插值函数
         
             2020 - 
         
-        2025 caibb16
+        2026 caibb16
     </section>
     
     <section class="powerby">
