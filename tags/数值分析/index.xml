@@ -81,7 +81,12 @@ $$&lt;ul&gt;
 &lt;/p&gt;
 $$
 \lim_{k \to \infty} \frac{x^* - x_{k+1}}{(x^* - x_k)^2} = -\frac{f&#39;&#39;(x^*)}{2 f&#39;(x^*)}
-$$&lt;h3 id=&#34;重根的-newton-迭代法&#34;&gt;重根的 Newton 迭代法
+$$&lt;h3 id=&#34;newton-迭代法的大范围收敛性&#34;&gt;Newton 迭代法的大范围收敛性
+&lt;/h3&gt;&lt;p&gt;设 $f(x) \in C^2[a, b]$，且满足：
+&lt;/p&gt;
+$$f(a) f(b) &lt; 0, \quad f&#39;(x) \neq 0, \quad f&#39;&#39;(x) 保号,\quad a - \frac{f(a)}{f&#39;(a)} \leq b , \quad b - \frac{f(b)}{f&#39;(b)} \ge a $$&lt;p&gt;
+则对任意初值 $x_0 \in [a, b]$，迭代格式 $x_{k+1} = x_k - \frac{f(x_k)}{f&amp;rsquo;(x_k)}$ 收敛于方程 $f(x) = 0$ 在 $[a, b]$ 上的唯一实根 $x^*$。&lt;/p&gt;
+&lt;h3 id=&#34;重根的-newton-迭代法&#34;&gt;重根的 Newton 迭代法
 &lt;/h3&gt;&lt;p&gt;设 \(x^*\) 是方程 $f(x) = 0$ 的 $m$ 重根&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;若 $m$ 已知，迭代改为：&lt;/li&gt;
@@ -327,7 +332,7 @@ $l_0(x), l_1(x), \cdots, l_n(x)$ 线性无关，称为 $n$ 次 Lagrange 插值�
 $$
 R_n(x)=f(x) - L_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \omega_{n+1}(x)
 $$&lt;p&gt;
-其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$。&lt;/p&gt;
+其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$, $\quad \xi$ 与 $x$ 有关。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;newton-插值多项式&#34;&gt;Newton 插值多项式
