@@ -81,7 +81,12 @@ $$&lt;ul&gt;
 &lt;/p&gt;
 $$
 \lim_{k \to \infty} \frac{x^* - x_{k+1}}{(x^* - x_k)^2} = -\frac{f&#39;&#39;(x^*)}{2 f&#39;(x^*)}
-$$&lt;h3 id=&#34;重根的-newton-迭代法&#34;&gt;重根的 Newton 迭代法
+$$&lt;h3 id=&#34;newton-迭代法的大范围收敛性&#34;&gt;Newton 迭代法的大范围收敛性
+&lt;/h3&gt;&lt;p&gt;设 $f(x) \in C^2[a, b]$，且满足：
+&lt;/p&gt;
+$$f(a) f(b) &lt; 0, \quad f&#39;(x) \neq 0, \quad f&#39;&#39;(x) 保号,\quad a - \frac{f(a)}{f&#39;(a)} \leq b , \quad b - \frac{f(b)}{f&#39;(b)} \ge a $$&lt;p&gt;
+则对任意初值 $x_0 \in [a, b]$，迭代格式 $x_{k+1} = x_k - \frac{f(x_k)}{f&amp;rsquo;(x_k)}$ 收敛于方程 $f(x) = 0$ 在 $[a, b]$ 上的唯一实根 $x^*$。&lt;/p&gt;
+&lt;h3 id=&#34;重根的-newton-迭代法&#34;&gt;重根的 Newton 迭代法
 &lt;/h3&gt;&lt;p&gt;设 \(x^*\) 是方程 $f(x) = 0$ 的 $m$ 重根&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;若 $m$ 已知，迭代改为：&lt;/li&gt;
@@ -327,7 +332,7 @@ $l_0(x), l_1(x), \cdots, l_n(x)$ 线性无关，称为 $n$ 次 Lagrange 插值�
 $$
 R_n(x)=f(x) - L_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \omega_{n+1}(x)
 $$&lt;p&gt;
-其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$。&lt;/p&gt;
+其中 $\omega_{n+1}(x) = (x - x_0)(x - x_1) \cdots (x - x_n)$, $\quad \xi$ 与 $x$ 有关。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;newton-插值多项式&#34;&gt;Newton 插值多项式
@@ -384,8 +389,390 @@ $$
 R_m(x) = f(x) - H_m(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} (x - x_0)^{m_0+1}(x - x_1)^{m_1+1} \cdots (x - x_n)^{m_n+1}
 $$&lt;h3 id=&#34;3次样条插值函数&#34;&gt;3次样条插值函数
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。&lt;/li&gt;
+&lt;li&gt;定义：每段小区间上用3次多项式进行插值，且在区间上具有连续二阶导数，称为3次样条插值函数。&lt;br&gt;
+要求3次样条插值函数 $S(x)$，每个小区间要确定4个参数，共要确定 $4n$ 个参数。&lt;br&gt;
+在每个节点处满足下面的连续性条件:&lt;br&gt;
+$S(x_j-0) = S(x_j+0),\quad S&amp;rsquo;(x_j-0) = S&amp;rsquo;(x_j+0),\quad S&amp;rsquo;&amp;rsquo;(x_j-0) = S&amp;rsquo;&amp;rsquo;(x_j+0), \quad j = 1, 2, \cdots, n-1$&lt;br&gt;
+共有 $3(n-1)$ 个条件，加上$n+1$ 个插值条件，共有 $4n - 2$ 个条件，还要加上2个条件，才能确定 $4n$ 个参数。&lt;br&gt;
+常用的附加条件有：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;(边界条件) 已知两端点的一阶导数, 即 $S&amp;rsquo;(x_0) = f&amp;rsquo;(x_0), \quad S&amp;rsquo;(x_n) = f&amp;rsquo;(x_n)$&lt;/li&gt;
+&lt;li&gt;(边界条件) 已知两端点的二阶导数, 即 $S&amp;rsquo;&amp;rsquo;(x_0) = f&amp;rsquo;&amp;rsquo;(x_0), \quad S&amp;rsquo;&amp;rsquo;(x_n) = f&amp;rsquo;&amp;rsquo;(x_n)$
+若令 $S&amp;rsquo;&amp;rsquo;(x_0) = 0, \quad S&amp;rsquo;&amp;rsquo;(x_n) = 0$，则称为自然边界条件。&lt;/li&gt;
+&lt;li&gt;(连接条件) 要求 $S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x)$ 在 $x_1$ 和 $x_{n-1}$ 处连续，即 $S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_1-0) = S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_1+0), \quad S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_{n-1}-0) = S&amp;rsquo;&amp;rsquo;&amp;rsquo;(x_{n-1}+0)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;求法：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$S(x)=y_j+{f[x_j,x_{j+1}]-(\frac{1}{3}M_j+\frac{1}{6}M_{j+1})h_j}(x-x_j)+ \frac{M_j}{2}(x - x_j)^2 + \frac{M_{j+1} - M_j}{6h_j}(x - x_j)^3, \quad x \in [x_j, x_{j+1}]，j=0,1,⋯,n-1$&lt;/p&gt;
+&lt;p&gt;其中 $h_j = x_{j+1} - x_j$，$M_j = S&amp;rsquo;&amp;rsquo;(x_j)$&lt;/p&gt;
+&lt;p&gt;对于边界条件 $S&amp;rsquo;(x_0) = f&amp;rsquo;(x_0), \quad S&amp;rsquo;(x_n) = f&amp;rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+&lt;/p&gt;
+$$\begin{bmatrix}
+2 &amp; 1 \\
+\mu_1 &amp; 2 &amp; \lambda_1 \\
+&amp; \mu_2 &amp; 2 &amp; \lambda_2 \\
+&amp; &amp; \ddots &amp; \ddots &amp; \ddots \\
+&amp; &amp; &amp; \mu_{n-1} &amp; 2 &amp; \lambda_{n-1} \\
+&amp; &amp; &amp; &amp; 1 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+M_0 \\
+M_1 \\
+M_2 \\
+\vdots \\
+M_{n-1} \\
+M_n
+\end{bmatrix} =
+\begin{bmatrix}
+d_0 \\
+d_1 \\
+d_2 \\
+\vdots \\
+d_{n-1} \\
+d_n
+\end{bmatrix}
+$$&lt;p&gt;
+对于边界条件 $S&amp;rsquo;&amp;rsquo;(x_0) = f&amp;rsquo;&amp;rsquo;(x_0), \quad S&amp;rsquo;&amp;rsquo;(x_n) = f&amp;rsquo;&amp;rsquo;(x_n)$，可列出如下方程组求解 $M_j$：
+&lt;/p&gt;
+$$\begin{bmatrix}
+2 &amp; \lambda_1 \\
+\mu_2 &amp; 2 &amp; \lambda_2 \\
+&amp; \mu_3 &amp; 2 &amp; \lambda_3 \\
+&amp; &amp; \ddots &amp; \ddots &amp; \ddots \\
+&amp; &amp; &amp; \mu_{n-2} &amp; 2 &amp; \lambda_{n-2} \\
+&amp; &amp; &amp; &amp; \mu_{n-1} &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+M_1 \\
+M_2 \\
+M_3 \\
+\vdots \\
+M_{n-2} \\ 
+M_{n-1}
+\end{bmatrix} =
+\begin{bmatrix}
+d_1-\mu_1 f&#39;&#39;(x_0) \\
+d_2 \\
+d_3 \\
+\vdots \\
+d_{n-2} \\
+d_{n-1}-\lambda_{n-1} f&#39;&#39;(x_n)
+\end{bmatrix}
+$$&lt;p&gt;
+其中
+&lt;/p&gt;
+$$\mu_j = \frac{h_{j-1}}{h_{j-1} + h_j}, \quad \lambda_j = \frac{h_j}{h_{j-1} + h_j}=1-\mu_j, \quad j = 1, 2, \cdots, n-1$$&lt;p&gt;
+&lt;/p&gt;
+$$d_0 = 6f[x_0,x_0,x_1], \quad d_n = 6f[x_{n-1},x_n,x_n]$$&lt;p&gt;
+&lt;/p&gt;
+$$d_j = 6 \left( f[x_{j-1}, x_j, x_{j+1}] \right), \quad j = 1, 2, \cdots, n-1$$&lt;h2 id=&#34;多项式逼近&#34;&gt;多项式逼近
+&lt;/h2&gt;&lt;h3 id=&#34;最佳一致逼近&#34;&gt;最佳一致逼近
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;连续函数的范数：设$f\in C[a,b]$，记
+$$
+||f||_1 = \int_a^b |f(x)| dx,\quad
+||f||_{\infty} = \max_{a \leq x \leq b} |f(x)|,\quad
+||f||_2 = \sqrt{ \int_a^b |f(x)|^2 dx } $$&lt;/li&gt;
+&lt;li&gt;最佳一致逼近多项式&lt;br&gt;
+定义：设 $f(x) \in C[a,b]$，$M_n$ 为次数不超过 $n$ 的任意多项式集合，若$\exists p_n\in M_n$，使得对任意 $q_n \in M_n$，有
+$$||f - p_n||_{\infty} \leq ||f - q_n||_{\infty}$$
+则称 $p_n(x)$ 为函数 $f(x)$ 在区间 $[a,b]$ 上的$n$次最佳一致逼近多项式。&lt;/li&gt;
+&lt;li&gt;一次最佳一致逼近多项式求法：&lt;br&gt;
+设 $p_1(x) = c_0 + c_1 x$，若 $f&amp;rsquo;&amp;rsquo;(x)$ 在 $(a, b)$ 内存在且保号，则 $f(x) − p_1 (x)$ 在 [a, b] 内有 3 个交错偏差点 $a, x_1 , b$, 于是可得
+$$\begin{cases}
+f(a) - p_1(a) = -[f(x_1)-p_1(x_1)] = f(b)-p_1(b) \\
+f&#39;(x_1) - p_1&#39;(x_1) = 0
+\end{cases}$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;最佳平方逼近&#34;&gt;最佳平方逼近
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;最佳平方逼近多项式&lt;br&gt;
+定义：设$X$为内积空间， $f \in X$，$M$ 为$X$的子空间，$\varphi_0,\varphi_1,\cdots,\varphi_m$为$M$的一组基，若$\exists \varphi\in M_n$，使得对任意 $\psi \in M$，有
+$$||f - \varphi|| \leq ||f - \psi||$$
+则称 $ \varphi$ 是 $f$ 在 $M$ 中的最佳平方逼近元&lt;/li&gt;
+&lt;li&gt;最佳平方逼近多项式求法：&lt;br&gt;
+如果$\varphi_i(x)=x^i(i=0,1,\cdots,m)$，设 $p(x) = \sum\limits_{i=0}^{m} c_i \varphi_i(x)$，则 $p(x)$ 称为 $f(x)$ 在 $[a, b]$ 上的 $m$ 次最佳平方逼近多项式&lt;br&gt;
+$c_0 , c_1 , \cdots , c_m$ 是下面的 (正规) 方程组的解:
+$$\begin{bmatrix}
+(\varphi_0, \varphi_0) &amp; (\varphi_0, \varphi_1) &amp; \cdots &amp; (\varphi_0, \varphi_m) \\
+(\varphi_1, \varphi_0) &amp; (\varphi_1, \varphi_1) &amp; \cdots &amp; (\varphi_1, \varphi_m) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+(\varphi_m, \varphi_0) &amp; (\varphi_m, \varphi_1) &amp; \cdots &amp; (\varphi_m, \varphi_m)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\
+c_1 \\
+\vdots \\
+c_m
+\end{bmatrix} =
+\begin{bmatrix}
+(f, \varphi_0) \\
+(f, \varphi_1) \\
+\vdots \\
+(f, \varphi_m)
+\end{bmatrix}$$
+其中 $(f, g) = \int_a^b f(x) g(x) dx$ 为内积。&lt;/li&gt;
+&lt;li&gt;超定方程组的最小二乘解：&lt;br&gt;
+设超定方程组为 $Ax = b$，其中 $A$ 为 $m \times n$ 矩阵，$m &amp;gt; n$，则其最小二乘解 $x^*$ 满足正规方程组
+$$A^T A x = A^T b$$&lt;/li&gt;
+&lt;li&gt;离散数据的最佳平方逼近多项式：&lt;br&gt;
+给定离散数据点 $(x_i, y_i), i = 0, 1, \cdots, n$，设 $p(x) = \sum\limits_{i=0}^{m} c_i \varphi_i(x)$，如果$\varphi_k(x)=x^k$，则 $p(x)$ 称为数据点的 $m$ 次最小二乘拟合多项式。
+记
+$$
+\mathbf{\varphi}_k =
+\begin{bmatrix}
+\varphi_k(x_0) \\
+\varphi_k(x_1) \\
+\vdots \\
+\varphi_k(x_n)
+\end{bmatrix}, \quad
+\mathbf{y} =
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+$$&lt;br&gt;
+$c_0 , c_1 , \cdots , c_n$ 是下面的 (正规) 方程组的解:
+$$\begin{bmatrix}
+(\varphi_0, \varphi_0) &amp; (\varphi_0, \varphi_1) &amp; \cdots &amp; (\varphi_0, \varphi_m) \\
+(\varphi_1, \varphi_0) &amp; (\varphi_1, \varphi_1) &amp; \cdots &amp; (\varphi_1, \varphi_m) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+(\varphi_m, \varphi_0) &amp; (\varphi_m, \varphi_1) &amp; \cdots &amp; (\varphi_m, \varphi_m)
+\end{bmatrix}
+\begin{bmatrix}
+c_0 \\
+c_1 \\
+\vdots \\
+c_m
+\end{bmatrix} =
+\begin{bmatrix}
+(y, \varphi_0) \\
+(y, \varphi_1) \\
+\vdots \\
+(y, \varphi_m)
+\end{bmatrix}$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数值积分与数值微分&#34;&gt;数值积分与数值微分
+&lt;/h2&gt;&lt;h3 id=&#34;插值型求积公式&#34;&gt;插值型求积公式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;定义&lt;br&gt;
+设有计算定积分 $I(f) = \int_a^b f(x) dx$ 的求积公式
+$$I_n(f) = \sum\limits_{k=0}^{n} A_k f(x_k)$$
+如果求积系数 $A_k=\int_a^b l_k(x) dx$，其中 $l_k(x)$ 为插值节点上的 Lagrange 基函数，则称 $I_n(f)$ 为插值型求积公式。&lt;br&gt;
+截断误差为：
+$$R_n(f) = I(f) - I_n(f) = \int_a^b \frac{f^{(n+1)}(\xi)}{(n+1)!}  \prod_{i=0}^n (x - x_i) dx, \quad \xi \in (a, b)$$
+若函数 $f(x)$ 在&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果求积节点 $x_k$ 为等距节点，即
+&lt;/p&gt;
+$$x_k = a + k h, \quad h = \frac{b-a}{n}, \quad k = 0, 1, \cdots, n$$&lt;p&gt;
+则称为 Newton-Cotes 求积公式，可写为：
+&lt;/p&gt;
+$$I_n(f) = (b-a) \sum\limits_{k=0}^{n} C_{n,k} f(x_k)$$&lt;p&gt;
+2. 常用的等距节点插值型求积公式&lt;br&gt;
+* 梯形公式（n=1）：&lt;/p&gt;
+$$T(f) = \frac{b-a}{2} [f(a) + f(b)]$$&lt;p&gt;
+* Simpson 公式（n=2）：&lt;/p&gt;
+$$S(f) = \frac{b-a}{6} [f(a) + 4f\left(\frac{a+b}{2}\right) + f(b)]$$&lt;p&gt;
+3. 代数精度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：设求积公式 $I_n(f)$ 对任意次数不超过 $m$ 的多项式均精确成立，即
+$$I(f) = I_n(f), \quad \forall f \in P_m$$
+而至少对一个 $m+1$ 次多项式不精确成立，则称求积公式 $I_n(f)$ 的代数精度为 $m$&lt;/li&gt;
+&lt;li&gt;定理：
+&lt;ul&gt;
+&lt;li&gt;求积公式 $I_n(f)$ 的代数精度至少为 $n$ $\Leftrightarrow$
+该求积公式是插值型求积公式&lt;/li&gt;
+&lt;li&gt;求积公式 $I_n(f)$ 的代数精度为$m$ $\Leftrightarrow$
+求积公式对 $1,x,x^2,\cdots,x^m$ 均精确成立，而对 $x^{m+1}$ 不精确成立&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;截断误差表达式推导
+&lt;ul&gt;
+&lt;li&gt;梯形公式：$$R_T(f) = -\frac{(b-a)^3}{12} f&#39;&#39;(\xi), \quad \xi \in (a, b)$$&lt;/li&gt;
+&lt;li&gt;Simpson 公式：$$R_S(f) = -\frac{(b-a)^5}{2880} f^{(4)}(\xi), \quad \xi \in (a, b)$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;复化求积公式&#34;&gt;复化求积公式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;定义&lt;br&gt;
+将区间 $[a, b]$ 等分为 $n$ 个小区间，每个小区间上使用相同的求积公式进行积分近似，称为复化求积公式。&lt;br&gt;
+记 $h = \frac{b-a}{n},\quad x_k = a + k h,\quad k=0,1,\cdots,n$，则复化求积公式可写为：
+$$I(f) = \sum\limits_{k=0}^{n-1} \int_{x_k}^{x_{k+1}} f(x) dx$$&lt;/li&gt;
+&lt;li&gt;复化梯形公式
+$$T_n(f) = \sum\limits_{k=0}^{n-1} \frac{h}{2} [f(x_k) + f(x_{k+1})]$$
+截断误差
+$$I(f)-T_n(f) = -\frac{b-a}{12}h^2 f&#39;&#39;(\eta), \quad \eta \in (a, b)$$
+$$I(f)-T_{2n}(f) \approx \frac{1}{3} [T_{2n}(f) - T_n(f)]$$
+递推关系式
+$$T_{2n}(f) = \frac{1}{2} [T_n(f) + h \sum\limits_{k=0}^{n-1} f\left(x_{k+\frac{1}{2}}\right)]$$
+其中$x_{k+\frac{1}{2}} = \frac{x_k + x_{k+1}}{2}$为新增的n个节点, $h=\frac{b-a}{n}$&lt;/li&gt;
+&lt;li&gt;复化 Simpson 公式
+$$S_n(f) = \sum\limits_{k=0}^{n-1} \frac{h}{6} [f(x_{k}) + 4f(x_{k+\frac{1}{2}}) + f(x_{k+1})]$$
+截断误差
+$$I(f)-S_n(f) = -\frac{b-a}{180}\left(\frac{h}{2}\right)^4 f^{(4)}(\eta), \quad \eta \in (a, b)$$
+$$I(f)-S_{2n}(f) \approx \frac{1}{15} [S_{2n}(f) - S_n(f)]$$&lt;/li&gt;
+&lt;li&gt;复化求积公式的阶数
+$$h\rightarrow 0,\quad I(f)-I_n(f) = O(h^p)$$
+则称复化求积公式的阶数为 $p$，由上文可知复化梯形公式为 2 阶, 复化 Simpson 公式为 4 阶&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;romberg-求积方法&#34;&gt;Romberg 求积方法
+&lt;/h3&gt;&lt;p&gt;先利用复化梯形公式计算出一系列 $T_{2^k}(f)$，然后利用
+&lt;/p&gt;
+$$S_n(f) \approx \frac{4}{3} T_{2n}(f) - \frac{1}{3} T_n(f)$$&lt;p&gt;
+&lt;/p&gt;
+$$C_n(f) \approx \frac{16}{15} S_{2n}(f) - \frac{1}{15} S_n(f)$$&lt;p&gt;
+&lt;/p&gt;
+$$R_n(f) \approx \frac{64}{63} C_{2n}(f) - \frac{1}{63} C_n(f)$$&lt;p&gt;
+依次递推，直到满足精度
+&lt;/p&gt;
+$$I(f) - R_n(f) \approx \frac{1}{255} [R_{2n}(f) - R_{n}(f)] &lt; \varepsilon$$&lt;h3 id=&#34;gauss-求积公式&#34;&gt;Gauss 求积公式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;定义：适当选择求积节点 $x_k$，使得求积公式的代数精度达到 $(2n+1)$，称为 Gauss 求积公式，对应的求积点 $x_k$ 称为 Gauss 点。&lt;/li&gt;
+&lt;li&gt;区间[-1,1] 上的 Gauss 求积公式
+当 $n=0$ 时，1 点 Gauss 求积公式为：
+$$G_0(f) = 2 f(0)$$
+当 $n=1$ 时，2 点 Gauss 求积公式为：
+$$G_1(f) = f\left(-\frac{1}{\sqrt{3}}\right) + f\left(\frac{1}{\sqrt{3}}\right)$$
+当 $n=2$ 时，3 点 Gauss 求积公式为：
+$$G_2(f) = \frac{5}{9} f\left(-\sqrt{\frac{3}{5}}\right) + \frac{8}{9} f(0) + \frac{5}{9} f\left(\sqrt{\frac{3}{5}}\right)$$&lt;/li&gt;
+&lt;li&gt;区间[a,b] 上的 Gauss 求积公式&lt;br&gt;
+考虑区间 $[a, b]$ 上的积分
+$$\int_a^b f(x) dx$$
+通过变量代换
+$x = \frac{a+b}{2} + \frac{b-a}{2} t$
+将区间 $[a, b]$ 上的积分转化为区间 $[-1, 1]$ 上的积分，得到
+$$\int_a^b f(x) dx = \frac{b-a}{2} \int_{-1}^{1} f\left(\frac{a+b}{2} + \frac{b-a}{2} t\right) dt$$
+得到 Gauss 求积公式：
+$$I_n(f) =  \sum\limits_{k=0}^{n}\frac{b-a}{2} \tilde{A_k} f\left(\frac{a+b}{2} + \frac{b-a}{2} t_k\right)$$
+再令$$x_k = \frac{a+b}{2} + \frac{b-a}{2} t_k,\quad A_k = \frac{b-a}{2} \tilde{A_k}$$
+则有
+$$I_n(f) =  \sum\limits_{k=0}^{n} A_k f(x_k)$$&lt;/li&gt;
+&lt;li&gt;截断误差表达式&lt;br&gt;
+Gauss 求积公式的截断误差为：
+$$R_n(f) = \frac{f^{(2n+2)}(\xi)}{(2n+2)!} \int_a^b \left[ \prod_{k=0}^{n} (x - x_k) \right]^2 dx, \quad \xi \in (a, b)$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;数值微分&#34;&gt;数值微分
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;差商代替导数值
+&lt;/p&gt;
+$$向前差商：f&#39;(x_0) \approx \frac{f(x_0 + h) - f(x_0)}{h}$$&lt;p&gt;
+&lt;/p&gt;
+$$向后差商：f&#39;(x_0) \approx \frac{f(x_0) - f(x_0 - h)}{h}$$&lt;p&gt;
+&lt;/p&gt;
+$$中心差商：f&#39;(x_0) \approx \frac{f(x_0 + h) - f(x_0 - h)}{2h}$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;截断误差&lt;br&gt;
+将 $f(x_0 + h), f(x_0 − h)$ 在 $x_0$ 点 Taylor 展开, 可以得
+&lt;/p&gt;
+$$f&#39;(x_0) - \frac{f(x_0 + h) - f(x_0)}{h} = -\frac{h}{2} f&#39;&#39;(x_0)+O(h^2)$$&lt;p&gt;
+&lt;/p&gt;
+$$f&#39;(x_0) - \frac{f(x_0) - f(x_0 - h)}{h} = \frac{h}{2} f&#39;&#39;(x_0)+O(h^2)$$&lt;p&gt;
+&lt;/p&gt;
+$$f&#39;(x_0) - \frac{f(x_0 + h) - f(x_0 - h)}{2h} = -\frac{h^2}{6} f^{(3)}(x_0)+O(h^3)$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插值型求导公式&lt;br&gt;
+建立插值多项式 $p_n(x)$作为函数 $f(x)$ 的近似，取其导数 $p_n&amp;rsquo;(x)$ 作为 $f&amp;rsquo;(x)$ 的近似，称为插值型求导公式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常微分方程数值解&#34;&gt;常微分方程数值解
+&lt;/h2&gt;&lt;h3 id=&#34;euler-方法&#34;&gt;Euler 方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Euler 公式：
+&lt;/p&gt;
+$$y_{i+1} = y_i + h f(x_i, y_i), \quad i=0,1,\cdots,n-1$$&lt;p&gt;
+其中 $h$ 为步长，$y_i$ 为 $y(x_i)$ 的近似值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;梯形公式：
+&lt;/p&gt;
+$$y_{i+1} = y_i + \frac{h}{2} [f(x_i, y_i) + f(x_{i+1}, y_{i+1})], \quad i=0,1,\cdots,n-1$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;预测校正公式(改进的Euler公式)：
+&lt;/p&gt;
+$$\begin{cases}
+预测：y^{(p)}_{i+1} = y_i + h f(x_i, y_i) \\
+校正：y_{i+1} = y_i + \frac{h}{2} [f(x_i, y_i) + f(x_{i+1}, y^{(p)}_{i+1})]
+\end{cases}$$&lt;p&gt;
+局部截断误差：$R_{i+1} = y(x_{i+1}) - y(x_i) - \frac{h}{2} [f(x_i, y(x_i)) + f(x_{i+1}, y(x_i)+hf(x_i,y(x_i))]$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;求法：分别求出预测公式的截断误差 $R^{（p）}_ {i+1}$ 和校正公式的截断误差 $R^{（c）}_ {i+1}$ ，则$R_{i+1}$可以通过加项减项凑出$R^{（p）}_ {i+1}$和$R^{（c）}_ {i+1}$&lt;br&gt;
+若$R_{i+1}=O(h^{p+1})$，则称该公式为 $p$ 阶的。Euler 公式为 1 阶，梯形公式和预测校正公式为 2 阶。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;整体截断误差：$E(h)= \max\limits_{0 \leq i \leq n} |y(x_i) - y_i^{[h]}|$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;runge-kutta-方法&#34;&gt;Runge-Kutta 方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;r级 Runge-Kutta 公式：
+$$\begin{cases}
+y_{i+1} = y_i + h \sum\limits_{j=1}^{r} \alpha_j k_j \\
+k_1 = f(x_i, y_i) \\
+k_2 = f(x_i + \lambda_2 h, y_i + h (\mu_{21} k_1)) \\
+k_3 = f(x_i + \lambda_3 h, y_i + h (\mu_{31} k_1 + \mu_{32} k_2)) \\
+\quad \vdots \\
+k_r = f(x_i + \lambda_j h, y_i + h (\mu_{r1} k_1 + \mu_{r2} k_2 + \cdots + \mu_{r,r-1} k_{r-1}))
+\end{cases}$$&lt;/li&gt;
+&lt;li&gt;2阶 Runge-Kutta 公式推导：
+当 $r=2$ 时，有
+$$\begin{cases}
+y_{i+1} = y_i + h (\alpha_1 k_1 + \alpha_2 k_2) \\
+k_1 = f(x_i, y_i) \\
+k_2 = f(x_i + \lambda_2 h, y_i + h \mu_{21} k_1)
+\end{cases}$$
+其局部截断误差为
+$$\begin{cases}
+R_{i+1} = y(x_{i+1}) - y(x_i) - h (\alpha_1 K_1 + \alpha_2 K_2) \\
+K_1 = f(x_i, y(x_i)) \\
+K_2 = f(x_i + \lambda_2 h, y(x_i) + h \mu_{21} K_1)
+\end{cases}$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将 $y(x_{i+1})$ 在 $x_i$ 点 Taylor 展开, 将 $K_2$ 在 $(x_i, y_i)$ 点 Taylor 展开&lt;br&gt;
+代入使公式具有二阶精度，即$R_{i+1}=O(h^{3})$，得
+&lt;/p&gt;
+$$\begin{cases}
+\alpha_1 + \alpha_2 = 1 \\
+\alpha_2 \lambda_2 = \frac{1}{2} \\
+\alpha_2 \mu_{21} = \frac{1}{2}
+\end{cases}$$&lt;h2 id=&#34;偏微分方程数值解&#34;&gt;偏微分方程数值解
+&lt;/h2&gt;&lt;h3 id=&#34;抛物型方程的差分解法&#34;&gt;抛物型方程的差分解法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;网格剖分
+将求解区域 $[0, l] \times [0, T]$ 作等距网格剖分，设空间步长为 $h = \frac{l}{M}$，时间步长为 $\tau = \frac{T}{N}$，则网格点为
+&lt;/p&gt;
+$$(x_i, t_k) = (i h, k \tau), \quad 0 \leq i \leq M, 0 \leq k \leq N$$&lt;p&gt;
+记 $u_i^k$ 为 $u(x_i, t_k)$ 的近似值。$r = \frac{a \tau}{h^2}$ 为步长比。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;差分格式推导&lt;br&gt;
+考虑下面的定解问题：
+&lt;/p&gt;
+$$\frac{\partial u}{\partial t} - a \frac{\partial^2 u}{\partial x^2}=f(x,t), \quad a &gt; 0$$&lt;p&gt;
+&lt;/p&gt;
+$$u(x,0) = \varphi(x), \quad x \in [0, l]$$&lt;p&gt;
+&lt;/p&gt;
+$$u(0,t) = \alpha(t), \quad u(l,t) = \beta(t), \quad t \in [0, T]$$&lt;p&gt;
+差分格式推导常用公式：
+&lt;/p&gt;
+$$g&#39;(x_0)= \frac{1}{h}[g(x_0+h)-g(x_0)] - \frac{h}{2} g&#39;&#39;(\xi),\quad x_0 &lt; \xi &lt; x_0 + h;$$&lt;p&gt;
+&lt;/p&gt;
+$$g&#39;(x_0)= \frac{1}{h}[g(x_0)-g(x_0-h)] + \frac{h}{2} g&#39;&#39;(\xi),\quad x_0 - h &lt; \xi &lt; x_0;$$&lt;p&gt;
+&lt;/p&gt;
+$$g&#39;(x_0)= \frac{1}{2h}[g(x_0+h)-g(x_0-h)] - \frac{h^2}{6} g^{(3)}(\xi),\quad x_0 - h &lt; \xi &lt; x_0 + h;$$&lt;p&gt;
+&lt;/p&gt;
+$$g&#39;&#39;(x_0)= \frac{1}{h^2}[g(x_0+h)-2g(x_0)+g(x_0-h)] - \frac{h^2}{12} g^{(4)}(\xi),\quad x_0 - h &lt; \xi &lt; x_0 + h;$$&lt;p&gt;
+&lt;/p&gt;
+$$g(x_0)= \frac{1}{2}[g(x_0+h)+g(x_0-h)] - \frac{h^2}{2} g&#39;&#39;(\xi),\quad x_0 - h &lt; \xi &lt; x_0 + h.$$&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         </item>
@@ -1458,6 +1845,64 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;ul&gt;
 &lt;li&gt;手动定义异常类，继承Exception类或RuntimeException类，重写构造方法&lt;/li&gt;
 &lt;li&gt;用于表示特定的异常情况，让报错信息更加见名知义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;file类&#34;&gt;File类
+&lt;/h2&gt;&lt;h3 id=&#34;创建file对象&#34;&gt;创建File对象
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;new File(String pathname)：通过路径创建File对象&lt;/li&gt;
+&lt;li&gt;new File(String parent, String child)：通过父路径和子路径创建File对象&lt;/li&gt;
+&lt;li&gt;new File(File parent, String child)：通过父File对象和子路径创建File对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;常用方法&#34;&gt;常用方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;创建文件和目录
+&lt;ul&gt;
+&lt;li&gt;createNewFile()：创建文件&lt;/li&gt;
+&lt;li&gt;mkdir()：创建单级目录&lt;/li&gt;
+&lt;li&gt;mkdirs()：创建多级目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;删除文件和目录
+&lt;ul&gt;
+&lt;li&gt;delete()：删除文件或目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;io流&#34;&gt;IO流
+&lt;/h2&gt;&lt;h3 id=&#34;字节流&#34;&gt;字节流
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;输入流：InputStream及其子类，用于读取数据&lt;/li&gt;
+&lt;li&gt;输出流：OutputStream及其子类，用于写出数据&lt;/li&gt;
+&lt;li&gt;常用子类：
+&lt;ul&gt;
+&lt;li&gt;FileInputStream：文件字节输入流&lt;/li&gt;
+&lt;li&gt;FileOutputStream：文件字节输出流&lt;/li&gt;
+&lt;li&gt;BufferedInputStream：缓冲字节输入流&lt;/li&gt;
+&lt;li&gt;BufferedOutputStream：缓冲字节输出流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;字符集
+&lt;ul&gt;
+&lt;li&gt;ASCII：美国标准信息交换码，单字节编码，表示128个字符&lt;/li&gt;
+&lt;li&gt;ISO-8859-1：拉丁字母编码，单字节编码，表示256个字符&lt;/li&gt;
+&lt;li&gt;GB2312：简体中文编码，双字节编码，表示6763个汉字和682个其他字符&lt;/li&gt;
+&lt;li&gt;GBK：扩展GB2312，双字节编码，表示21003个汉字和其他字符&lt;/li&gt;
+&lt;li&gt;UTF-8：可变长度编码，1-4字节表示一个字符，兼容ASCII编码，支持全球所有语言字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;字符流&#34;&gt;字符流
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;输入流：Reader及其子类，用于读取字符数据&lt;/li&gt;
+&lt;li&gt;输出流：Writer及其子类，用于写出字符数据&lt;/li&gt;
+&lt;li&gt;常用子类：
+&lt;ul&gt;
+&lt;li&gt;FileReader：文件字符输入流&lt;/li&gt;
+&lt;li&gt;FileWriter：文件字符输出流&lt;/li&gt;
+&lt;li&gt;BufferedReader：缓冲字符输入流&lt;/li&gt;
+&lt;li&gt;BufferedWriter：缓冲字符输出流&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

@@ -492,6 +492,18 @@
         <li><a href="#异常的处理">异常的处理</a></li>
       </ul>
     </li>
+    <li><a href="#file类">File类</a>
+      <ul>
+        <li><a href="#创建file对象">创建File对象</a></li>
+        <li><a href="#常用方法">常用方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#io流">IO流</a>
+      <ul>
+        <li><a href="#字节流">字节流</a></li>
+        <li><a href="#字符流">字符流</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -1147,6 +1159,64 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 </ul>
 </li>
 </ol>
+<h2 id="file类">File类
+</h2><h3 id="创建file对象">创建File对象
+</h3><ol>
+<li>new File(String pathname)：通过路径创建File对象</li>
+<li>new File(String parent, String child)：通过父路径和子路径创建File对象</li>
+<li>new File(File parent, String child)：通过父File对象和子路径创建File对象</li>
+</ol>
+<h3 id="常用方法">常用方法
+</h3><ol>
+<li>创建文件和目录
+<ul>
+<li>createNewFile()：创建文件</li>
+<li>mkdir()：创建单级目录</li>
+<li>mkdirs()：创建多级目录</li>
+</ul>
+</li>
+<li>删除文件和目录
+<ul>
+<li>delete()：删除文件或目录</li>
+</ul>
+</li>
+</ol>
+<h2 id="io流">IO流
+</h2><h3 id="字节流">字节流
+</h3><ol>
+<li>输入流：InputStream及其子类，用于读取数据</li>
+<li>输出流：OutputStream及其子类，用于写出数据</li>
+<li>常用子类：
+<ul>
+<li>FileInputStream：文件字节输入流</li>
+<li>FileOutputStream：文件字节输出流</li>
+<li>BufferedInputStream：缓冲字节输入流</li>
+<li>BufferedOutputStream：缓冲字节输出流</li>
+</ul>
+</li>
+<li>字符集
+<ul>
+<li>ASCII：美国标准信息交换码，单字节编码，表示128个字符</li>
+<li>ISO-8859-1：拉丁字母编码，单字节编码，表示256个字符</li>
+<li>GB2312：简体中文编码，双字节编码，表示6763个汉字和682个其他字符</li>
+<li>GBK：扩展GB2312，双字节编码，表示21003个汉字和其他字符</li>
+<li>UTF-8：可变长度编码，1-4字节表示一个字符，兼容ASCII编码，支持全球所有语言字符</li>
+</ul>
+</li>
+</ol>
+<h3 id="字符流">字符流
+</h3><ol>
+<li>输入流：Reader及其子类，用于读取字符数据</li>
+<li>输出流：Writer及其子类，用于写出字符数据</li>
+<li>常用子类：
+<ul>
+<li>FileReader：文件字符输入流</li>
+<li>FileWriter：文件字符输出流</li>
+<li>BufferedReader：缓冲字符输入流</li>
+<li>BufferedWriter：缓冲字符输出流</li>
+</ul>
+</li>
+</ol>
 
 </section>
 
@@ -1294,7 +1364,7 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         
             2020 - 
         
-        2025 caibb16
+        2026 caibb16
     </section>
     
     <section class="powerby">
@@ -1406,7 +1476,7 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         
             2020 - 
         
-        2025 caibb16
+        2026 caibb16
     </section>
     
     <section class="powerby">
