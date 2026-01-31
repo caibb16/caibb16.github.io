@@ -628,10 +628,16 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;输出流：OutputStream及其子类，用于写出数据&lt;/li&gt;
 &lt;li&gt;常用子类：
 &lt;ul&gt;
-&lt;li&gt;FileInputStream：文件字节输入流&lt;/li&gt;
-&lt;li&gt;FileOutputStream：文件字节输出流&lt;/li&gt;
-&lt;li&gt;BufferedInputStream：缓冲字节输入流&lt;/li&gt;
-&lt;li&gt;BufferedOutputStream：缓冲字节输出流&lt;/li&gt;
+&lt;li&gt;FileInputStream：文件字节输入流
+&lt;ul&gt;
+&lt;li&gt;方法：read()、read(byte[] b)、read(byte[] b, int off, int len)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;FileOutputStream：文件字节输出流
+&lt;ul&gt;
+&lt;li&gt;方法：write(int b)、write(byte[] b)、write(byte[] b, int off, int len)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;字符集
@@ -650,10 +656,12 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;li&gt;输出流：Writer及其子类，用于写出字符数据&lt;/li&gt;
 &lt;li&gt;常用子类：
 &lt;ul&gt;
-&lt;li&gt;FileReader：文件字符输入流&lt;/li&gt;
+&lt;li&gt;FileReader：文件字符输入流
+&lt;ul&gt;
+&lt;li&gt;方法：read()、read(char[] cbuf)、readLine()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;FileWriter：文件字符输出流&lt;/li&gt;
-&lt;li&gt;BufferedReader：缓冲字符输入流&lt;/li&gt;
-&lt;li&gt;BufferedWriter：缓冲字符输出流&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

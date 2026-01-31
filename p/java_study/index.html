@@ -1188,10 +1188,16 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 <li>输出流：OutputStream及其子类，用于写出数据</li>
 <li>常用子类：
 <ul>
-<li>FileInputStream：文件字节输入流</li>
-<li>FileOutputStream：文件字节输出流</li>
-<li>BufferedInputStream：缓冲字节输入流</li>
-<li>BufferedOutputStream：缓冲字节输出流</li>
+<li>FileInputStream：文件字节输入流
+<ul>
+<li>方法：read()、read(byte[] b)、read(byte[] b, int off, int len)</li>
+</ul>
+</li>
+<li>FileOutputStream：文件字节输出流
+<ul>
+<li>方法：write(int b)、write(byte[] b)、write(byte[] b, int off, int len)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>字符集
@@ -1210,10 +1216,12 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 <li>输出流：Writer及其子类，用于写出字符数据</li>
 <li>常用子类：
 <ul>
-<li>FileReader：文件字符输入流</li>
+<li>FileReader：文件字符输入流
+<ul>
+<li>方法：read()、read(char[] cbuf)、readLine()</li>
+</ul>
+</li>
 <li>FileWriter：文件字符输出流</li>
-<li>BufferedReader：缓冲字符输入流</li>
-<li>BufferedWriter：缓冲字符输出流</li>
 </ul>
 </li>
 </ol>
