@@ -502,6 +502,8 @@
       <ul>
         <li><a href="#字节流">字节流</a></li>
         <li><a href="#字符流">字符流</a></li>
+        <li><a href="#序列化流">序列化流</a></li>
+        <li><a href="#转换流">转换流</a></li>
       </ul>
     </li>
   </ul>
@@ -1224,6 +1226,34 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 <li>FileWriter：文件字符输出流</li>
 </ul>
 </li>
+<li>使用场景
+<ul>
+<li>字节流：拷贝任意类型的文件</li>
+<li>字符流：处理文本文件，如txt、java、xml等</li>
+</ul>
+</li>
+</ol>
+<h3 id="序列化流">序列化流
+</h3><ol>
+<li>ObjectOutputStream：对象输出流，用于将对象序列化到文件中
+<ul>
+<li>方法：writeObject(Object obj)、flush()、close()</li>
+</ul>
+</li>
+<li>ObjectInputStream：对象输入流，用于从文件中读取对象
+<ul>
+<li>方法：readObject()、close()</li>
+</ul>
+</li>
+</ol>
+<h3 id="转换流">转换流
+</h3><ol>
+<li>InputStreamReader：将字节流转换为字符流
+<ul>
+<li>构造方法：InputStreamReader(InputStream in)、InputStreamReader(InputStream in, String charsetName)</li>
+</ul>
+</li>
+<li>OutputStreamWriter：将字符流转换为字节流</li>
 </ol>
 
 </section>
