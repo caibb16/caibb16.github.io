@@ -9,10 +9,10 @@
         <copyright>caibb16</copyright>
         <lastBuildDate>Mon, 29 Dec 2025 12:32:33 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数值分析笔记</title>
-        <link>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
+        <link>https://caibb16.github.io/post/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 29 Dec 2025 12:32:33 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://caibb16.github.io/post/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;绪论&#34;&gt;绪论
 &lt;/h2&gt;&lt;h3 id=&#34;误差&#34;&gt;误差
 &lt;/h3&gt;&lt;p&gt;绝对误差： $e = x^* - x$&lt;br&gt;
@@ -778,10 +778,10 @@ $$g(x_0)= \frac{1}{2}[g(x_0+h)+g(x_0-h)] - \frac{h^2}{2} g&#39;&#39;(\xi),\quad 
         </item>
         <item>
         <title>Navila复现笔记</title>
-        <link>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现，引用如下：&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2412.04453&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -797,10 +797,10 @@ $$g(x_0)= \frac{1}{2}[g(x_0+h)+g(x_0-h)] - \frac{h^2}{2} g&#39;&#39;(\xi),\quad 
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高层次视觉语言理解：VLM输出语言形式的中级动作，例如“右转 30 度”。中级动作输出传达了位置和方向信息，指导机器人的导航策略。&lt;/li&gt;
 &lt;li&gt;低层次运动控制：训练一个低级视觉运动策略来遵循指令以对导航指令进行执行，具体来说就是将VLM的高层语言导航指令转换为精确的联合动作。
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
 	width=&#34;1128&#34;
 	height=&#34;308&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila架构图&#34;
@@ -823,10 +823,10 @@ $$g(x_0)= \frac{1}{2}[g(x_0+h)+g(x_0-h)] - \frac{h^2}{2} g&#39;&#39;(\xi),\quad 
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;训练过程如下图：&lt;br&gt;
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;441&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila控制策略&#34;
@@ -1196,10 +1196,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/ol&gt;
 &lt;h3 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
+&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
 	width=&#34;625&#34;
 	height=&#34;344&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;终端显示&#34;
@@ -1219,10 +1219,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Reinforcement Learning</title>
-        <link>https://caibb16.github.io/p/reinforcement-learning/</link>
+        <link>https://caibb16.github.io/post/reinforcement-learning/</link>
         <pubDate>Sun, 21 Dec 2025 14:49:14 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/reinforcement-learning/</guid>
+        <guid>https://caibb16.github.io/post/reinforcement-learning/</guid>
         <description>&lt;h2 id=&#34;什么是强化学习&#34;&gt;什么是强化学习
 &lt;/h2&gt;&lt;p&gt;强化学习（Reinforcement Learning，RL）是一种机器学习范式，旨在训练智能体通过与环境交互来学习最佳行为策略，以最大化累积奖励。与监督学习不同，强化学习没有明确的输入输出对，而是通过试错和奖励信号来指导学习过程。&lt;/p&gt;
 &lt;h2 id=&#34;强化学习的基本概念&#34;&gt;强化学习的基本概念
@@ -1258,10 +1258,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>Linux 常用命令速查</title>
-        <link>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://caibb16.github.io/post/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Wed, 10 Dec 2025 14:28:59 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>https://caibb16.github.io/post/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 Linux 命令，偏&amp;quot;日常使用备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1756,10 +1756,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>PyTorch 张量操作命令速查</title>
-        <link>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://caibb16.github.io/post/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Mon, 08 Dec 2025 16:18:37 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <guid>https://caibb16.github.io/post/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;记录常用 PyTorch 张量操作命令，偏&amp;quot;查表备忘&amp;quot;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2269,10 +2269,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>git命令自用</title>
-        <link>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
+        <link>https://caibb16.github.io/post/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
+        <guid>https://caibb16.github.io/post/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2307,16 +2307,12 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 在当前目录初始化仓库&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 克隆远程仓库&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/username/repo.git
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 克隆指定分支&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone -b 分支名 https://github.com/username/repo.git
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
@@ -2344,6 +2340,8 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看本地分支&lt;/span&gt;
@@ -2359,6 +2357,8 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 删除本地分支&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -d dev
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -D dev  &lt;span class=&#34;c1&#34;&gt;# 强制删除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 移除git跟踪的文件但保留在本地&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git rm --cached 文件名
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 强制推送本地分支到远程分支&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -f origin main
@@ -2385,6 +2385,8 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看远程仓库&lt;/span&gt;
@@ -2401,16 +2403,18 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin main
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 拉取远程仓库最新代码&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin main
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 添加submodule&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add &amp;lt;inner_repo_url&amp;gt; path/to/inner_repo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
         <title>Turtlebot3_test</title>
-        <link>https://caibb16.github.io/p/turtlebot3_test/</link>
+        <link>https://caibb16.github.io/post/turtlebot3_test/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/turtlebot3_test/</guid>
+        <guid>https://caibb16.github.io/post/turtlebot3_test/</guid>
         <description>&lt;h2 id=&#34;前置准备&#34;&gt;前置准备
 &lt;/h2&gt;&lt;p&gt;运行相关命令前需先安装对应功能包，如turtlebot3、slam_toolbox、cartographer、nav2等。&lt;br&gt;
 若从源码编译安装，请确保已编译对应功能包。
@@ -2505,10 +2509,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
         </item>
         <item>
         <title>java_study</title>
-        <link>https://caibb16.github.io/p/java_study/</link>
+        <link>https://caibb16.github.io/post/java_study/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/java_study/</guid>
+        <guid>https://caibb16.github.io/post/java_study/</guid>
         <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
 &lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
 &lt;/h3&gt;&lt;ol&gt;
@@ -3201,11 +3205,11 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Markdown 语法指南</title>
-        <link>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
+        <link>https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
-        <description>&lt;img src="https://caibb16.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;h1 id=&#34;markdown-语法说明&#34;&gt;Markdown 语法说明
+        <guid>https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid>
+        <description>&lt;img src="https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;h1 id=&#34;markdown-语法说明&#34;&gt;Markdown 语法说明
 &lt;/h1&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，广泛用于编写文档、博客、说明书等。它语法简洁，易于阅读和编写，可快速转换为 HTML 网页。&lt;/p&gt;
 &lt;h2 id=&#34;标题&#34;&gt;标题
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 号表示标题，支持六级标题：&lt;/p&gt;
@@ -3354,10 +3358,10 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>https://caibb16.github.io/p/math-typesetting/</link>
+        <link>https://caibb16.github.io/post/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/math-typesetting/</guid>
+        <guid>https://caibb16.github.io/post/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;

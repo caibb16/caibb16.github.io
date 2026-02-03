@@ -9,10 +9,10 @@
         <copyright>caibb16</copyright>
         <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/tags/slam/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Turtlebot3_test</title>
-        <link>https://caibb16.github.io/p/turtlebot3_test/</link>
+        <link>https://caibb16.github.io/post/turtlebot3_test/</link>
         <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/p/turtlebot3_test/</guid>
+        <guid>https://caibb16.github.io/post/turtlebot3_test/</guid>
         <description>&lt;h2 id=&#34;前置准备&#34;&gt;前置准备
 &lt;/h2&gt;&lt;p&gt;运行相关命令前需先安装对应功能包，如turtlebot3、slam_toolbox、cartographer、nav2等。&lt;br&gt;
 若从源码编译安装，请确保已编译对应功能包。

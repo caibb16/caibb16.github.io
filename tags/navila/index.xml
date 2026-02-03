@@ -9,10 +9,10 @@
         <copyright>caibb16</copyright>
         <lastBuildDate>Wed, 24 Dec 2025 12:39:23 +0800</lastBuildDate><atom:link href="https://caibb16.github.io/tags/navila/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Navila复现笔记</title>
-        <link>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 24 Dec 2025 12:39:23 +0800</pubDate>
         
-        <guid>https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;引言&#34;&gt;引言
 &lt;/h2&gt;&lt;p&gt;本文尝试对Navila论文进行复现，引用如下：&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2412.04453&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -28,10 +28,10 @@
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高层次视觉语言理解：VLM输出语言形式的中级动作，例如“右转 30 度”。中级动作输出传达了位置和方向信息，指导机器人的导航策略。&lt;/li&gt;
 &lt;li&gt;低层次运动控制：训练一个低级视觉运动策略来遵循指令以对导航指令进行执行，具体来说就是将VLM的高层语言导航指令转换为精确的联合动作。
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image.png&#34;
 	width=&#34;1128&#34;
 	height=&#34;308&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_19ca08b344dce6ca.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image_hu_535d66e3322dd091.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila架构图&#34;
@@ -54,10 +54,10 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;训练过程如下图：&lt;br&gt;
-&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
+&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2.png&#34;
 	width=&#34;1046&#34;
 	height=&#34;441&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_9745ae400f7e16dd.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image2_hu_b30a74d5aab416f5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Navila控制策略&#34;
@@ -427,10 +427,10 @@ mp3d数据及下载比较麻烦，使用官方给的脚本不知道为什么只�
 &lt;/ol&gt;
 &lt;h3 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
+&lt;li&gt;运行r2r.sh脚本后，终端会实时可视化VLM的action指令&lt;img src=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3.png&#34;
 	width=&#34;625&#34;
 	height=&#34;344&#34;
-	srcset=&#34;https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/p/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
+	srcset=&#34;https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_ee3553dcbcb888f6.png 480w, https://caibb16.github.io/post/navila%E5%A4%8D%E7%8E%B0%E7%AC%94%E8%AE%B0/image3_hu_b7787f6723bc3561.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;终端显示&#34;
