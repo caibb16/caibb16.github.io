@@ -8,156 +8,416 @@
         <language>zh-cn</language>
         <copyright>caibb16</copyright>
         <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/tags/%E8%AF%AD%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>java_study</title>
-        <link>https://caibb16.github.io/post/java_study/</link>
+        <title>Java 学习笔记</title>
+        <link>https://caibb16.github.io/post/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://caibb16.github.io/post/java_study/</guid>
-        <description>&lt;h2 id=&#34;数据类型&#34;&gt;数据类型
-&lt;/h2&gt;&lt;h3 id=&#34;基本数据类型数据值存储在自己空间&#34;&gt;基本数据类型：数据值存储在自己空间
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;整数类型：byte、short、int、long&lt;br&gt;
-整数在计算机中以补码形式存在，最高位为符号位&lt;/p&gt;
+        <guid>https://caibb16.github.io/post/java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;-目录&#34;&gt;📚 目录
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95&#34; &gt;基础语法&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b&#34; &gt;数据类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%b5%81%e7%a8%8b%e6%8e%a7%e5%88%b6&#34; &gt;流程控制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%95%b0%e7%bb%84&#34; &gt;数组&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%96%b9%e6%b3%95&#34; &gt;方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1&#34; &gt;面向对象&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e7%b1%bb%e5%92%8c%e5%af%b9%e8%b1%a1&#34; &gt;类和对象&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%b0%81%e8%a3%85&#34; &gt;封装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e7%bb%a7%e6%89%bf&#34; &gt;继承&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%a4%9a%e6%80%81&#34; &gt;多态&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%8c%85&#34; &gt;包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#final%e5%85%b3%e9%94%ae%e5%ad%97&#34; &gt;final关键字&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e9%9d%99%e6%80%81%e4%bb%a3%e7%a0%81%e5%9d%97&#34; &gt;静态代码块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%8a%bd%e8%b1%a1%e7%b1%bb%e5%92%8c%e6%8a%bd%e8%b1%a1%e6%96%b9%e6%b3%95&#34; &gt;抽象类和抽象方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%8e%a5%e5%8f%a3&#34; &gt;接口&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%86%85%e9%83%a8%e7%b1%bb&#34; &gt;内部类&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e9%9b%86%e5%90%88%e6%a1%86%e6%9e%b6&#34; &gt;集合框架&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%8d%95%e5%88%97%e9%9b%86%e5%90%88&#34; &gt;单列集合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%8f%8c%e5%88%97%e9%9b%86%e5%90%88&#34; &gt;双列集合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e4%b8%8d%e5%8f%af%e5%8f%98%e9%9b%86%e5%90%88&#34; &gt;不可变集合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#stream%e6%b5%81&#34; &gt;Stream流&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e9%ab%98%e7%ba%a7%e7%89%b9%e6%80%a7&#34; &gt;高级特性&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&#34; &gt;异常处理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#file%e7%b1%bb&#34; &gt;File类&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#io%e6%b5%81&#34; &gt;IO流&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%a4%9a%e7%ba%bf%e7%a8%8b&#34; &gt;多线程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b&#34; &gt;网络编程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;基础语法&#34;&gt;基础语法
+&lt;/h2&gt;&lt;h3 id=&#34;数据类型&#34;&gt;数据类型
+&lt;/h3&gt;&lt;h4 id=&#34;1-基本数据类型&#34;&gt;1️⃣ 基本数据类型
+&lt;/h4&gt;&lt;p&gt;数据值存储在自己空间&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类型&lt;/th&gt;
+          &lt;th&gt;分类&lt;/th&gt;
+          &lt;th&gt;占用空间&lt;/th&gt;
+          &lt;th&gt;说明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;byte&lt;/td&gt;
+          &lt;td&gt;整数&lt;/td&gt;
+          &lt;td&gt;1字节&lt;/td&gt;
+          &lt;td&gt;-128 ~ 127&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;short&lt;/td&gt;
+          &lt;td&gt;整数&lt;/td&gt;
+          &lt;td&gt;2字节&lt;/td&gt;
+          &lt;td&gt;-32768 ~ 32767&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;int&lt;/td&gt;
+          &lt;td&gt;整数&lt;/td&gt;
+          &lt;td&gt;4字节&lt;/td&gt;
+          &lt;td&gt;默认整数类型&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;long&lt;/td&gt;
+          &lt;td&gt;整数&lt;/td&gt;
+          &lt;td&gt;8字节&lt;/td&gt;
+          &lt;td&gt;需加L后缀&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;float&lt;/td&gt;
+          &lt;td&gt;浮点&lt;/td&gt;
+          &lt;td&gt;4字节&lt;/td&gt;
+          &lt;td&gt;需加F后缀&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;double&lt;/td&gt;
+          &lt;td&gt;浮点&lt;/td&gt;
+          &lt;td&gt;8字节&lt;/td&gt;
+          &lt;td&gt;默认浮点类型&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;char&lt;/td&gt;
+          &lt;td&gt;字符&lt;/td&gt;
+          &lt;td&gt;2字节&lt;/td&gt;
+          &lt;td&gt;单个字符&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;boolean&lt;/td&gt;
+          &lt;td&gt;布尔&lt;/td&gt;
+          &lt;td&gt;1字节&lt;/td&gt;
+          &lt;td&gt;true/false&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;byte 1字节&lt;br&gt;
-short 2字节&lt;br&gt;
-int  4字节&lt;br&gt;
-long 8字节&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;重点&lt;/strong&gt;：整数在计算机中以补码形式存在，最高位为符号位&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;浮点类型：float、double&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;字符类型：char&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;布尔类型：boolean&lt;/p&gt;
-&lt;/li&gt;
+&lt;h4 id=&#34;2-引用数据类型&#34;&gt;2️⃣ 引用数据类型
+&lt;/h4&gt;&lt;p&gt;数据值存储在堆中，自己空间存储地址值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类（Class）&lt;/li&gt;
+&lt;li&gt;接口（Interface）&lt;/li&gt;
+&lt;li&gt;数组（Array）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-类型转换&#34;&gt;3️⃣ 类型转换
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 小范围 → 大范围（自动转换）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 高位补0，符号位扩展&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 自动转换&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 大范围 → 小范围（强制转换）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 直接截取低位，可能丢失精度&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;100L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 强制转换&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;流程控制&#34;&gt;流程控制
+&lt;/h3&gt;&lt;h4 id=&#34;switch-语句&#34;&gt;Switch 语句
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;📌 Case穿透现象&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;执行case语句时，若未发现&lt;code&gt;break&lt;/code&gt;，则顺序执行下一个case&lt;/li&gt;
+&lt;li&gt;直到发现&lt;code&gt;break&lt;/code&gt;为止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;使用场景&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;if&lt;/code&gt;：适用于范围判断&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;switch&lt;/code&gt;：适用于在有限个数据中任选其一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;switch&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;day&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;工作日&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;周末&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;无效日期&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;循环语句&#34;&gt;循环语句
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;for vs while&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;对比项&lt;/th&gt;
+          &lt;th&gt;for&lt;/th&gt;
+          &lt;th&gt;while&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;运行规则&lt;/td&gt;
+          &lt;td&gt;相同&lt;/td&gt;
+          &lt;td&gt;相同&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;使用场景&lt;/td&gt;
+          &lt;td&gt;已知循环次数/范围&lt;/td&gt;
+          &lt;td&gt;只知道结束条件&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;continue vs break&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;关键字&lt;/th&gt;
+          &lt;th&gt;作用&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;continue&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;结束本次循环，进入下一次循环&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;break&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;结束整个循环&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;数组&#34;&gt;数组
+&lt;/h3&gt;&lt;h4 id=&#34;初始化方式&#34;&gt;初始化方式
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 静态初始化（指定初始化值）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 动态初始化（指定数组长度）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 二维数组&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[][]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[][]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}};&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;遍历数组&#34;&gt;遍历数组
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 增强for循环&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 二维数组遍历&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 外循环：获取每一行&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 内循环：获取每个元素&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;方法&#34;&gt;方法
+&lt;/h3&gt;&lt;h4 id=&#34;方法定义的思路&#34;&gt;方法定义的思路
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;我要干什么？&lt;/strong&gt; → 确定方法体&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;我需要什么？&lt;/strong&gt; → 确定形参&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;引用数据类型数据值存储在堆中自己空间存储地址值&#34;&gt;引用数据类型：数据值存储在堆中，自己空间存储地址值
-&lt;/h3&gt;&lt;p&gt;类、接口、数组&lt;/p&gt;
-&lt;h3 id=&#34;类型转换&#34;&gt;类型转换
-&lt;/h3&gt;&lt;p&gt;小范围转大范围：高位补0，符号位扩展&lt;br&gt;
-大范围转小范围：直接截取低位&lt;/p&gt;
-&lt;h2 id=&#34;switch语句&#34;&gt;switch语句
-&lt;/h2&gt;&lt;p&gt;case穿透：执行case语句时，若未发现break，则顺序执行下一个case语句，直到发现break为止&lt;br&gt;
-if和switch的各自应用场景：if一般用于对范围的判断，switch用于在有限个数据任选其一&lt;/p&gt;
-&lt;h2 id=&#34;循环语句&#34;&gt;循环语句
-&lt;/h2&gt;&lt;h3 id=&#34;for和while的对比&#34;&gt;for和while的对比
-&lt;/h3&gt;&lt;p&gt;相同点：运行规则相同&lt;br&gt;
-不同点：for循环一般用于知道循环次数或者循环范围，while循环一般用于不知道循环次数和范围，只知道循环的结束条件&lt;/p&gt;
-&lt;h3 id=&#34;continue和break&#34;&gt;continue和break
-&lt;/h3&gt;&lt;p&gt;continue：结束本次循环，进入下一次循环
-break：结束整个循环&lt;/p&gt;
-&lt;h2 id=&#34;数组&#34;&gt;数组
-&lt;/h2&gt;&lt;h3 id=&#34;静态初始化指定初始化值&#34;&gt;静态初始化（指定初始化值）
-&lt;/h3&gt;&lt;p&gt;数据类型[] 数组名 = {元素1, 元素2, 元素3&amp;hellip;  }&lt;/p&gt;
-&lt;h3 id=&#34;动态初始化指定数组长度&#34;&gt;动态初始化（指定数组长度）
-&lt;/h3&gt;&lt;p&gt;数据类型[] 数组名 = new 数据类型[数组长度];&lt;/p&gt;
-&lt;h3 id=&#34;遍历数组&#34;&gt;遍历数组
-&lt;/h3&gt;&lt;p&gt;for(数据类型 变量名 : 数组名){
-//使用变量名进行操作
-}&lt;/p&gt;
-&lt;h2 id=&#34;方法&#34;&gt;方法
-&lt;/h2&gt;&lt;h3 id=&#34;方法的定义&#34;&gt;方法的定义
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;我要干什么？——方法体&lt;/li&gt;
-&lt;li&gt;我需要什么？——形参&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;方法的基本内存原理&#34;&gt;方法的基本内存原理
-&lt;/h3&gt;&lt;p&gt;栈：方法调用时进栈，执行结束时出栈（先进后出）&lt;br&gt;
-堆：创建对象（new）时进堆，存储引用数据类型的值&lt;/p&gt;
-&lt;h3 id=&#34;基本数据类型和引用数据类型的存储&#34;&gt;基本数据类型和引用数据类型的存储
-&lt;/h3&gt;&lt;p&gt;基本数据类型：数据值存储在自己的空间中（传递时传递数据）&lt;br&gt;
-引用数据类型：数据值存储在堆中，自己空间中存储的是地址值（传递时传递地址）&lt;/p&gt;
-&lt;h2 id=&#34;二维数组&#34;&gt;二维数组
-&lt;/h2&gt;&lt;h3 id=&#34;初始化&#34;&gt;初始化
-&lt;/h3&gt;&lt;p&gt;数据类型[ ][ ] 数组名 = new 数据类型[行数][列数];&lt;br&gt;
-数据类型[ ][ ] 数组名 = { {元素1, 元素2}, {元素3, 元素4} }&lt;/p&gt;
-&lt;h3 id=&#34;遍历&#34;&gt;遍历
-&lt;/h3&gt;&lt;p&gt;外循环：遍历二维数组获取每一个一维数组 （数组名[ ]获取一维数组地址）&lt;br&gt;
-内循环：遍历一维数组获取每一个元素 （数组名[ ][ ]同时获取一维数组地址和元素）&lt;/p&gt;
+&lt;h4 id=&#34;内存原理&#34;&gt;内存原理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;方法调用时，栈内存开辟空间存储局部变量和方法调用信息&lt;/li&gt;
+&lt;li&gt;方法执行完毕，栈内存空间释放&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;方法重载&#34;&gt;方法重载
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或参数类型不同即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;方法递归&#34;&gt;方法递归
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;方法自己调用自己&lt;/li&gt;
+&lt;li&gt;递归出口：避免死循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;方法参数传递&#34;&gt;方法参数传递
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基本数据类型&lt;/strong&gt;：值传递&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;引用数据类型&lt;/strong&gt;：地址传递&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;面向对象&#34;&gt;面向对象
-&lt;/h2&gt;&lt;h3 id=&#34;类和对象的关系&#34;&gt;类和对象的关系
-&lt;/h3&gt;&lt;p&gt;类是对象的模板，对象是类的具体体现&lt;/p&gt;
-&lt;h3 id=&#34;成员变量和局部变量&#34;&gt;成员变量和局部变量
-&lt;/h3&gt;&lt;p&gt;成员变量：定义在类中，方法外，可以被类中的所有方法使用，默认初始化值&lt;br&gt;
-局部变量：定义在方法中，只能被该方法使用，使用前必须初始化&lt;/p&gt;
-&lt;h3 id=&#34;构造方法&#34;&gt;构造方法
-&lt;/h3&gt;&lt;ol&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;类和对象&#34;&gt;类和对象
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;类是对象的模板，对象是类的具体体现&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;对象的内存解析&#34;&gt;对象的内存解析
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;栈&lt;/strong&gt;：存储局部变量和方法调用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;堆&lt;/strong&gt;：存储对象实例和数组实例，对象和数组的地址值存储在栈中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;方法区&lt;/strong&gt;：存储类信息、常量、静态变量、方法字节码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;封装&#34;&gt;封装
+&lt;/h3&gt;&lt;h4 id=&#34;成员变量和局部变量&#34;&gt;成员变量和局部变量
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;成员变量&lt;/strong&gt;：定义在类中，方法外，可以被类中的所有方法使用，默认初始化值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;局部变量&lt;/strong&gt;：定义在方法中，只能被该方法使用，使用前必须初始化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;构造方法&#34;&gt;构造方法
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;方法名和类名相同&lt;/li&gt;
 &lt;li&gt;没有返回值类型&lt;/li&gt;
 &lt;li&gt;用于创建对象并初始化对象成员变量&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;方法重载&#34;&gt;方法重载
-&lt;/h3&gt;&lt;p&gt;在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或参数类型不同即可&lt;/p&gt;
-&lt;h3 id=&#34;就近原则和this关键字&#34;&gt;就近原则和this关键字
-&lt;/h3&gt;&lt;p&gt;就近原则：在方法中使用变量时，优先使用局部变量，如果没有则使用成员变量&lt;br&gt;
-this关键字的两种用法：&lt;/p&gt;
+&lt;h4 id=&#34;方法重载-1&#34;&gt;方法重载
+&lt;/h4&gt;&lt;p&gt;在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或参数类型不同即可&lt;/p&gt;
+&lt;h4 id=&#34;this关键字&#34;&gt;this关键字
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;就近原则&lt;/strong&gt;：在方法中使用变量时，优先使用局部变量，如果没有则使用成员变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;this关键字的两种用法&lt;/strong&gt;：
 &lt;ol&gt;
 &lt;li&gt;表示当前对象的引用，指向当前对象本身&lt;/li&gt;
 &lt;li&gt;在构造方法中，this(形参列表)表示调用本类中的另一个构造方法&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;this的内存原理：this存储在栈中，指向堆中的当前对象，代表方法调用者的地址值&lt;/p&gt;
-&lt;h3 id=&#34;javabean类描述某类事物&#34;&gt;JavaBean类（描述某类事物）
-&lt;/h3&gt;&lt;ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;内存原理&lt;/strong&gt;：this存储在栈中，指向堆中的当前对象，代表方法调用者的地址值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;javabean类&#34;&gt;JavaBean类
+&lt;/h4&gt;&lt;p&gt;JavaBean用于描述某类事物，具有以下特点：&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;类是公共的（public）&lt;/li&gt;
 &lt;li&gt;有一个无参的公共构造方法&lt;/li&gt;
 &lt;li&gt;成员变量私有化（private）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;对象的内存解析&#34;&gt;对象的内存解析
-&lt;/h3&gt;&lt;p&gt;栈：存储局部变量和方法调用&lt;br&gt;
-堆：存储对象实例和数组实例，对象和数组的地址值存储在栈中&lt;br&gt;
-方法区：存储类信息、常量、静态变量、方法字节码&lt;/p&gt;
-&lt;h3 id=&#34;static关键字&#34;&gt;static关键字
-&lt;/h3&gt;&lt;h4 id=&#34;静态变量&#34;&gt;静态变量
-&lt;/h4&gt;&lt;p&gt;特点：被类的所有对象共享，随着类的加载而加载，优先于对象存在&lt;br&gt;
-调用方式：类名.静态变量名 或 对象名.静态变量名&lt;/p&gt;
-&lt;h4 id=&#34;静态方法&#34;&gt;静态方法
-&lt;/h4&gt;&lt;p&gt;特点：多用在测试类和工具类中&lt;br&gt;
-调用方式：类名.静态方法名 或 对象名.静态方法名&lt;br&gt;
-静态方法中不能使用非静态的成员变量和成员方法，非静态方法二者都可以使用，因为静态方法优先于对象存在，而非静态的成员变量和成员方法依赖于对象存在&lt;/p&gt;
-&lt;h3 id=&#34;工具类&#34;&gt;工具类
-&lt;/h3&gt;&lt;ol&gt;
+&lt;h4 id=&#34;static关键字&#34;&gt;static关键字
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;静态变量&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：被类的所有对象共享，随着类的加载而加载，优先于对象存在&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调用方式&lt;/strong&gt;：类名.静态变量名 或 对象名.静态变量名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;静态方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：多用在测试类和工具类中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调用方式&lt;/strong&gt;：类名.静态方法名 或 对象名.静态方法名&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：静态方法中不能使用非静态的成员变量和成员方法，非静态方法二者都可以使用，因为静态方法优先于对象存在，而非静态的成员变量和成员方法依赖于对象存在&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;工具类&#34;&gt;工具类
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;提供静态方法，方便调用&lt;/li&gt;
 &lt;li&gt;构造方法私有化，避免创建对象&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;集合&#34;&gt;集合
-&lt;/h2&gt;&lt;h3 id=&#34;arraylist&#34;&gt;ArrayList
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;动态数组，长度可变&lt;/li&gt;
-&lt;li&gt;存储有序的、可重复的数据&lt;/li&gt;
-&lt;li&gt;底层使用Object[]数组存储数据&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;继承&#34;&gt;继承
-&lt;/h2&gt;&lt;h3 id=&#34;继承的基本概念&#34;&gt;继承的基本概念
-&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;继承&#34;&gt;继承
+&lt;/h3&gt;&lt;h4 id=&#34;继承的基本概念&#34;&gt;继承的基本概念
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;子类继承父类，子类拥有父类的属性和方法，可以访问父类的非私有成员&lt;/li&gt;
-&lt;li&gt;继承方法：使用extends关键字实现继承&lt;/li&gt;
-&lt;li&gt;继承特点：单继承、多层继承
-&lt;blockquote&gt;
-&lt;p&gt;单继承：Java中一个类只能有一个直接父类&lt;br&gt;
-多层继承：子类继承父类，父类继承祖父类&lt;br&gt;
-Object类：所有类都继承Object类&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;继承方法：使用&lt;code&gt;extends&lt;/code&gt;关键字实现继承&lt;/li&gt;
+&lt;li&gt;继承特点：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;单继承&lt;/strong&gt;：Java中一个类只能有一个直接父类&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多层继承&lt;/strong&gt;：子类继承父类，父类继承祖父类&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Object类&lt;/strong&gt;：所有类都继承Object类&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;继承中成员变量访问特点：
-&lt;blockquote&gt;
-&lt;p&gt;就进原则：子类对象访问成员变量时，优先访问局部变量，再访问子类自己的成员变量，再查找父类的成员变量，直到Object类为止，整个是一个向上的查找过程&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;就近原则&lt;/strong&gt;：子类对象访问成员变量时，优先访问局部变量，再访问子类自己的成员变量，再查找父类的成员变量，直到Object类为止，整个是一个向上的查找过程&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;super关键字&#34;&gt;super关键字
-&lt;/h3&gt;&lt;p&gt;表示父类对象的引用，指向父类对象本身&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在子类构造方法中，super(形参列表)表示调用父类的构造方法&lt;br&gt;
-super.成员变量名：访问父类的成员变量&lt;br&gt;
-super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;方法重写override&#34;&gt;方法重写（Override）
-&lt;/h3&gt;&lt;ol&gt;
+&lt;h4 id=&#34;super关键字&#34;&gt;super关键字
+&lt;/h4&gt;&lt;p&gt;表示父类对象的引用，指向父类对象本身&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;super(形参列表)&lt;/code&gt;：在子类构造方法中调用父类的构造方法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;super.成员变量名&lt;/code&gt;：访问父类的成员变量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;super.成员方法名(实参列表)&lt;/code&gt;：访问父类的成员方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;方法重写override&#34;&gt;方法重写（Override）
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;子类继承父类后，可以对父类的方法进行重新定义和实现&lt;/li&gt;
 &lt;li&gt;重写方法的方法名、参数列表、返回值类型必须和父类被重写的方法相同&lt;/li&gt;
 &lt;li&gt;重写方法的访问权限不能小于父类被重写的方法的访问权限&lt;/li&gt;
@@ -165,408 +425,295 @@ super.成员方法名(实参列表)：访问父类的成员方法&lt;/p&gt;
 &lt;li&gt;重写方法中可以调用父类被重写的方法，使用super关键字实现&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;多态&#34;&gt;多态
-&lt;/h3&gt;&lt;p&gt;定义：父类引用指向子类对象&lt;br&gt;
-使用：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建对象时，使用父类创建子类对象；&lt;br&gt;
-定义方法时，形参使用父类类型，可以传入所有子类对象&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;特点：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;多态只能发生在继承关系中&lt;br&gt;
-多态只能调用子类重写父类的方法，不能调用子类特有的方法&lt;br&gt;
-多态的前提是有继承关系和方法重写&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;多态的体现：方法调用时，编译看左边，运行看右边;变量访问时，编译运行都看左边&lt;/p&gt;
-&lt;h2 id=&#34;包&#34;&gt;包
-&lt;/h2&gt;&lt;p&gt;包的作用：用于对类进行分类管理，避免类名冲突&lt;br&gt;
-包的声明：package 包名;  声明在类的第一行&lt;br&gt;
-包的导入：import 包名.类名; 或 import 包名.*;*表示导入包中所有类&lt;br&gt;
-使用其他类的规则：&lt;/p&gt;
-&lt;ol&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;定义&#34;&gt;定义
+&lt;/h4&gt;&lt;p&gt;父类引用指向子类对象&lt;/p&gt;
+&lt;h4 id=&#34;使用场景&#34;&gt;使用场景
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;创建对象时，使用父类创建子类对象&lt;/li&gt;
+&lt;li&gt;定义方法时，形参使用父类类型，可以传入所有子类对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;特点&#34;&gt;特点
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;多态只能发生在继承关系中&lt;/li&gt;
+&lt;li&gt;多态只能调用子类重写父类的方法，不能调用子类特有的方法&lt;/li&gt;
+&lt;li&gt;多态的前提是有继承关系和方法重写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;多态的体现&#34;&gt;多态的体现
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;方法调用&lt;/strong&gt;：编译看左边，运行看右边&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;变量访问&lt;/strong&gt;：编译运行都看左边&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;包&#34;&gt;包
+&lt;/h3&gt;&lt;h4 id=&#34;包的作用&#34;&gt;包的作用
+&lt;/h4&gt;&lt;p&gt;用于对类进行分类管理，避免类名冲突&lt;/p&gt;
+&lt;h4 id=&#34;包的声明和导入&#34;&gt;包的声明和导入
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;声明&lt;/strong&gt;：&lt;code&gt;package 包名;&lt;/code&gt; 声明在类的第一行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;导入&lt;/strong&gt;：&lt;code&gt;import 包名.类名;&lt;/code&gt; 或 &lt;code&gt;import 包名.*;&lt;/code&gt; (* 表示导入包中所有类)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;使用其他类的规则&#34;&gt;使用其他类的规则
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;使用同一个包中的类，不需要导包&lt;/li&gt;
-&lt;li&gt;使用java.lang包中的类，不需要导包&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;java.lang&lt;/code&gt;包中的类，不需要导包&lt;/li&gt;
 &lt;li&gt;其他情况都需要导包&lt;/li&gt;
 &lt;li&gt;使用两个包中的同名类，需要使用类的全限定名（包名.类名）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;final关键字&#34;&gt;final关键字
-&lt;/h2&gt;&lt;h3 id=&#34;final修饰变量&#34;&gt;final修饰变量
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;基本数据类型：变量值不可改变&lt;/li&gt;
-&lt;li&gt;引用数据类型：引用地址不可改变，但对象的内容可以改变&lt;/li&gt;
+&lt;h3 id=&#34;final关键字&#34;&gt;final关键字
+&lt;/h3&gt;&lt;h4 id=&#34;final修饰变量&#34;&gt;final修饰变量
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基本数据类型&lt;/strong&gt;：变量值不可改变&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;引用数据类型&lt;/strong&gt;：引用地址不可改变，但对象的内容可以改变&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;final修饰方法&#34;&gt;final修饰方法
-&lt;/h3&gt;&lt;p&gt;表示该方法不能被重写&lt;/p&gt;
-&lt;h3 id=&#34;final修饰类&#34;&gt;final修饰类
-&lt;/h3&gt;&lt;p&gt;表示该类不能被继承&lt;/p&gt;
-&lt;h2 id=&#34;静态代码块&#34;&gt;静态代码块
-&lt;/h2&gt;&lt;p&gt;使用static关键字修饰，随着类的加载而执行，并且只执行一次&lt;br&gt;
-作用：用于初始化类的信息&lt;/p&gt;
-&lt;h2 id=&#34;抽象类和抽象方法&#34;&gt;抽象类和抽象方法
-&lt;/h2&gt;&lt;h3 id=&#34;抽象方法&#34;&gt;抽象方法
-&lt;/h3&gt;&lt;p&gt;父类中的抽象方法，提取子类的共性，没有方法体，用于被子类重写&lt;/p&gt;
-&lt;h3 id=&#34;抽象类&#34;&gt;抽象类
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h4 id=&#34;final修饰方法&#34;&gt;final修饰方法
+&lt;/h4&gt;&lt;p&gt;表示该方法不能被重写&lt;/p&gt;
+&lt;h4 id=&#34;final修饰类&#34;&gt;final修饰类
+&lt;/h4&gt;&lt;p&gt;表示该类不能被继承&lt;/p&gt;
+&lt;h3 id=&#34;静态代码块&#34;&gt;静态代码块
+&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;static&lt;/code&gt;关键字修饰，随着类的加载而执行，并且只执行一次&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作用&lt;/strong&gt;：用于初始化类的信息&lt;/p&gt;
+&lt;h3 id=&#34;抽象类和抽象方法&#34;&gt;抽象类和抽象方法
+&lt;/h3&gt;&lt;h4 id=&#34;抽象方法&#34;&gt;抽象方法
+&lt;/h4&gt;&lt;p&gt;父类中的抽象方法，提取子类的共性，没有方法体，用于被子类重写&lt;/p&gt;
+&lt;h4 id=&#34;抽象类&#34;&gt;抽象类
+&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;抽象类不能实例化&lt;/li&gt;
 &lt;li&gt;继承抽象类的子类必须重写父类中的所有抽象方法，除非子类也是抽象类&lt;/li&gt;
 &lt;li&gt;抽象类可以有构造方法，用于子类创建对象时调用父类构造方法&lt;/li&gt;
-&lt;li&gt;作用：强制让子类按照某种格式重写&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：强制让子类按照某种格式重写&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;接口&#34;&gt;接口
-&lt;/h2&gt;&lt;h3 id=&#34;接口的定义&#34;&gt;接口的定义
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;使用interface关键字定义&lt;/li&gt;
+&lt;h3 id=&#34;接口&#34;&gt;接口
+&lt;/h3&gt;&lt;h4 id=&#34;接口的定义&#34;&gt;接口的定义
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;interface&lt;/code&gt;关键字定义&lt;/li&gt;
 &lt;li&gt;接口中只能定义常量和抽象方法&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;接口的作用&#34;&gt;接口的作用
-&lt;/h3&gt;&lt;ol&gt;
+&lt;h4 id=&#34;接口的作用&#34;&gt;接口的作用
+&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;规范类的行为&lt;/li&gt;
 &lt;li&gt;实现多继承，接口可以被多个子类实现&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;接口中的成员&#34;&gt;接口中的成员
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;成员变量：只能是常量，默认修饰符public static final&lt;/li&gt;
-&lt;li&gt;成员方法：只能是抽象方法，默认修饰符public abstract&lt;/li&gt;
+&lt;h4 id=&#34;接口中的成员&#34;&gt;接口中的成员
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;成员变量&lt;/strong&gt;：只能是常量，默认修饰符&lt;code&gt;public static final&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成员方法&lt;/strong&gt;：只能是抽象方法，默认修饰符&lt;code&gt;public abstract&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;接口的实现&#34;&gt;接口的实现
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;使用implements关键字实现接口&lt;/li&gt;
-&lt;li&gt;格式：class 类名 implements 接口名1, 接口名2&amp;hellip;{}&lt;/li&gt;
+&lt;h4 id=&#34;接口的实现&#34;&gt;接口的实现
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;implements&lt;/code&gt;关键字实现接口&lt;/li&gt;
+&lt;li&gt;格式：&lt;code&gt;class 类名 implements 接口名1, 接口名2...{}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;实现接口的类必须重写接口中的所有抽象方法，除非该类是抽象类&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;接口和类之间的关系&#34;&gt;接口和类之间的关系
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;类和类的关系：继承关系，只能单继承，不能多继承&lt;/li&gt;
-&lt;li&gt;类和接口的关系：实现关系，可以单实现，也可以多实现，可以在继承一个类的同时实现多个接口&lt;/li&gt;
-&lt;li&gt;接口和接口的关系：继承关系，可以单继承，也可以多继承&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;接口中新增的方法&#34;&gt;接口中新增的方法
-&lt;/h3&gt;&lt;h4 id=&#34;默认方法&#34;&gt;默认方法
+&lt;h4 id=&#34;接口和类之间的关系&#34;&gt;接口和类之间的关系
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;使用default关键字修饰，可以有方法体，实现类不强制重写&lt;/li&gt;
-&lt;li&gt;实现类可以重写接口中的默认方法，需要去掉default关键字&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;类和类的关系&lt;/strong&gt;：继承关系，只能单继承，不能多继承&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;类和接口的关系&lt;/strong&gt;：实现关系，可以单实现，也可以多实现，可以在继承一个类的同时实现多个接口&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接口和接口的关系&lt;/strong&gt;：继承关系，可以单继承，也可以多继承&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;静态方法-1&#34;&gt;静态方法
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;使用static关键字修饰，可以有方法体，实现类不能重写&lt;/li&gt;
+&lt;h4 id=&#34;接口中新增的方法&#34;&gt;接口中新增的方法
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;默认方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;default&lt;/code&gt;关键字修饰，可以有方法体，实现类不强制重写&lt;/li&gt;
+&lt;li&gt;实现类可以重写接口中的默认方法，需要去掉&lt;code&gt;default&lt;/code&gt;关键字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;静态方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;static&lt;/code&gt;关键字修饰，可以有方法体，实现类不能重写&lt;/li&gt;
 &lt;li&gt;只能通过接口名调用接口中的静态方法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;私有方法java-9及以上版本&#34;&gt;私有方法（Java 9及以上版本）
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;使用private关键字修饰&lt;/li&gt;
+&lt;p&gt;&lt;strong&gt;私有方法&lt;/strong&gt;（Java 9及以上版本）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;private&lt;/code&gt;关键字修饰&lt;/li&gt;
 &lt;li&gt;只能在接口内部使用，不能被实现类使用&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;内部类&#34;&gt;内部类
-&lt;/h2&gt;&lt;h3 id=&#34;成员内部类&#34;&gt;成员内部类
-&lt;/h3&gt;&lt;h4 id=&#34;创建内部类对象&#34;&gt;创建内部类对象：
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;外部类名.内部类名 对象名 = new 外部类名().new 内部类名();&lt;/li&gt;
+&lt;h3 id=&#34;内部类&#34;&gt;内部类
+&lt;/h3&gt;&lt;h4 id=&#34;成员内部类&#34;&gt;成员内部类
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;创建内部类对象&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;外部类名.内部类名 对象名 = new 外部类名().new 内部类名();&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;在外部类的成员方法中创建内部类对象，外界通过外部类对象调用该方法获取内部类对象&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;内部类方法访问&#34;&gt;内部类方法访问
+&lt;p&gt;&lt;strong&gt;内部类方法访问&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;访问内部类成员：&lt;code&gt;this.成员变量名&lt;/code&gt; 或 &lt;code&gt;成员变量名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;访问外部类成员：&lt;code&gt;外部类名.this.成员变量名&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;静态内部类&#34;&gt;静态内部类
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;创建静态内部类对象&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;外部类名&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;内部类名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;对象名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;外部类名&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;内部类名&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;静态内部类方法访问&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;访问静态方法：&lt;code&gt;外部类名.内部类名.静态方法名();&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;访问非静态方法：创建对象后，通过对象调用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;匿名内部类&#34;&gt;匿名内部类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：没有类名的内部类，必须继承一个类或实现一个接口，继承类或实现接口的同时创建对象&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：简化代码编写&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;格式&lt;/strong&gt;：&lt;code&gt;new 父类名或接口名(){重写父类或接口的方法};&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;集合框架&#34;&gt;集合框架
+&lt;/h2&gt;&lt;h3 id=&#34;单列集合&#34;&gt;单列集合
+&lt;/h3&gt;&lt;h4 id=&#34;arraylist&#34;&gt;ArrayList
 &lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;访问内部类成员：this.成员变量名 或 成员变量名&lt;/li&gt;
-&lt;li&gt;访问外部类成员：外部类名.this.成员变量名&lt;/li&gt;
+&lt;li&gt;动态数组，长度可变&lt;/li&gt;
+&lt;li&gt;存储有序的、可重复的数据&lt;/li&gt;
+&lt;li&gt;底层使用&lt;code&gt;Object[]&lt;/code&gt;数组存储数据&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;静态内部类&#34;&gt;静态内部类
-&lt;/h3&gt;&lt;h4 id=&#34;创建静态内部类对象&#34;&gt;创建静态内部类对象
-&lt;/h4&gt;&lt;p&gt;外部类名.内部类名 对象名 = new 外部类名.内部类名();&lt;/p&gt;
-&lt;h4 id=&#34;静态内部类方法访问&#34;&gt;静态内部类方法访问
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;访问静态方法：外部类名.内部类名.静态方法名();&lt;/li&gt;
-&lt;li&gt;访问非静态方法：创建对象后，通过对象调用;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;匿名内部类&#34;&gt;匿名内部类
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;定义：没有类名的内部类，必须继承一个类或实现一个接口，继承类或实现接口的同时创建对象&lt;/li&gt;
-&lt;li&gt;作用：简化代码编写&lt;/li&gt;
-&lt;li&gt;格式：new 父类名或接口名(){重写父类或接口的方法};&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;单列集合&#34;&gt;单列集合
-&lt;/h2&gt;&lt;h3 id=&#34;collection顶层接口&#34;&gt;collection顶层接口
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;是单列集合的顶层接口，所有方法被list和set接口继承&lt;/li&gt;
-&lt;li&gt;常用方法：add()、remove()、clear()、size()、isEmpty()、contains()、toArray()&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;list接口&#34;&gt;List接口
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;有序、可重复的集合&lt;/li&gt;
-&lt;li&gt;常用实现类：ArrayList、LinkedList、Vector&lt;/li&gt;
-&lt;li&gt;常用方法：add(index, element)、get(index)、set(index, element)、remove(index)、indexOf(element)、lastIndexOf(element)、subList(fromIndex, toIndex)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;set接口&#34;&gt;Set接口
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;无序、不可重复的集合&lt;/li&gt;
-&lt;li&gt;常用实现类：HashSet、LinkedHashSet、TreeSet&lt;/li&gt;
-&lt;li&gt;HashSet：基于哈希表实现，存储元素无序&lt;/li&gt;
-&lt;li&gt;LinkedHashSet：基于哈希表和链表实现，存储元素有序&lt;/li&gt;
-&lt;li&gt;TreeSet：基于红黑树实现，存储元素有序&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;集合遍历&#34;&gt;集合遍历
-&lt;/h2&gt;&lt;h3 id=&#34;迭代器遍历&#34;&gt;迭代器遍历
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;用于遍历集合元素&lt;/li&gt;
-&lt;li&gt;获取迭代器对象：Iterator&lt;String&gt; iterator = 集合对象.iterator();&lt;/li&gt;
-&lt;li&gt;常用方法：hasNext()、next()、remove()&lt;br&gt;
-hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素并移动指针，remove() 删除当前元素&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;增强for遍历&#34;&gt;增强for遍历
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;格式：for(数据类型 变量名 : 集合对象){ //使用变量名进行操作 }&lt;/li&gt;
-&lt;li&gt;适用于所有实现了Iterable接口的集合类&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;lamda表达式遍历&#34;&gt;lamda表达式遍历
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;格式：集合对象.forEach(变量名 -&amp;gt; { //使用变量名进行操作 });&lt;/li&gt;
-&lt;li&gt;简化代码编写，提高可读性&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;数据结构&#34;&gt;数据结构
-&lt;/h2&gt;&lt;h3 id=&#34;栈&#34;&gt;栈
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;先进后出（LIFO）的数据结构&lt;/li&gt;
-&lt;li&gt;主要操作：push()入栈，pop()出栈，peek()查看栈顶元素&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;队列&#34;&gt;队列
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;先进先出（FIFO）的数据结构&lt;/li&gt;
-&lt;li&gt;主要操作：offer()入队，poll()出队，peek()查看队头元素&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;数组-1&#34;&gt;数组
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;由连续的内存空间组成的线性数据结构&lt;/li&gt;
-&lt;li&gt;每个元素通过索引访问，查询操作高效，插入和删除操作较慢&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;链表&#34;&gt;链表
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;由节点组成的线性数据结构，每个节点是独立的对象，在内存中不连续&lt;/li&gt;
-&lt;li&gt;每个节点包含数据值和下一个节点的地址&lt;/li&gt;
-&lt;li&gt;特点：插入和删除操作高效，查询操作较慢&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;泛型&#34;&gt;泛型
-&lt;/h2&gt;&lt;h3 id=&#34;集合中使用泛型&#34;&gt;集合中使用泛型
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：在集合类中使用泛型，可以指定集合中存储元素的类型&lt;/li&gt;
-&lt;li&gt;格式：集合类&amp;lt;数据类型&amp;gt; 对象名 = new 集合类&amp;lt;&amp;gt;();&lt;/li&gt;
-&lt;li&gt;细节：
-&lt;ul&gt;
-&lt;li&gt;泛型只能是引用数据类型，不能是基本数据类型&lt;/li&gt;
-&lt;li&gt;指定泛型的类型后，传递数据时可以传入该类型及其子类类型对象&lt;/li&gt;
-&lt;li&gt;如果不写泛型，默认类型为Object&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;泛型类&#34;&gt;泛型类
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：在类定义时使用泛型，可以指定类中成员变量和方法的参数类型&lt;/li&gt;
-&lt;li&gt;格式：
-&lt;ul&gt;
-&lt;li&gt;定义类时：class 类名&lt;E&gt;{ //类体 }，E表示不确定的类型&lt;/li&gt;
-&lt;li&gt;创建对象时：类名&amp;lt;数据类型&amp;gt; 对象名 = new 类名&amp;lt;&amp;gt;();&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;泛型方法&#34;&gt;泛型方法
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：在方法定义时使用泛型，可以指定方法的参数类型和返回值类型&lt;/li&gt;
-&lt;li&gt;格式：
-&lt;ul&gt;
-&lt;li&gt;定义方法时：&lt;E&gt; 返回值类型 方法名(E 参数名){ //方法体 }&lt;/li&gt;
-&lt;li&gt;调用方法时：对象名.方法名(实参);&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;泛型接口&#34;&gt;泛型接口
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：在接口定义时使用泛型，可以指定接口中方法的参数类型和返回值类型&lt;/li&gt;
-&lt;li&gt;格式：
-&lt;ul&gt;
-&lt;li&gt;定义接口时：interface 接口名&lt;E&gt;{ //接口体 }&lt;/li&gt;
-&lt;li&gt;实现接口的两种方式：
-&lt;ul&gt;
-&lt;li&gt;实现类给出具体的类型：class 类名 implements 接口名&amp;lt;数据类型&amp;gt;{ //类体 }&lt;/li&gt;
-&lt;li&gt;实现类继续使用泛型：class 类名&lt;E&gt; implements 接口名&lt;E&gt;{ //类体 }&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;泛型通配符&#34;&gt;泛型通配符
-&lt;/h3&gt;&lt;p&gt;定义：在使用泛型时，可以使用通配符?表示不确定的类型&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;上限通配符：? extends 父类类型，表示可以使用父类类型及其子类类型&lt;/li&gt;
-&lt;li&gt;下限通配符：? super 子类类型，表示可以使用子类类型及其父类类型&lt;/li&gt;
-&lt;li&gt;无限制通配符：?，表示可以使用任何类型&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;数据结构树&#34;&gt;数据结构（树）
-&lt;/h2&gt;&lt;h3 id=&#34;二叉树&#34;&gt;二叉树
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：每个节点最多有两个子节点的树形数据结构&lt;/li&gt;
-&lt;li&gt;特点：每个节点有一个左子节点和一个右子节点&lt;/li&gt;
-&lt;li&gt;遍历方式：
-&lt;ul&gt;
-&lt;li&gt;前序遍历：先访问根节点，再访问左子树，最后访问右子树&lt;/li&gt;
-&lt;li&gt;中序遍历：先访问左子树，再访问根节点，最后访问右子树&lt;/li&gt;
-&lt;li&gt;后序遍历：先访问左子树，再访问右子树，最后访问根节点&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;二叉搜索树&#34;&gt;二叉搜索树
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：一种特殊的二叉树，满足左子节点小于根节点，右子节点大于根节点的性质&lt;/li&gt;
-&lt;li&gt;特点：支持高效的查找、插入和删除操作&lt;/li&gt;
-&lt;li&gt;应用：常用于实现动态集合&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;平衡二叉树&#34;&gt;平衡二叉树
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：一种自平衡的二叉搜索树，保证任意节点的左右子树高度差不超过1&lt;/li&gt;
-&lt;li&gt;特点：通过旋转操作保持平衡&lt;/li&gt;
-&lt;li&gt;应用：常用于实现高效的查找、插入和删除操作&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;红黑树&#34;&gt;红黑树
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;定义：一种自平衡的二叉搜索树，每个节点有颜色属性（红色或黑色）&lt;/li&gt;
-&lt;li&gt;特点：通过颜色属性和旋转操作&lt;/li&gt;
-&lt;li&gt;应用：常用于实现关联数组和集合&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;set系列集合&#34;&gt;Set系列集合
-&lt;/h2&gt;&lt;p&gt;特点：无序、不可重复、无索引&lt;/p&gt;
-&lt;h3 id=&#34;hashset&#34;&gt;HashSet
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：哈希表（数组+链表/红黑树）&lt;/li&gt;
-&lt;li&gt;特点：无序、不可重复、查询效率高&lt;/li&gt;
-&lt;li&gt;添加元素过程：
+&lt;h4 id=&#34;hashset&#34;&gt;HashSet
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：哈希表（数组+链表/红黑树）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：无序、不可重复、查询效率高&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;添加元素过程&lt;/strong&gt;：
 &lt;ul&gt;
 &lt;li&gt;计算元素的哈希值，确定存储位置&lt;/li&gt;
 &lt;li&gt;如果位置为空，直接存储&lt;/li&gt;
-&lt;li&gt;如果位置不为空，使用equals()方法判断是否重复，重复则不添加，不重复则添加到链表或红黑树中&lt;/li&gt;
+&lt;li&gt;如果位置不为空，使用&lt;code&gt;equals()&lt;/code&gt;方法判断是否重复，重复则不添加，不重复则添加到链表或红黑树中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;接口实现：
+&lt;li&gt;&lt;strong&gt;接口实现&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;重写hashCode()和equals()方法（这两个方法属于Object类），确保元素唯一性;&lt;/li&gt;
-&lt;li&gt;不同对象只要属性值相同，hashCode()返回相同的哈希值，equals()返回true&lt;/li&gt;
+&lt;li&gt;重写&lt;code&gt;hashCode()&lt;/code&gt;和&lt;code&gt;equals()&lt;/code&gt;方法（这两个方法属于Object类），确保元素唯一性&lt;/li&gt;
+&lt;li&gt;不同对象只要属性值相同，&lt;code&gt;hashCode()&lt;/code&gt;返回相同的哈希值，&lt;code&gt;equals()&lt;/code&gt;返回true&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;linkedhashset&#34;&gt;LinkedHashSet
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：哈希表+双向链表（维护元素的插入顺序）&lt;/li&gt;
-&lt;li&gt;特点：有序、不可重复、无索引&lt;/li&gt;
-&lt;li&gt;接口实现：重写hashCode()和equals()方法，确保元素唯一性&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;treeset&#34;&gt;TreeSet
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：红黑树&lt;/li&gt;
-&lt;li&gt;特点：有序、不可重复、无索引&lt;/li&gt;
-&lt;li&gt;添加元素过程：
+&lt;/ul&gt;
+&lt;h4 id=&#34;linkedhashset&#34;&gt;LinkedHashSet
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：哈希表+双向链表（维护元素的插入顺序）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：有序、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接口实现&lt;/strong&gt;：重写&lt;code&gt;hashCode()&lt;/code&gt;和&lt;code&gt;equals()&lt;/code&gt;方法，确保元素唯一性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;treeset&#34;&gt;TreeSet
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：红黑树&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：有序、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;添加元素过程&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;使用compareTo()或compare()方法比较元素大小，确定存储位置&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;compareTo()&lt;/code&gt;或&lt;code&gt;compare()&lt;/code&gt;方法比较元素大小，确定存储位置&lt;/li&gt;
 &lt;li&gt;按照大小顺序存储元素&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;接口实现：
+&lt;li&gt;&lt;strong&gt;接口实现&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;默认排序：集合中的元素实现Comparable接口，重写compareTo()方法，指定排序规则&lt;/li&gt;
-&lt;li&gt;比较器排序：集合使用Comparator接口，重写compare()方法，指定排序规则&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;默认排序&lt;/strong&gt;：集合中的元素实现Comparable接口，重写&lt;code&gt;compareTo()&lt;/code&gt;方法，指定排序规则&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;比较器排序&lt;/strong&gt;：集合使用Comparator接口，重写&lt;code&gt;compare()&lt;/code&gt;方法，指定排序规则&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;双列集合&#34;&gt;双列集合
-&lt;/h2&gt;&lt;h3 id=&#34;map接口&#34;&gt;Map接口
-&lt;/h3&gt;&lt;ol&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;双列集合&#34;&gt;双列集合
+&lt;/h3&gt;&lt;h4 id=&#34;map接口&#34;&gt;Map接口
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;基本概念&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;双列集合的顶层接口，存储键值对（key-value）&lt;/li&gt;
 &lt;li&gt;常用实现类：HashMap、LinkedHashMap、TreeMap&lt;/li&gt;
-&lt;li&gt;常用方法：put(key, value)、get(key)、remove(key)、containsKey(key)、containsValue(value)、keySet()、values()、entrySet()&lt;/li&gt;
-&lt;li&gt;遍历方法：
-&lt;ul&gt;
-&lt;li&gt;keySet()把键存储到Set集合中，遍历Set集合获取键，再通过键获取值&lt;/li&gt;
-&lt;li&gt;EntrySet()把键值对存储到Set集合中，遍历Set集合用getKey()和getValue()方法获取每一个键值对，再通过键值对获取键和值&lt;/li&gt;
-&lt;li&gt;Lambda表达式遍历：map.forEach((key, value) -&amp;gt; { //使用key和value进行操作 });&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;hashmap&#34;&gt;HashMap
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：哈希表（数组+链表/红黑树）&lt;/li&gt;
-&lt;li&gt;特点：无序、不可重复、无索引&lt;/li&gt;
-&lt;li&gt;添加键值对过程：
+&lt;p&gt;&lt;strong&gt;常用方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;put(key, value)&lt;/code&gt;：添加键值对&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get(key)&lt;/code&gt;：获取值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;remove(key)&lt;/code&gt;：删除键值对&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;containsKey(key)&lt;/code&gt;：判断是否包含键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;containsValue(value)&lt;/code&gt;：判断是否包含值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;keySet()&lt;/code&gt;：获取所有键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;values()&lt;/code&gt;：获取所有值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;entrySet()&lt;/code&gt;：获取所有键值对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;遍历方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;keySet()&lt;/code&gt;：把键存储到Set集合中，遍历Set集合获取键，再通过键获取值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;entrySet()&lt;/code&gt;：把键值对存储到Set集合中，遍历Set集合用&lt;code&gt;getKey()&lt;/code&gt;和&lt;code&gt;getValue()&lt;/code&gt;方法获取每一个键值对&lt;/li&gt;
+&lt;li&gt;Lambda表达式遍历：&lt;code&gt;map.forEach((key, value) -&amp;gt; { //使用key和value进行操作 });&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;hashmap&#34;&gt;HashMap
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：哈希表（数组+链表/红黑树）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：无序、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;添加键值对过程&lt;/strong&gt;：
 &lt;ul&gt;
 &lt;li&gt;计算键的哈希值，确定存储位置&lt;/li&gt;
 &lt;li&gt;如果位置为空，直接存储键值对&lt;/li&gt;
-&lt;li&gt;如果位置不为空，使用equals()方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中&lt;/li&gt;
+&lt;li&gt;如果位置不为空，使用&lt;code&gt;equals()&lt;/code&gt;方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;linkedhashmap&#34;&gt;LinkedHashMap
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：哈希表+双向链表（维护键值对的插入顺序）&lt;/li&gt;
-&lt;li&gt;特点：有序、不可重复、无索引&lt;/li&gt;
-&lt;li&gt;添加键值对过程:
+&lt;/ul&gt;
+&lt;h4 id=&#34;linkedhashmap&#34;&gt;LinkedHashMap
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：哈希表+双向链表（维护键值对的插入顺序）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：有序、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;添加键值对过程&lt;/strong&gt;：
 &lt;ul&gt;
 &lt;li&gt;计算键的哈希值，确定存储位置&lt;/li&gt;
 &lt;li&gt;如果位置为空，直接存储键值对，并在双向链表中维护插入顺序&lt;/li&gt;
-&lt;li&gt;如果位置不为空，使用equals()方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中，并在双向链表中维护插入顺序&lt;/li&gt;
+&lt;li&gt;如果位置不为空，使用&lt;code&gt;equals()&lt;/code&gt;方法判断键是否重复，重复则覆盖，不重复则添加到链表或红黑树中，并在双向链表中维护插入顺序&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;treemap&#34;&gt;TreeMap
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;底层数据结构：红黑树&lt;/li&gt;
-&lt;li&gt;特点：有序(对键进行排序)、不可重复、无索引&lt;/li&gt;
-&lt;li&gt;添加键值对过程：
+&lt;/ul&gt;
+&lt;h4 id=&#34;treemap&#34;&gt;TreeMap
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;底层数据结构&lt;/strong&gt;：红黑树&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：有序（对键进行排序）、不可重复、无索引&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;添加键值对过程&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;使用compareTo()或compare()方法比较键的大小，确定存储位置&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;compareTo()&lt;/code&gt;或&lt;code&gt;compare()&lt;/code&gt;方法比较键的大小，确定存储位置&lt;/li&gt;
 &lt;li&gt;按照键的大小顺序存储键值对&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;不可变集合&#34;&gt;不可变集合
-&lt;/h2&gt;&lt;p&gt;一旦创建后，集合的内容不能被修改（添加、删除、修改元素）&lt;/p&gt;
-&lt;h3 id=&#34;创建不可变集合的方法&#34;&gt;创建不可变集合的方法
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;list.of(E&amp;hellip; elements)：创建不可变的List集合&lt;/li&gt;
-&lt;li&gt;set.of(E&amp;hellip; elements)：创建不可变的Set集合，元素不能重复&lt;/li&gt;
-&lt;li&gt;map.of(K k1, V v1, K k2, V v2, &amp;hellip;)：创建不可变的Map集合，键值对数量上限为10&lt;/li&gt;
-&lt;li&gt;map.ofEntries(Map.Entry&amp;lt;? extends K, ? extends V&amp;gt;&amp;hellip; entries)：创建不可变的Map集合，键值对数量不限&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;stream流&#34;&gt;Stream流
-&lt;/h2&gt;&lt;h3 id=&#34;使用&#34;&gt;使用
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;collection集合
-&lt;ul&gt;
-&lt;li&gt;集合对象.stream()：获取集合的Stream流&lt;/li&gt;
+&lt;h3 id=&#34;不可变集合&#34;&gt;不可变集合
+&lt;/h3&gt;&lt;h4 id=&#34;定义-1&#34;&gt;定义
+&lt;/h4&gt;&lt;p&gt;一旦创建后，集合的内容不能被修改（添加、删除、修改元素）&lt;/p&gt;
+&lt;h4 id=&#34;创建不可变集合的方法&#34;&gt;创建不可变集合的方法
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;List.of(E... elements)&lt;/code&gt;：创建不可变的List集合&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Set.of(E... elements)&lt;/code&gt;：创建不可变的Set集合，元素不能重复&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map.of(K k1, V v1, K k2, V v2, ...)&lt;/code&gt;：创建不可变的Map集合，键值对数量上限为10&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map.ofEntries(Map.Entry&amp;lt;? extends K, ? extends V&amp;gt;... entries)&lt;/code&gt;：创建不可变的Map集合，键值对数量不限&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;map集合
+&lt;h3 id=&#34;stream流&#34;&gt;Stream流
+&lt;/h3&gt;&lt;h4 id=&#34;获取stream流&#34;&gt;获取Stream流
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Collection集合&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;需要先使用entrySet()将map转换为单列集合，再转换为Stream流&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;集合对象.stream()&lt;/code&gt;：获取集合的Stream流&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Arrays工具类
+&lt;li&gt;&lt;strong&gt;Map集合&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;Arrays.stream(数组对象)：获取数组的Stream流&lt;/li&gt;
+&lt;li&gt;需要先使用&lt;code&gt;entrySet()&lt;/code&gt;将map转换为单列集合，再转换为Stream流&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Stream接口
+&lt;li&gt;&lt;strong&gt;Arrays工具类&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;静态方法：of()、iterate()、generate()、concat()&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Arrays.stream(数组对象)&lt;/code&gt;：获取数组的Stream流&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;方法引用&#34;&gt;方法引用
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;定义：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体&lt;/li&gt;
-&lt;li&gt;lambda表达式格式：参数列表 -&amp;gt; 方法体&lt;/li&gt;
-&lt;li&gt;方法引用格式：类名或对象名::方法名
+&lt;li&gt;&lt;strong&gt;Stream接口&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;引用静态方法：类名::静态方法名&lt;/li&gt;
-&lt;li&gt;引用成员方法：对象名::成员方法名&lt;/li&gt;
-&lt;li&gt;引用构造方法：类名::new&lt;/li&gt;
+&lt;li&gt;静态方法：&lt;code&gt;of()&lt;/code&gt;、&lt;code&gt;iterate()&lt;/code&gt;、&lt;code&gt;generate()&lt;/code&gt;、&lt;code&gt;concat()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;异常&#34;&gt;异常
-&lt;/h2&gt;&lt;h3 id=&#34;异常的分类&#34;&gt;异常的分类
+&lt;h4 id=&#34;方法引用&#34;&gt;方法引用
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：方法引用是Lambda表达式的一种简化形式，用于直接引用已有的方法，当做函数式接口中抽象方法的方法体&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lambda表达式格式&lt;/strong&gt;：&lt;code&gt;参数列表 -&amp;gt; 方法体&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法引用格式&lt;/strong&gt;：&lt;code&gt;类名或对象名::方法名&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引用静态方法：&lt;code&gt;类名::静态方法名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;引用成员方法：&lt;code&gt;对象名::成员方法名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;引用构造方法：&lt;code&gt;类名::new&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;高级特性&#34;&gt;高级特性
+&lt;/h2&gt;&lt;h3 id=&#34;异常处理&#34;&gt;异常处理
+&lt;/h3&gt;&lt;h3 id=&#34;异常的分类&#34;&gt;异常的分类
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;检查异常（编译时异常）：在编译阶段被检查的异常，必须处理，否则编译不通过，如IOException、SQLException&lt;/li&gt;
 &lt;li&gt;非检查异常（运行时异常）：在运行阶段被检查的异常，不强制处理，如NullPointerException、ArrayIndexOutOfBoundsException&lt;/li&gt;
@@ -650,49 +797,67 @@ hasNext() 判断当前指针是否有元素，next() 获取当前指向的元素
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;字符流&#34;&gt;字符流
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;输入流：Reader及其子类，用于读取字符数据&lt;/li&gt;
-&lt;li&gt;输出流：Writer及其子类，用于写出字符数据&lt;/li&gt;
-&lt;li&gt;常用子类：
-&lt;ul&gt;
-&lt;li&gt;FileReader：文件字符输入流
-&lt;ul&gt;
-&lt;li&gt;方法：read()、read(char[] cbuf)、readLine()&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;FileWriter：文件字符输出流&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;使用场景
-&lt;ul&gt;
-&lt;li&gt;字节流：拷贝任意类型的文件&lt;/li&gt;
-&lt;li&gt;字符流：处理文本文件，如txt、java、xml等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;h4 id=&#34;字符流&#34;&gt;字符流
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;基本概念&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;输入流&lt;/strong&gt;：&lt;code&gt;Reader&lt;/code&gt;及其子类，用于读取字符数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;输出流&lt;/strong&gt;：&lt;code&gt;Writer&lt;/code&gt;及其子类，用于写出字符数据&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;序列化流&#34;&gt;序列化流
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;ObjectOutputStream：对象输出流，用于将对象序列化到文件中
+&lt;p&gt;&lt;strong&gt;常用子类&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;方法：writeObject(Object obj)、flush()、close()&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FileReader&lt;/code&gt;：文件字符输入流
+&lt;ul&gt;
+&lt;li&gt;方法：&lt;code&gt;read()&lt;/code&gt;、&lt;code&gt;read(char[] cbuf)&lt;/code&gt;、&lt;code&gt;readLine()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ObjectInputStream：对象输入流，用于从文件中读取对象
-&lt;ul&gt;
-&lt;li&gt;方法：readObject()、close()&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FileWriter&lt;/code&gt;：文件字符输出流&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
+&lt;p&gt;&lt;strong&gt;使用场景&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;字节流&lt;/strong&gt;：拷贝任意类型的文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;字符流&lt;/strong&gt;：处理文本文件，如txt、java、xml等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;序列化流&#34;&gt;序列化流
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;ObjectOutputStream&lt;/strong&gt;：对象输出流，用于将对象序列化到文件中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法：&lt;code&gt;writeObject(Object obj)&lt;/code&gt;、&lt;code&gt;flush()&lt;/code&gt;、&lt;code&gt;close()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;ObjectInputStream&lt;/strong&gt;：对象输入流，用于从文件中读取对象&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法：&lt;code&gt;readObject()&lt;/code&gt;、&lt;code&gt;close()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;转换流&#34;&gt;转换流
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;InputStreamReader&lt;/strong&gt;：将字节流转换为字符流&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构造方法：&lt;code&gt;InputStreamReader(InputStream in)&lt;/code&gt;、&lt;code&gt;InputStreamReader(InputStream in, String charsetName)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;OutputStreamWriter&lt;/strong&gt;：将字符流转换为字节流&lt;/p&gt;
+&lt;h3 id=&#34;多线程&#34;&gt;多线程
+&lt;/h3&gt;&lt;h4 id=&#34;基本概念&#34;&gt;基本概念
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;进程&lt;/strong&gt;：程序在计算机中运行时的一个实例&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程&lt;/strong&gt;：进程中的一个执行单元，一个进程可以有多个线程，线程之间互相独立，共享进程的资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;网络编程&#34;&gt;网络编程
+&lt;/h3&gt;&lt;h4 id=&#34;tcp协议&#34;&gt;TCP协议
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;面向连接的协议，通信前需要建立连接&lt;/li&gt;
+&lt;li&gt;数据传输可靠，数据顺序不会乱&lt;/li&gt;
+&lt;li&gt;传输效率相对较低&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;转换流&#34;&gt;转换流
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;InputStreamReader：将字节流转换为字符流
-&lt;ul&gt;
-&lt;li&gt;构造方法：InputStreamReader(InputStream in)、InputStreamReader(InputStream in, String charsetName)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;OutputStreamWriter：将字符流转换为字节流&lt;/li&gt;
+&lt;h4 id=&#34;udp协议&#34;&gt;UDP协议
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;面向无连接的协议，通信前不需要建立连接&lt;/li&gt;
+&lt;li&gt;数据传输不可靠，数据顺序可能会乱&lt;/li&gt;
+&lt;li&gt;传输效率相对较高&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 id=&#34;socket编程&#34;&gt;Socket编程
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ServerSocket&lt;/code&gt;：服务器套接字，用于监听客户端的连接请求&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Socket&lt;/code&gt;：客户端套接字，用于与服务器建立连接，发送和接收数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三次握手&lt;/strong&gt;：建立TCP连接的过程，客户端和服务器之间进行三次数据交换，确保连接的建立&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;四次挥手&lt;/strong&gt;：断开TCP连接的过程，客户端和服务器之间进行四次数据交换，确保连接的断开&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

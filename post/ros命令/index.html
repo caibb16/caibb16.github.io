@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文档记录了 ROS 机器人（Go2）的常用操作命令，包括 SSH 连接、建图、导航、控制等完整流程。\nSSH 连接信息 常用设备的 SSH 连接地址：\n1 2 3 4 5 6 7 8 9 10 11 # 9025 设备 ssh wheeltec@192.168.110.182 # 9004 设备 ssh wheeltec@192.168.110.181 # 其他设备 ssh wheeltec@192.168.168.50 # 密码: dongguan ssh firefly@192.168.168.168 网络配置 WiFi 连接 1 2 # 连接到办公室 WiFi sudo nmcli dev wifi connect &#34;WL-OFFICE&#34; password &#34;wlwl1102&#34; 查看网络信息 1 2 3 4 5 # 方式一 ifconfig # 方式二 ip a Docker 容器管理 查看和启动容器 1 2 3 4 5 # 查看所有容器 docker ps -a # 启动机器人运行容器 docker start robot_runner 建图流程 1. 启动建图程序 1 2 3 4 5 # 进入容器 docker exec -it robot_runner bash # 运行在线 SLAM 建图 /root/ws_nav/src/go2_real/1_run_online_slam.sh 提示: 手持遥控器控制狗开始行走扫图\n">
+<title>ROS命令</title>
+
+<link rel='canonical' href='https://caibb16.github.io/post/ros%E5%91%BD%E4%BB%A4/'>
+
+<link rel="stylesheet" href="/scss/style.min.84945aa8ed0beadc700fc6923a008654510d25f2ae928fe9a5cb1e0450f90b1a.css"><meta property='og:title' content="ROS命令">
+<meta property='og:description' content="本文档记录了 ROS 机器人（Go2）的常用操作命令，包括 SSH 连接、建图、导航、控制等完整流程。\nSSH 连接信息 常用设备的 SSH 连接地址：\n1 2 3 4 5 6 7 8 9 10 11 # 9025 设备 ssh wheeltec@192.168.110.182 # 9004 设备 ssh wheeltec@192.168.110.181 # 其他设备 ssh wheeltec@192.168.168.50 # 密码: dongguan ssh firefly@192.168.168.168 网络配置 WiFi 连接 1 2 # 连接到办公室 WiFi sudo nmcli dev wifi connect &#34;WL-OFFICE&#34; password &#34;wlwl1102&#34; 查看网络信息 1 2 3 4 5 # 方式一 ifconfig # 方式二 ip a Docker 容器管理 查看和启动容器 1 2 3 4 5 # 查看所有容器 docker ps -a # 启动机器人运行容器 docker start robot_runner 建图流程 1. 启动建图程序 1 2 3 4 5 # 进入容器 docker exec -it robot_runner bash # 运行在线 SLAM 建图 /root/ws_nav/src/go2_real/1_run_online_slam.sh 提示: 手持遥控器控制狗开始行走扫图\n">
+<meta property='og:url' content='https://caibb16.github.io/post/ros%E5%91%BD%E4%BB%A4/'>
+<meta property='og:site_name' content='caibb16'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ROS' /><meta property='article:tag' content='命令速查' /><meta property='article:published_time' content='2026-02-05T10:24:25&#43;08:00'/><meta property='article:modified_time' content='2026-02-05T10:24:25&#43;08:00'/>
+<meta name="twitter:title" content="ROS命令">
+<meta name="twitter:description" content="本文档记录了 ROS 机器人（Go2）的常用操作命令，包括 SSH 连接、建图、导航、控制等完整流程。\nSSH 连接信息 常用设备的 SSH 连接地址：\n1 2 3 4 5 6 7 8 9 10 11 # 9025 设备 ssh wheeltec@192.168.110.182 # 9004 设备 ssh wheeltec@192.168.110.181 # 其他设备 ssh wheeltec@192.168.168.50 # 密码: dongguan ssh firefly@192.168.168.168 网络配置 WiFi 连接 1 2 # 连接到办公室 WiFi sudo nmcli dev wifi connect &#34;WL-OFFICE&#34; password &#34;wlwl1102&#34; 查看网络信息 1 2 3 4 5 # 方式一 ifconfig # 方式二 ip a Docker 容器管理 查看和启动容器 1 2 3 4 5 # 查看所有容器 docker ps -a # 启动机器人运行容器 docker start robot_runner 建图流程 1. 启动建图程序 1 2 3 4 5 # 进入容器 docker exec -it robot_runner bash # 运行在线 SLAM 建图 /root/ws_nav/src/go2_real/1_run_online_slam.sh 提示: 手持遥控器控制狗开始行走扫图\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3b6de81a26fb1b8e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">caibb16</a></h1>
+            <h2 class="site-description">一个摆烂人的小窝</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/219954243?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 5L9 7" />
+  <path d="M16.5 5L15 7" />
+  <rect x="4" y="8" width="16" height="11" rx="2" />
+  <circle cx="8.5" cy="13" r="1" fill="currentColor" />
+  <circle cx="15.5" cy="13" r="1" fill="currentColor" />
+  <path d="M9 16.5C9.5 17 10.5 17.5 12 17.5C13.5 17.5 14.5 17 15 16.5" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/caibb16'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/caibb16'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://caibb16.github.io/en/" >English</option>
+                                
+                                    <option value="https://caibb16.github.io/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ssh-连接信息">SSH 连接信息</a></li>
+    <li><a href="#网络配置">网络配置</a>
+      <ul>
+        <li><a href="#wifi-连接">WiFi 连接</a></li>
+        <li><a href="#查看网络信息">查看网络信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-容器管理">Docker 容器管理</a>
+      <ul>
+        <li><a href="#查看和启动容器">查看和启动容器</a></li>
+      </ul>
+    </li>
+    <li><a href="#建图流程">建图流程</a>
+      <ul>
+        <li><a href="#1-启动建图程序">1. 启动建图程序</a></li>
+        <li><a href="#2-点云图处理">2. 点云图处理</a></li>
+        <li><a href="#3-地图转换与部署">3. 地图转换与部署</a></li>
+        <li><a href="#4-上传地图到系统">4. 上传地图到系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#导航操作">导航操作</a>
+      <ul>
+        <li><a href="#启动导航">启动导航</a></li>
+        <li><a href="#ros2-节点启动">ROS2 节点启动</a></li>
+      </ul>
+    </li>
+    <li><a href="#导航控制命令">导航控制命令</a>
+      <ul>
+        <li><a href="#查询当前位置">查询当前位置</a></li>
+        <li><a href="#发布导航目标点">发布导航目标点</a></li>
+        <li><a href="#紧急停止">紧急停止</a></li>
+      </ul>
+    </li>
+    <li><a href="#巡检状态控制">巡检状态控制</a>
+      <ul>
+        <li><a href="#启动巡检">启动巡检</a></li>
+        <li><a href="#关闭巡检">关闭巡检</a></li>
+      </ul>
+    </li>
+    <li><a href="#话题监听">话题监听</a>
+      <ul>
+        <li><a href="#实时位置监听">实时位置监听</a></li>
+        <li><a href="#定位信息查询容器内">定位信息查询（容器内）</a></li>
+      </ul>
+    </li>
+    <li><a href="#地图导出与备份">地图导出与备份</a>
+      <ul>
+        <li><a href="#创建地图备份">创建地图备份</a></li>
+        <li><a href="#下载地图到本地">下载地图到本地</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置文件管理">配置文件管理</a>
+      <ul>
+        <li><a href="#定位参数配置">定位参数配置</a></li>
+        <li><a href="#地图发布脚本">地图发布脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#编译相关">编译相关</a>
+      <ul>
+        <li><a href="#编译指定包">编译指定包</a></li>
+      </ul>
+    </li>
+    <li><a href="#常用工作流程总结">常用工作流程总结</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%B7%A5%E5%85%B7/" style="background-color: #e3da5fff; color: #fff;">
+                工具
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ros%E5%91%BD%E4%BB%A4/">ROS命令</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-02-05T10:24:25&#43;08:00'>Feb 05, 2026</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>本文档记录了 ROS 机器人（Go2）的常用操作命令，包括 SSH 连接、建图、导航、控制等完整流程。</p>
+<h2 id="ssh-连接信息">SSH 连接信息
+</h2><p>常用设备的 SSH 连接地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 9025 设备</span>
+</span></span><span class="line"><span class="cl">ssh wheeltec@192.168.110.182
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9004 设备</span>
+</span></span><span class="line"><span class="cl">ssh wheeltec@192.168.110.181
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 其他设备</span>
+</span></span><span class="line"><span class="cl">ssh wheeltec@192.168.168.50
+</span></span><span class="line"><span class="cl"><span class="c1"># 密码: dongguan</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ssh firefly@192.168.168.168
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="网络配置">网络配置
+</h2><h3 id="wifi-连接">WiFi 连接
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 连接到办公室 WiFi</span>
+</span></span><span class="line"><span class="cl">sudo nmcli dev wifi connect <span class="s2">&#34;WL-OFFICE&#34;</span> password <span class="s2">&#34;wlwl1102&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查看网络信息">查看网络信息
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 方式一</span>
+</span></span><span class="line"><span class="cl">ifconfig
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式二</span>
+</span></span><span class="line"><span class="cl">ip a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker-容器管理">Docker 容器管理
+</h2><h3 id="查看和启动容器">查看和启动容器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看所有容器</span>
+</span></span><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动机器人运行容器</span>
+</span></span><span class="line"><span class="cl">docker start robot_runner
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="建图流程">建图流程
+</h2><h3 id="1-启动建图程序">1. 启动建图程序
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 进入容器</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it robot_runner bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行在线 SLAM 建图</span>
+</span></span><span class="line"><span class="cl">/root/ws_nav/src/go2_real/1_run_online_slam.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>提示</strong>: 手持遥控器控制狗开始行走扫图</p>
+</blockquote>
+<h3 id="2-点云图处理">2. 点云图处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在容器内编辑地图</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it robot_runner bash
+</span></span><span class="line"><span class="cl">/root/ws_nav/src/go2_real/2_edit_map.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出容器</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-地图转换与部署">3. 地图转换与部署
+</h3><p><strong>在宿主机上执行（不要在容器内）</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 转换 PCD 到 PGM 格式</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/ws_nav/src/go2_real
+</span></span><span class="line"><span class="cl">bash 2.1_pcd2pgm.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建导航目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p ~/ws_nav/src/go2_real/navigation_3d/global_planner/pcd_map/pgm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 复制最新地图到导航目录</span>
+</span></span><span class="line"><span class="cl">cp /home/wheeltec/maps/<span class="k">$(</span>ls -t /home/wheeltec/maps/ <span class="p">|</span> head -1<span class="k">)</span>/* <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>   ~/ws_nav/src/go2_real/navigation_3d/global_planner/pcd_map/pgm/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 确认地图文件</span>
+</span></span><span class="line"><span class="cl">ls -lh ~/ws_nav/src/go2_real/navigation_3d/global_planner/pcd_map/pgm/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-上传地图到系统">4. 上传地图到系统
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 停止守护进程</span>
+</span></span><span class="line"><span class="cl">sudo bash /opt/vasystem/daemon.sh stop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动守护进程</span>
+</span></span><span class="line"><span class="cl">sudo bash /opt/vasystem/daemon.sh start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="导航操作">导航操作
+</h2><h3 id="启动导航">启动导航
+</h3><blockquote>
+<p><strong>重要</strong>: 启动导航前，将狗移动到建图起点附近，且保持朝向与建图时一致</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 进入容器</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it robot_runner bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动导航</span>
+</span></span><span class="line"><span class="cl">/root/ws_nav/src/go2_real/3_nav_start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等待日志输出控制文本后，表示启动成功。</p>
+<h3 id="ros2-节点启动">ROS2 节点启动
+</h3><p><strong>必须在容器外启动</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/ws_ros2/
+</span></span><span class="line"><span class="cl">bash start.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或手动 source 环境</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/ws_ros2
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> install/setup.bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="导航控制命令">导航控制命令
+</h2><h3 id="查询当前位置">查询当前位置
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 方式一（推荐）</span>
+</span></span><span class="line"><span class="cl">rosrun tf tf_echo map base_link
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式二</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bash /root/ws_nav/src/tools/query_current_pose.sh</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="发布导航目标点">发布导航目标点
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 格式: publish_clicked_point.sh x y theta</span>
+</span></span><span class="line"><span class="cl">bash /root/ws_nav/src/tools/publish_clicked_point.sh 0.5 0.5 <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="紧急停止">紧急停止
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 方式一：脚本停止</span>
+</span></span><span class="line"><span class="cl">/root/ws_nav/src/tools/emergency_stop.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式二：发布零速度</span>
+</span></span><span class="line"><span class="cl">ros2 topic pub -r <span class="m">10</span> /cmd_vel geometry_msgs/msg/Twist <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="s2">&#34;{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="巡检状态控制">巡检状态控制
+</h2><h3 id="启动巡检">启动巡检
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 topic pub /inspecting_state std_msgs/msg/Bool <span class="s1">&#39;{data: true}&#39;</span> -r <span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="关闭巡检">关闭巡检
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ros2 topic pub /inspecting_state std_msgs/msg/Bool <span class="s1">&#39;{data: false}&#39;</span> -r <span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="话题监听">话题监听
+</h2><h3 id="实时位置监听">实时位置监听
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rostopic <span class="nb">echo</span> /topology/real_time_point
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="定位信息查询容器内">定位信息查询（容器内）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it robot_runner bash
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/ws_nav_node/
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> devel/setup.bash
+</span></span><span class="line"><span class="cl">rostopic <span class="nb">echo</span> /topology/real_time_point
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="地图导出与备份">地图导出与备份
+</h2><h3 id="创建地图备份">创建地图备份
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建导出目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p map_export
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 复制所有地图相关文件</span>
+</span></span><span class="line"><span class="cl">cp ~/ws_nav/src/go2_real/navigation_3d/global_planner/pcd_map/pgm/* map_export/
+</span></span><span class="line"><span class="cl">cp ~/ws_nav/src/go2_real/navigation_3d/global_planner/pcd_map/pcd/aft_pgo_free_space.pcd map_export/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打包（带时间戳）</span>
+</span></span><span class="line"><span class="cl">tar -czf robot_map_<span class="k">$(</span>date +%Y%m%d_%H%M%S<span class="k">)</span>.tar.gz map_export/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看打包文件</span>
+</span></span><span class="line"><span class="cl">ls -lh robot_map_*.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="下载地图到本地">下载地图到本地
+</h3><p><strong>在本地电脑上执行</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">scp wheeltec@192.168.110.148:~/robot_map_*.tar.gz .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置文件管理">配置文件管理
+</h2><h3 id="定位参数配置">定位参数配置
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看定位配置</span>
+</span></span><span class="line"><span class="cl">cat ~/ws_nav/src/go2_real/navigation_3d/fast_lio_nav/open3d_loc/config/loc_param_go2.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑定位配置</span>
+</span></span><span class="line"><span class="cl">nano ~/ws_nav/src/go2_real/navigation_3d/fast_lio_nav/open3d_loc/config/loc_param_go2.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="地图发布脚本">地图发布脚本
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 添加执行权限</span>
+</span></span><span class="line"><span class="cl">chmod +x ~/publish_map.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译相关">编译相关
+</h2><h3 id="编译指定包">编译指定包
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 只编译指定包及其依赖</span>
+</span></span><span class="line"><span class="cl">catkin_make --only-pkg-with-deps &lt;包名&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="常用工作流程总结">常用工作流程总结
+</h2><ol>
+<li><strong>建图流程</strong>: 启动建图 → 遥控器控制行走 → 编辑地图 → 转换格式 → 上传系统</li>
+<li><strong>导航流程</strong>: 移动到起点 → 启动导航 → 启动 ROS2 节点 → 发布目标点</li>
+<li><strong>备份流程</strong>: 复制地图文件 → 打包 → 下载到本地</li>
+</ol>
+<blockquote>
+<p><strong>提示</strong>: 所有涉及机器人运动的操作都需要先启动 ROS2 节点</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ros/">ROS</a>
+        
+            <a href="/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">命令速查</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux 常用命令速查</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/pytorch-%E5%BC%A0%E9%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PyTorch 张量操作命令速查</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/turtlebot3_test/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Turtlebot3_test</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/git%E5%91%BD%E4%BB%A4%E8%87%AA%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">git命令自用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/">
+        
+        
+            <div class="article-image">
+                <img src="/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.c514d916917173a48a42e0114b469961_hu_12cb662251854034.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Markdown 语法指南"
+                        
+                        data-hash="md5-xRTZFpFxc6SKQuARS0aZYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Markdown 语法指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="caibb16/hugo-main"
+    data-repo-id="R_kgDOQjF2uA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQjF2uM4CznVb"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 caibb16
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 caibb16
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+
+<script src="https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+
+
+<style>
+#live2d-tips {
+    position: fixed;
+    bottom: 220px;
+    left: 30px;
+    background: rgba(129, 220, 226, 0.95);
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #5b6c7d;
+    box-shadow: 0 3px 15px rgba(191, 158, 118, 0.3);
+    max-width: 250px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#live2d-tips.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    #live2d-tips {
+        display: none;
+    }
+}
+</style>
+
+
+<div id="live2d-tips"></div>
+
+<script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "left",
+            "width": 150,
+            "height": 250,
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": false  
+        },
+        "react": {
+            "opacityDefault": 0.9,
+            "opacityOnHover": 1.0
+        },
+        "dialog": {
+            "enable": false  
+        }
+    });
+
+    
+    let messageTimer;
+    let allowHoverTips = false; 
+    
+    function showMessage(text, duration = 1000) {
+        const tips = document.getElementById('live2d-tips');
+        if (!tips || !text) return;
+        
+        tips.innerHTML = text;
+        tips.classList.add('show');
+        
+        clearTimeout(messageTimer);
+        if (duration > 0) {
+            messageTimer = setTimeout(() => {
+                tips.classList.remove('show');
+            }, duration);
+        }
+    }
+
+    
+    function getTimeGreeting() {
+        const hour = new Date().getHours();
+        const greetings = {
+            night: ['夜深了，早点休息吧 💤', '晚安～记得明天来看我哦'],
+            morning: ['早上好！☀️', '新的一天开始啦，加油！'],
+            noon: ['中午了，该吃饭啦！🍱', '记得休息一下哦'],
+            afternoon: ['下午好！☕', '下午茶时间，要不要喝杯咖啡？'],
+            evening: ['晚上好！🌙', '辛苦一天了，慢慢浏览吧']
+        };
+        
+        if (hour < 6) return greetings.night[Math.floor(Math.random() * greetings.night.length)];
+        if (hour < 11) return greetings.morning[Math.floor(Math.random() * greetings.morning.length)];
+        if (hour < 14) return greetings.noon[Math.floor(Math.random() * greetings.noon.length)];
+        if (hour < 18) return greetings.afternoon[Math.floor(Math.random() * greetings.afternoon.length)];
+        if (hour < 22) return greetings.evening[Math.floor(Math.random() * greetings.evening.length)];
+        return greetings.night[Math.floor(Math.random() * greetings.night.length)];
+    }
+
+    
+    window.addEventListener('load', function() {
+        const path = window.location.pathname;
+        const isHomePage = path === '/' || path === '/zh-cn/' || path === '/en/' || path.match(/^\/(zh-cn|en)?\/?$/);
+        
+        if (isHomePage) {
+            setTimeout(() => {
+                showMessage('你好！我是Hatsune Miku ♪<br>欢迎来到 caibb16 的博客！', 3000);
+                
+                setTimeout(() => {
+                    allowHoverTips = true;
+                }, 3500);
+            }, 500);
+        } else {
+            
+            allowHoverTips = true;
+        }
+    });
+
+    
+    document.addEventListener('mouseover', function(e) {
+        if (!allowHoverTips) return; 
+        const target = e.target;
+        
+        
+        if (target.matches('.article-title, .article-list .article-title a')) {
+            showMessage('要不要看看这篇文章？📖');
+        }
+        
+        else if (target.matches('.article-tags a, .tag-cloud a')) {
+            const tag = target.textContent.trim();
+            showMessage(`标签「${tag}」相关的内容哦 🏷️`);
+        }
+        
+        else if (target.matches('.article-category a')) {
+            const category = target.textContent.trim();
+            showMessage(`分类「${category}」下的文章 📂`);
+        }
+        
+        else if (target.matches('.site-nav a, .menu a')) {
+            const text = target.textContent.trim();
+            const tips = {
+                '主页': '回到主页看看最新内容 🏠',
+                '归档': '所有文章都在这里哦 📚',
+                '关于': '想了解博主吗？🤔',
+                '搜索': '试试搜索你感兴趣的内容 🔍',
+                '链接': '这里有一些友情链接 🔗'
+            };
+            if (tips[text]) {
+                showMessage(tips[text]);
+            }
+        }
+        
+        else if (target.matches('input[type="search"], .search-input')) {
+            showMessage('输入关键词搜索文章吧 🔍');
+        }
+        
+        else if (target.closest('.menu-social a, .social-links a, .sidebar-social a')) {
+            const link = target.closest('a');
+            const href = link ? link.href.toLowerCase() : '';
+            
+            if (href.includes('github')) {
+                showMessage('来 GitHub 看看我的代码吧 👨‍💻');
+            } else if (href.includes('twitter') || href.includes('x.com')) {
+                showMessage('X 上关注我吧 🐦');
+            } else if (href.includes('bilibili')) {
+                showMessage('B站关注我吧 📺');
+            } else if (href.includes('qq.com') || href.includes('tencent')) {
+                showMessage('加我 QQ 好友吧 💬');
+            } else {
+                showMessage('想关注博主吗？👀');
+            }
+        }
+        
+        else if (target.closest('.aplayer, .music-player')) {
+            showMessage('来听听音乐放松一下吧 🎵');
+        }
+        
+        else if (target.closest('.giscus, .comments')) {
+            showMessage('欢迎在评论区留言哦 💬');
+        }
+        
+        else if (target.matches('.back-to-top, #back-to-top')) {
+            showMessage('点击回到顶部 ⬆️');
+        }
+        
+        else if (target.matches('.copy-button, .copy-code-button')) {
+            showMessage('复制代码到剪贴板 📋');
+        }
+        
+        else if (target.matches('.article-image img, .post-content img')) {
+            showMessage('点击查看大图 🖼️');
+        }
+    });
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+
+particlesJS('particles-js', {
+    particles: {
+        number: {
+            value: 80,  
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: '#64748b'  
+        },
+        shape: {
+            type: 'circle',  
+            stroke: {
+                width: 0,
+                color: '#000000'
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+                enable: false
+            }
+        },
+        size: {
+            value: 3,
+            random: true,
+            anim: {
+                enable: false
+            }
+        },
+        line_linked: {
+            enable: true,  
+            distance: 150,
+            color: '#64748b',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 2,  
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'grab'  
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'  
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 140,
+                line_linked: {
+                    opacity: 1
+                }
+            },
+            push: {
+                particles_nb: 4
+            }
+        }
+    },
+    retina_detect: true
+});
+</script>
+
+<style>
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;   
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
