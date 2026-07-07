@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdown on caibb16</title><link>https://caibb16.github.io/tags/markdown/</link><description>Recent content in Markdown on caibb16</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>caibb16</copyright><lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://caibb16.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown 语法指南</title><link>https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid><description>&lt;img src="https://caibb16.github.io/post/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" /&gt;&lt;h1 id="markdown-语法说明"&gt;Markdown 语法说明
+&lt;/h1&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，广泛用于编写文档、博客、说明书等。它语法简洁，易于阅读和编写，可快速转换为 HTML 网页。&lt;/p&gt;
+&lt;h2 id="标题"&gt;标题
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 号表示标题，支持六级标题：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 一级标题
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;## 二级标题
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;### 三级标题
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="段落"&gt;段落
+&lt;/h2&gt;&lt;p&gt;直接输入文本即可形成段落。段落之间用空行分隔。&lt;/p&gt;
+&lt;h2 id="引用块"&gt;引用块
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;&amp;gt;&lt;/code&gt; 表示引用内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; 这是引用内容
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="列表"&gt;列表
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;无序列表：使用 &lt;code&gt;*&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt; 或 &lt;code&gt;+&lt;/code&gt; 作为标记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* 项目一
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* 项目二
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;有序列表：使用数字加点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. 第一项
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. 第二项
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;支持嵌套列表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="代码块"&gt;代码块
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;行内代码：用反引号包裹，如 &lt;code&gt;print('Hello')&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多行代码块：用三个反引号包裹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;import torch
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;print(torch.__version__)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="表格"&gt;表格
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;|&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt; 创建表格：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;| 姓名 | 年龄 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;| ---- | ---- |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;| 张三 | 27 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;| 李四 | 23 |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="链接与图片"&gt;链接与图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;链接：&lt;code&gt;[描述](网址)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;图片：&lt;code&gt;![描述](图片地址)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="强调"&gt;强调
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;斜体&lt;/em&gt;：用一个星号或下划线包裹&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;粗体&lt;/strong&gt;：用两个星号或下划线包裹&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;删除线&lt;/del&gt;：用两个波浪线包裹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="其他元素"&gt;其他元素
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;分割线：&lt;code&gt;---&lt;/code&gt; 或 &lt;code&gt;***&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;脚注：&lt;code&gt;[^1]&lt;/code&gt;，在文档底部添加脚注内容&lt;/li&gt;
+&lt;li&gt;行内 HTML：可直接嵌入 HTML 标签&lt;/li&gt;
+&lt;li&gt;特殊格式：如 &lt;code&gt;&amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;mark&amp;gt;高亮&amp;lt;/mark&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;sub&amp;gt;下标&amp;lt;/sub&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;sup&amp;gt;上标&amp;lt;/sup&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="视频与多媒体"&gt;视频与多媒体
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;图片：&lt;code&gt;![图片描述](图片地址)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;视频：&lt;code&gt;&amp;lt;video src=&amp;quot;xxx.mp4&amp;quot; controls width=&amp;quot;700&amp;quot;&amp;gt;&amp;lt;/video&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="数学公式"&gt;数学公式
+&lt;/h2&gt;&lt;p&gt;支持 LaTeX 语法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;行内公式：&lt;code&gt;$公式$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;块级公式：&lt;code&gt;$$公式$$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多行公式：&lt;code&gt;$$$公式$$$&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;常用 LaTeX 命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\alpha, \beta, \gamma, \delta, \epsilon # 希腊字母
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\sum_{下标}^{上标}, \prod_{下标}^{上标}, \int_{下标}^{上标} # 求和、乘积、积分
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\frac{分子}{分母} # 分数
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\sqrt{表达式} # 平方根
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\sqrt[n]{表达式} # n 次根
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\begin{matrix} ... \end{matrix} # 矩阵
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;Markdown 语法简单易学，适合快速编写结构化文档。更多高级用法可参考 &lt;a class="link" href="https://markdown.com.cn/" target="_blank" rel="noopener"
+&gt;Markdown 官方文档&lt;/a&gt; 。&lt;/p&gt;</description></item></channel></rss>
